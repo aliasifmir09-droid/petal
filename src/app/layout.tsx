@@ -42,6 +42,8 @@ export const metadata: Metadata = {
   keywords: [
     "NYC florist",
     "same day flower delivery NYC",
+    "Christmas flower delivery NYC",
+    "Christmas Eve flowers New York",
     "luxury bouquets Manhattan",
     "Brooklyn flower delivery",
     "Queens florist Jackson Heights",
@@ -49,6 +51,7 @@ export const metadata: Metadata = {
     "Staten Island florist",
     "Petalswift",
     "same day bouquets New York",
+    "holiday centerpiece NYC",
   ],
   openGraph: {
     title: "Petalswift | Luxury Same-Day Flowers & Bouquets in NYC",

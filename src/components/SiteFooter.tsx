@@ -19,6 +19,16 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-porcelain/85">
             <li>
+              <Link href="/christmas" className="hover:text-porcelain">
+                Christmas flowers
+              </Link>
+            </li>
+            <li>
+              <Link href="/order" className="hover:text-porcelain">
+                Start an order
+              </Link>
+            </li>
+            <li>
               <Link href="/arrangements" className="hover:text-porcelain">
                 All arrangements
               </Link>

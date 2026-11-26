@@ -11,18 +11,24 @@ export function FinalCta() {
             className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-leaf/10 blur-3xl"
           />
           <p className="font-display text-4xl tracking-[-0.035em] text-ink md:text-6xl">
-            Send something unforgettable today.
+            Start Christmas orders now.
           </p>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-            Choose a composition, add a note, and we handle the rest—from our
-            Jackson Heights atelier across New York.
+            Operations are live for holiday gifts and same-day NYC delivery.
+            Shop Christmas, place an order online, or call the atelier.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
-              href="/shop"
+              href="/christmas"
               className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
             >
-              Browse bouquets
+              Shop Christmas
+            </Link>
+            <Link
+              href="/order"
+              className="inline-flex border border-ink/15 px-7 py-3.5 text-sm text-ink transition-colors hover:border-ink/35"
+            >
+              How to order
             </Link>
             <a
               href={`tel:${site.phone}`}

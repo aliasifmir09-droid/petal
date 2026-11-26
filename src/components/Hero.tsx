@@ -27,21 +27,21 @@ export function Hero() {
             {site.tagline}
           </h1>
           <p className="reveal reveal-delay-2 mt-5 max-w-md text-base leading-relaxed text-porcelain/78 md:text-lg">
-            Same-day bouquets across the five boroughs—composed in Jackson
-            Heights, delivered with quiet precision.
+            Christmas orders are open. Same-day bouquets across the five
+            boroughs—composed in Jackson Heights, delivered with quiet precision.
           </p>
           <div className="reveal reveal-delay-3 mt-9 flex flex-wrap items-center gap-3">
             <Link
-              href="/arrangements"
+              href="/christmas"
               className="inline-flex bg-porcelain px-7 py-3.5 text-sm text-leaf transition-colors hover:bg-white"
             >
-              All arrangements
+              Shop Christmas
             </Link>
             <Link
-              href="/delivery"
+              href="/order"
               className="inline-flex border border-porcelain/35 px-7 py-3.5 text-sm text-porcelain transition-colors hover:border-porcelain/70 hover:bg-white/10"
             >
-              NYC same-day
+              Start an order
             </Link>
           </div>
         </div>

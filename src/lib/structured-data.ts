@@ -1,5 +1,5 @@
 import { products } from "@/lib/catalog";
-import { boroughs, faqs, site } from "@/lib/site";
+import { boroughs, christmasFaqs, faqs, site } from "@/lib/site";
 
 export function organizationSchema() {
   return {
@@ -120,15 +120,121 @@ export function faqSchema() {
   };
 }
 
-export function itemListSchema() {
+export function itemListSchema(slugs?: string[]) {
+  const list = slugs
+    ? products.filter((p) => slugs.includes(p.slug))
+    : products;
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: products.map((product, index) => ({
+    itemListElement: list.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `${site.url}/shop/${product.slug}`,
       name: product.name,
     })),
+  };
+}
+
+export function faqSchemaFrom(
+  items: readonly { question: string; answer: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function christmasFaqSchema() {
+  return faqSchemaFrom([...faqs.slice(0, 4), ...christmasFaqs]);
+}
+
+export function howToOrderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to order Christmas flowers from Petalswift in NYC",
+    description:
+      "Start a same-day or scheduled Christmas flower delivery across New York City.",
+    totalTime: "PT5M",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+      value: "72",
+    },
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Choose an arrangement",
+        text: "Browse https://www.petalswift.com/christmas or /arrangements and pick a holiday bouquet, hatbox, or centerpiece.",
+        url: `${site.url}/christmas`,
+      },
+      {
+        "@type": "HowToStep",
+        name: "Confirm delivery details",
+        text: `Enter the NYC ZIP, preferred date, and note. Same-day cutoff is ${site.orderCutoff}; Christmas Eve cutoff is ${site.christmasEveCutoff}.`,
+        url: `${site.url}/order`,
+      },
+      {
+        "@type": "HowToStep",
+        name: "Checkout or call",
+        text: `Add to cart online or call ${site.phoneDisplay} / email ${site.email} to place the order with Petalswift in Jackson Heights.`,
+        url: `${site.url}/order`,
+      },
+    ],
+  };
+}
+
+export function flowerDeliveryServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "NYC Same-Day Flower & Christmas Delivery",
+    serviceType: "Flower delivery",
+    provider: { "@id": `${site.url}/#organization` },
+    areaServed: boroughs.map((b) => ({
+      "@type": "AdministrativeArea",
+      name: `${b.name}, New York`,
+    })),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${site.url}/order`,
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: site.phone,
+        contactType: "customer service",
+        areaServed: "US-NY",
+        availableLanguage: ["English"],
+      },
+    },
+    offers: {
+      "@type": "Offer",
+      url: `${site.url}/christmas`,
+      priceCurrency: "USD",
+      price: "72.00",
+      availability: "https://schema.org/InStock",
+      description: site.holidayNote,
+    },
+  };
+}
+
+export function speakableSchema(cssSelectors: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Petalswift Christmas Flowers NYC",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+    url: `${site.url}/christmas`,
   };
 }

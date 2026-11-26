@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { useCart } from "@/lib/cart";
 import { site } from "@/lib/site";
 
@@ -39,21 +40,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40">
       <div className="bg-leaf text-porcelain">
         <div className="site-shell flex flex-wrap items-center gap-3 py-3 lg:flex-nowrap lg:gap-4 lg:py-3.5">
-          <Link
-            href="/"
-            className="shrink-0 font-display text-[1.65rem] leading-none tracking-[-0.03em] text-porcelain md:text-[1.85rem]"
+          <BrandLogo
+            variant="on-brand"
+            className="shrink-0"
             onClick={() => setOpen(false)}
-          >
-            <span className="inline-flex items-center gap-2">
-              <span
-                aria-hidden
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-petal text-sm font-bold text-ink"
-              >
-                ✦
-              </span>
-              {site.name}
-            </span>
-          </Link>
+          />
 
           <Link
             href="/delivery"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { ContactEmail } from "@/components/ContactEmail";
 import { boroughs, site } from "@/lib/site";
 
@@ -7,7 +8,7 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-leaf-deep text-porcelain">
       <div className="site-shell grid gap-14 py-20 md:grid-cols-[1.5fr_1fr_1fr_1.1fr] md:gap-16 md:py-24">
         <div>
-          <p className="font-display text-4xl tracking-[-0.04em]">{site.name}</p>
+          <BrandLogo variant="on-dark" size="lg" href="/" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-porcelain/72">
             Luxury flowers and composed bouquets for New York City—arranged
             fresh in Jackson Heights, delivered across all five boroughs.

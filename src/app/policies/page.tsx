@@ -27,7 +27,7 @@ export default function PoliciesPage() {
           Trust & policies
         </p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl tracking-[-0.035em] text-ink md:text-7xl">
-          Refunds, cancellations, substitutions, freshness.
+          Refunds, cancellations, substitutions, freshness, and delivery policies.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
           Clear rules before you order. Questions? Call{" "}

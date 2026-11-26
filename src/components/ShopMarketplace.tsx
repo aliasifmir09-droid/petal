@@ -12,6 +12,7 @@ import {
   styles,
   type Product,
 } from "@/lib/catalog";
+import { productSubtitle } from "@/lib/product-details";
 
 type SortKey = "featured" | "price-asc" | "price-desc" | "name";
 
@@ -270,6 +271,9 @@ export function ShopMarketplace({
                   </h2>
                   <p className="text-sm text-ink-soft">${product.price}</p>
                 </div>
+                <p className="mt-1 text-sm text-ink-soft">
+                  {productSubtitle(product)}
+                </p>
                 <p className="mt-1 text-[0.7rem] uppercase tracking-[0.16em] text-ink-soft/70">
                   {product.size}
                   {" · "}

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
+import { FreshnessGuarantee } from "@/components/FreshnessGuarantee";
 import { GiftAddons } from "@/components/GiftAddons";
 import { OrderUpdatesForm } from "@/components/OrderUpdatesForm";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { useCart } from "@/lib/cart";
 import { deliveryZones } from "@/lib/ops";
 import { site } from "@/lib/site";
@@ -51,7 +53,7 @@ export default function CartPage() {
           <div className="space-y-6">
             {lines.map((line) => (
               <div
-                key={line.slug}
+                key={line.lineKey}
                 className="grid grid-cols-[96px_1fr] gap-4 border-b border-line pb-6 md:grid-cols-[120px_1fr_auto]"
               >
                 <div className="relative aspect-square overflow-hidden bg-mist/30">
@@ -88,7 +90,11 @@ export default function CartPage() {
                         min={1}
                         value={line.quantity}
                         onChange={(e) =>
-                          setQuantity(line.slug, Number(e.target.value) || 1)
+                          setQuantity(
+                            line.slug,
+                            Number(e.target.value) || 1,
+                            line.size,
+                          )
                         }
                         className="ml-2 w-16 border border-ink/15 bg-white px-2 py-1.5 text-sm"
                       />
@@ -96,7 +102,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       className="text-sm text-ink-soft underline-offset-4 hover:underline"
-                      onClick={() => removeItem(line.slug)}
+                      onClick={() => removeItem(line.slug, line.size)}
                     >
                       Remove
                     </button>
@@ -179,6 +185,8 @@ export default function CartPage() {
                 Request order by email
               </a>
             </div>
+            <PaymentTrust />
+            <FreshnessGuarantee compact />
             <DeliveryChecker compact />
           </aside>
         </section>

@@ -54,6 +54,21 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/gallery" className="hover:text-porcelain">
+                Photo gallery
+              </Link>
+            </li>
+            <li>
+              <Link href="/corporate" className="hover:text-porcelain">
+                Corporate
+              </Link>
+            </li>
+            <li>
+              <Link href="/subscribe" className="hover:text-porcelain">
+                Subscriptions
+              </Link>
+            </li>
+            <li>
               <Link href="/sizes" className="hover:text-porcelain">
                 Size guide
               </Link>
@@ -66,6 +81,16 @@ export function SiteFooter() {
             <li>
               <Link href="/about" className="hover:text-porcelain">
                 Our Atelier
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="hover:text-porcelain">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-porcelain">
+                Terms
               </Link>
             </li>
             <li>

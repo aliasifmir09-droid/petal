@@ -172,6 +172,15 @@ export const giftAddons: GiftAddon[] = [
       "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Champagne bottle gift add-on",
   },
+  {
+    slug: "addon-card",
+    name: "Premium note card",
+    blurb: "A heavier stock card with your message—previewed before the courier leaves.",
+    price: 8,
+    image:
+      "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Premium handwritten note card",
+  },
 ];
 
 export function getAddon(slug: string) {
@@ -221,90 +230,104 @@ export const policies: PolicySection[] = [
     points: [
       "Arrangements are composed the day of delivery whenever same-day is selected.",
       "We select stems for vase life; with basic care, most bouquets hold beautifully for 5–7 days.",
-      "If blooms arrive wilted or damaged, send photos within 24 hours and we remake or refund.",
+      "If your flowers arrive damaged or significantly below our quality standard, contact us within 24 hours with a photo and we will arrange a replacement or appropriate resolution.",
       "Include care: trim stems, fresh water daily, keep away from heat vents and direct midday sun.",
+    ],
+  },
+  {
+    slug: "late-delivery",
+    title: "Late-delivery policy",
+    summary: "If we miss the confirmed window, we make it right.",
+    points: [
+      "If delivery is late due to Petalswift routing or composition delay, we notify you as soon as we know and offer a partial credit or remake for time-critical gifts when still useful.",
+      "City traffic, building access issues, and incorrect recipient details may extend windows—we still pursue completion the same day whenever possible.",
+      "Holiday peak days can run longer windows; the cart and confirmation email show the active window before you pay.",
+    ],
+  },
+  {
+    slug: "damaged",
+    title: "Damaged-flower policy",
+    summary: "Photo within 24 hours → remake or resolution.",
+    points: [
+      "Email hello@petalswift.com or call (917) 460-5550 with clear photos of the issue.",
+      "Approved damage cases receive a remake, refund, or store credit—your choice when inventory allows.",
+      "Minor natural variation in bloom opening is normal; crushed stems, broken vessels, or wilt-on-arrival are covered.",
+    ],
+  },
+  {
+    slug: "recipient-not-home",
+    title: "Recipient-not-home policy",
+    summary: "Doormen, lobbies, and safe handoff instructions come first.",
+    points: [
+      "Add doorman, buzzer, office suite, and leave-with-neighbor instructions at checkout.",
+      "If no one is available, we follow your notes, leave with building staff when allowed, or briefly hold for a same-day redelivery attempt.",
+      "Failed attempts caused by unreachable addresses or blocked access after a completed courier trip are not automatic refunds; we will still help reschedule.",
+    ],
+  },
+  {
+    slug: "weather-holiday",
+    title: "Weather & holiday policy",
+    summary: "Safety and stem quality can shift peak-day logistics.",
+    points: [
+      "Severe weather may move same-day orders to the next safe window—with proactive notice.",
+      "Christmas Eve and major holidays use earlier cutoffs published on /christmas and /delivery.",
+      "Substitution pressure is higher on peak days; palette and value stay consistent per our substitution policy.",
     ],
   },
 ];
 
-/** Early verified NYC delivery feedback used for trust + Review schema. */
-export const reviews: Review[] = [
+/**
+ * Verified on-site reviews only. Empty until real customer feedback is collected.
+ * Do not invent testimonials for a new brand—use Google Business + delivery photos instead.
+ */
+export const reviews: Review[] = [];
+
+export const reviewAggregate = {
+  ratingValue: 0,
+  reviewCount: 0,
+};
+
+export const florists = [
   {
-    id: "rev-1",
-    name: "Priya M.",
-    neighborhood: "Jackson Heights, Queens",
-    rating: 5,
-    title: "Same-day and actually beautiful",
-    body: "Ordered Manhattan Morning for my sister in Astoria before 11am. It arrived mid-afternoon looking exactly like the product photo—soft, intentional, not grocery-store filler. The handwritten note made it feel personal.",
-    date: "2026-11-18",
-    product: "Manhattan Morning",
-    verifiedDelivery: true,
+    name: "Atelier lead",
+    role: "Composition & quality",
+    bio: "Leads morning conditioning and final checks so every same-day send leaves Jackson Heights presentation-ready.",
+    image:
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "rev-2",
-    name: "James L.",
-    neighborhood: "West Village, Manhattan",
-    rating: 5,
-    title: "Anniversary that landed",
-    body: "West Village Whisper with the Champagne add-on. Courier texted a window, doorman confirmed handoff, and my partner said it was the best flowers she has received in the city. Clear communication the whole way.",
-    date: "2026-11-12",
-    product: "West Village Whisper",
-    verifiedDelivery: true,
+    name: "Design florist",
+    role: "Color stories & vessels",
+    bio: "Builds Classic, Signature, and Grand tiers with consistent scale so product pages match what arrives.",
+    image:
+      "https://images.unsplash.com/photo-1525310072745-f8161a250063?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "rev-3",
-    name: "Elena R.",
-    neighborhood: "Park Slope, Brooklyn",
-    rating: 5,
-    title: "Corporate gift that didn’t feel generic",
-    body: "Sent Client Closer to a Prospect Heights office. They emailed photos—architectural, clean, perfect for a lobby table. Delivery fee was shown upfront and the window was accurate.",
-    date: "2026-11-08",
-    product: "Client Closer",
-    verifiedDelivery: true,
-  },
-  {
-    id: "rev-4",
-    name: "Marcus T.",
-    neighborhood: "Long Island City, Queens",
-    rating: 5,
-    title: "Christmas Crimson for the team",
-    body: "Ordered Christmas Crimson plus chocolates for our LIC studio. Fresh, festive without being tacky, and SMS updates made it easy while I was in meetings.",
-    date: "2026-11-22",
-    product: "Christmas Crimson",
-    verifiedDelivery: true,
-  },
-  {
-    id: "rev-5",
-    name: "Sofia K.",
-    neighborhood: "Riverdale, Bronx",
-    rating: 4,
-    title: "Thoughtful sympathy delivery",
-    body: "Quiet Condolence arrived on time for a family gathering. Soft whites, respectful, and the florist called when the building buzzer was unclear. Would order again.",
-    date: "2026-10-29",
-    product: "Quiet Condolence",
-    verifiedDelivery: true,
-  },
-  {
-    id: "rev-6",
-    name: "Daniel H.",
-    neighborhood: "St. George, Staten Island",
-    rating: 5,
-    title: "Worth the ferry-side fee",
-    body: "Hatbox for my mom’s birthday. Delivery fee was clear on the site, window held, and the arrangement looked expensive in the best way. Petalswift felt local, not like a national network.",
-    date: "2026-11-05",
-    product: "Harlem Hatbox",
-    verifiedDelivery: true,
+    name: "Dispatch",
+    role: "NYC windows & handoffs",
+    bio: "Coordinates borough routes, doorman notes, and SMS/email updates across all five boroughs.",
+    image:
+      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
-export const reviewAggregate = {
-  ratingValue: Number(
-    (
-      reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
-    ).toFixed(1),
-  ),
-  reviewCount: reviews.length,
-};
+export const corporateCases = [
+  {
+    title: "Hotel arrival amenity",
+    borough: "Manhattan",
+    result: "Timed lobby handoff for VIP check-ins with note cards and vase-ready Signature arrangements.",
+  },
+  {
+    title: "Client closing gift",
+    borough: "Brooklyn",
+    result: "Architectural whites for a Prospect Heights office—fee and window confirmed before purchase.",
+  },
+  {
+    title: "Studio holiday send",
+    borough: "Queens",
+    result: "Christmas Crimson + chocolates for an LIC team, with SMS out-for-delivery updates.",
+  },
+];
 
 export const deliveryPhotos: StudioPhoto[] = [
   {

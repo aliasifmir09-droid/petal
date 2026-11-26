@@ -4,7 +4,7 @@ import { boroughs, site } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-leaf-deep text-porcelain">
-      <div className="site-shell grid gap-12 py-16 md:grid-cols-[1.5fr_1fr_1fr_1.1fr]">
+      <div className="site-shell grid gap-14 py-20 md:grid-cols-[1.5fr_1fr_1fr_1.1fr] md:gap-16 md:py-24">
         <div>
           <p className="font-display text-4xl tracking-[-0.04em]">{site.name}</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-porcelain/72">

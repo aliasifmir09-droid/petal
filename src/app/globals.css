@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f6f3ef;
-  --canvas-deep: #ebe6df;
-  --ink: #101412;
-  --ink-soft: #4a524c;
-  --mist: #d6dbd4;
-  --leaf: #17362c;
-  --leaf-deep: #0d211a;
-  --petal: #b99289;
-  --porcelain: #fbfaf7;
-  --line: rgba(16, 20, 18, 0.1);
+  /* Walmart-inspired commerce system: blue brand, yellow CTA, white retail ground */
+  --canvas: #f3f6fa;
+  --canvas-deep: #e7edf5;
+  --ink: #0f1c2e;
+  --ink-soft: #5a6573;
+  --mist: #d5deea;
+  --leaf: #0071dc;
+  --leaf-deep: #004f9a;
+  --petal: #ffc220;
+  --petal-deep: #f2b600;
+  --porcelain: #ffffff;
+  --line: rgba(15, 28, 46, 0.1);
   --background: var(--canvas);
   --foreground: var(--ink);
+  --section-y: 6.5rem;
+  --section-y-lg: 9rem;
+  --card-gap: 2.25rem;
+  --shell-max: 1360px;
 }
 
 @theme inline {
@@ -26,6 +32,7 @@
   --color-leaf: var(--leaf);
   --color-leaf-deep: var(--leaf-deep);
   --color-petal: var(--petal);
+  --color-petal-deep: var(--petal-deep);
   --color-porcelain: var(--porcelain);
   --color-line: var(--line);
   --font-sans: var(--font-outfit);
@@ -44,9 +51,9 @@ body {
   margin: 0;
   min-height: 100%;
   background:
-    radial-gradient(1100px 520px at 8% -8%, rgba(185, 146, 137, 0.16), transparent 58%),
-    radial-gradient(900px 480px at 92% 0%, rgba(23, 54, 44, 0.09), transparent 52%),
-    linear-gradient(180deg, #faf8f5 0%, var(--canvas) 38%, var(--canvas-deep) 100%);
+    radial-gradient(1000px 480px at 0% -10%, rgba(0, 113, 220, 0.1), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(255, 194, 32, 0.12), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, var(--canvas) 42%, var(--canvas-deep) 100%);
   color: var(--ink);
   font-family: var(--font-outfit), ui-sans-serif, sans-serif;
   text-rendering: optimizeLegibility;
@@ -59,13 +66,13 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 50;
-  opacity: 0.035;
+  opacity: 0.02;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: rgba(23, 54, 44, 0.18);
+  background: rgba(0, 113, 220, 0.2);
   color: var(--ink);
 }
 
@@ -76,14 +83,76 @@ body::before {
 }
 
 .site-shell {
-  width: min(1240px, calc(100% - 2rem));
+  width: min(var(--shell-max), calc(100% - 2.5rem));
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .site-shell {
-    width: min(1240px, calc(100% - 3rem));
+    width: min(var(--shell-max), calc(100% - 4.5rem));
   }
+}
+
+@media (min-width: 1280px) {
+  .site-shell {
+    width: min(var(--shell-max), calc(100% - 6rem));
+  }
+}
+
+/* World-class e-commerce breathing room */
+.section-gap {
+  padding-block: var(--section-y);
+}
+
+@media (min-width: 768px) {
+  .section-gap {
+    padding-block: var(--section-y-lg);
+  }
+}
+
+.commerce-card {
+  border: 1px solid var(--line);
+  background: var(--porcelain);
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .commerce-card {
+    padding: 2rem;
+  }
+}
+
+.btn-spark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--petal);
+  color: var(--ink);
+  padding: 0.9rem 1.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.btn-spark:hover {
+  background: var(--petal-deep);
+}
+
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--leaf);
+  color: var(--porcelain);
+  padding: 0.9rem 1.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 160ms ease;
+}
+
+.btn-brand:hover {
+  background: var(--leaf-deep);
 }
 
 .reveal {

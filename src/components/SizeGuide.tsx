@@ -6,12 +6,12 @@ export function SizeGuide({ compact = false }: { compact?: boolean }) {
     <section
       className={
         compact
-          ? "border border-line bg-porcelain/70 p-6"
-          : "border-y border-line bg-porcelain/55 py-16 md:py-20"
+          ? "border border-line bg-porcelain p-6 md:p-8"
+          : "section-gap border-y border-line bg-porcelain"
       }
     >
       <div className={compact ? undefined : "site-shell"}>
-        <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
           Size & pricing
         </p>
         <h2
@@ -29,12 +29,12 @@ export function SizeGuide({ compact = false }: { compact?: boolean }) {
           </p>
         ) : null}
         <div
-          className={`mt-8 grid gap-4 ${compact ? "" : "md:grid-cols-3"}`}
+          className={`mt-10 grid gap-6 ${compact ? "" : "md:grid-cols-3"}`}
         >
           {sizeTiers.map((tier) => (
             <article
               key={tier.name}
-              className="border border-line bg-canvas/40 p-5"
+              className="commerce-card bg-canvas/40"
             >
               <h3 className="font-display text-2xl tracking-[-0.02em] text-ink">
                 {tier.name}

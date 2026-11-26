@@ -6,11 +6,11 @@ export function Collection() {
   const featured = products.filter((p) => p.bestseller).slice(0, 3);
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="section-gap">
       <div className="site-shell">
-        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
               Featured compositions
             </p>
             <h2 className="font-display mt-4 text-4xl tracking-[-0.035em] text-ink md:text-6xl">
@@ -19,20 +19,20 @@ export function Collection() {
           </div>
           <Link
             href="/shop"
-            className="text-sm text-leaf underline-offset-4 transition-colors hover:text-leaf-deep hover:underline"
+            className="text-sm font-semibold text-leaf underline-offset-4 transition-colors hover:text-leaf-deep hover:underline"
           >
             View the full collection
           </Link>
         </div>
 
-        <div className="mt-14 space-y-16 md:space-y-24">
+        <div className="mt-16 space-y-20 md:mt-20 md:space-y-28">
           {featured.map((bouquet, index) => {
             const reverse = index % 2 === 1;
             return (
               <Link
                 key={bouquet.slug}
                 href={`/shop/${bouquet.slug}`}
-                className={`group grid items-center gap-8 md:grid-cols-2 md:gap-14 ${
+                className={`group grid items-center gap-10 md:grid-cols-2 md:gap-20 ${
                   reverse ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >

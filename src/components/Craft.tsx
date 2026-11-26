@@ -1,9 +1,9 @@
 export function Craft() {
   return (
-    <section className="border-y border-line bg-porcelain/70 py-24 md:py-32">
-      <div className="site-shell grid items-end gap-12 md:grid-cols-[1.15fr_0.85fr]">
+    <section className="section-gap border-y border-line bg-porcelain">
+      <div className="site-shell grid items-end gap-16 md:grid-cols-[1.15fr_0.85fr] md:gap-24">
         <div>
-          <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
             The standard
           </p>
           <h2 className="font-display mt-5 max-w-2xl text-4xl leading-[1.02] tracking-[-0.035em] text-ink md:text-6xl">

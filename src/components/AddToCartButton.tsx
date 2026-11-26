@@ -15,10 +15,10 @@ export function AddToCartButton({
   const [added, setAdded] = useState(false);
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-4">
       <button
         type="button"
-        className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+        className="btn-spark min-w-[160px]"
         onClick={() => {
           addItem(slug, 1);
           setAdded(true);
@@ -29,7 +29,7 @@ export function AddToCartButton({
       {added ? (
         <Link
           href="/cart"
-          className="text-sm text-leaf underline-offset-4 hover:underline"
+          className="text-sm font-semibold text-leaf underline-offset-4 hover:underline"
         >
           View cart
         </Link>

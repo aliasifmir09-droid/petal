@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { JsonLd } from "@/components/JsonLd";
 import { Reviews } from "@/components/Reviews";
+import { postsByBorough } from "@/lib/blog";
 import { products } from "@/lib/catalog";
 import { deliveryFeeForBorough } from "@/lib/ops";
+import { qaByBorough } from "@/lib/qa";
 import { boroughs, getBorough, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
@@ -42,6 +44,8 @@ export default async function BoroughPage({ params }: Props) {
   if (!borough) notFound();
   const zone = deliveryFeeForBorough(slug);
   const featured = products.filter((p) => p.bestseller).slice(0, 4);
+  const relatedPosts = postsByBorough(slug).slice(0, 3);
+  const relatedQa = qaByBorough(slug).slice(0, 4);
 
   return (
     <div className="pt-8 md:pt-10">
@@ -207,6 +211,51 @@ export default async function BoroughPage({ params }: Props) {
           >
             Policies
           </Link>
+        </div>
+      </section>
+
+      <section className="site-shell grid gap-10 border-t border-line py-16 md:grid-cols-2">
+        <div>
+          <h2 className="font-display text-3xl text-ink">
+            {borough.name} flower delivery guides
+          </h2>
+          <ul className="mt-6 space-y-3">
+            {relatedPosts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="font-semibold text-leaf hover:underline"
+                >
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/blog" className="text-sm text-ink-soft hover:text-leaf">
+                All NYC flower blog posts →
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="font-display text-3xl text-ink">{borough.name} Q&amp;A</h2>
+          <ul className="mt-6 space-y-3">
+            {relatedQa.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`/qa/${item.slug}`}
+                  className="font-semibold text-leaf hover:underline"
+                >
+                  {item.question}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/qa" className="text-sm text-ink-soft hover:text-leaf">
+                Full NYC Q&amp;A hub →
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

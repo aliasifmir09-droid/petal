@@ -36,6 +36,8 @@ Petalswift composes and delivers holiday and everyday bouquets across all five N
 - [Sell on Petalswift](https://www.petalswift.com/sell): Shop owner accounts to list and sell flowers on the marketplace
 - [Partner shops](https://www.petalswift.com/sell/shops): Live marketplace sellers
 - [Create shop account](https://www.petalswift.com/sell/apply): Onboard as a florist / shop owner seller
+- [NYC Q&A](https://www.petalswift.com/qa): Indexable answers for five-borough same-day flower delivery
+- [Blog](https://www.petalswift.com/blog): Guides for Manhattan, Brooklyn, Queens, Bronx, Staten Island flower delivery
 
 ## What Petalswift is known for
 

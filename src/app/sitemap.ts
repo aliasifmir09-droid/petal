@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog";
 import { occasions, products, styles } from "@/lib/catalog";
+import { qaItems } from "@/lib/qa";
 import { partnerShops } from "@/lib/sellers";
 import { boroughs, site } from "@/lib/site";
 
@@ -27,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sell", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/sell/apply", priority: 0.85, changeFrequency: "weekly" as const },
     { path: "/sell/shops", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/qa", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/blog", priority: 0.95, changeFrequency: "daily" as const },
+    { path: "/faq", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/subscribe", priority: 0.6, changeFrequency: "monthly" as const },
   ].map((route) => ({
     url: `${base}${route.path}`,
@@ -70,6 +75,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
+  const qaRoutes = qaItems.map((item) => ({
+    url: `${base}/qa/${item.slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticRoutes,
     ...productRoutes,
@@ -77,5 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...styleRoutes,
     ...boroughRoutes,
     ...sellerRoutes,
+    ...blogRoutes,
+    ...qaRoutes,
   ];
 }

@@ -109,6 +109,16 @@ export function SiteFooter() {
                 FAQ
               </Link>
             </li>
+            <li>
+              <Link href="/qa" className="hover:text-porcelain">
+                NYC Q&amp;A
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="hover:text-porcelain">
+                Flower blog
+              </Link>
+            </li>
           </ul>
         </div>
 

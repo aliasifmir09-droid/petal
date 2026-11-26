@@ -360,3 +360,46 @@ export function speakableSchema(cssSelectors: string[]) {
     url: `${site.url}/christmas`,
   };
 }
+
+export function articleSchema(post: {
+  slug: string;
+  title: string;
+  description: string;
+  publishedAt: string;
+  updatedAt: string;
+  heroImage: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: [post.heroImage],
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    author: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${site.url}/blog/${post.slug}`,
+    },
+    inLanguage: "en-US",
+  };
+}
+
+export function qaPageSchema(
+  items: readonly { question: string; answer: string }[],
+) {
+  return faqSchemaFrom(items);
+}

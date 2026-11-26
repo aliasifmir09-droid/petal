@@ -17,6 +17,8 @@ const departments = [
   { href: "/delivery", label: "Same-day" },
   { href: "/nyc", label: "NYC boroughs" },
   { href: "/sell", label: "Sell on Petalswift" },
+  { href: "/blog", label: "Blog" },
+  { href: "/qa", label: "Q&A" },
   { href: "/sizes", label: "Sizes" },
 ];
 

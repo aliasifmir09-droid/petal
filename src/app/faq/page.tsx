@@ -37,7 +37,16 @@ export default function FaqPage() {
           <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
             {site.phoneDisplay}
           </a>{" "}
-          or email <ContactEmail className="text-leaf hover:underline" />.
+          or email <ContactEmail className="text-leaf hover:underline" />. For
+          five-borough SEO answers see the{" "}
+          <Link href="/qa" className="font-semibold text-leaf hover:underline">
+            NYC Q&amp;A hub
+          </Link>{" "}
+          and{" "}
+          <Link href="/blog" className="font-semibold text-leaf hover:underline">
+            flower delivery blog
+          </Link>
+          .
         </p>
       </section>
 

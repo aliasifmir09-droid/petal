@@ -16,6 +16,7 @@ const departments = [
   { href: "/styles/lily-free", label: "Lily-free" },
   { href: "/delivery", label: "Same-day" },
   { href: "/nyc", label: "NYC boroughs" },
+  { href: "/sell", label: "Sell on Petalswift" },
   { href: "/sizes", label: "Sizes" },
 ];
 
@@ -105,10 +106,16 @@ export function SiteHeader() {
               Reorder
             </Link>
             <Link
-              href="/updates"
+              href="/sell/account"
               className="hidden rounded-full px-3 py-2 text-sm text-porcelain hover:bg-white/10 lg:inline"
             >
-              Account
+              Seller account
+            </Link>
+            <Link
+              href="/updates"
+              className="hidden rounded-full px-3 py-2 text-sm text-porcelain hover:bg-white/10 xl:inline"
+            >
+              Order updates
             </Link>
             <Link
               href="/cart"

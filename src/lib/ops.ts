@@ -151,7 +151,7 @@ export const giftAddons: GiftAddon[] = [
     blurb: "A clean, quiet scent—soft cedar and citrus—for the table beside the blooms.",
     price: 36,
     image:
-      "https://images.unsplash.com/photo-1602602870296-0a43b0e0e8b3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Luxury scented candle gift",
   },
   {

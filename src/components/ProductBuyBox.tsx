@@ -7,12 +7,14 @@ import { PaymentTrust } from "@/components/PaymentTrust";
 import type { Product } from "@/lib/catalog";
 import { deliveryZones } from "@/lib/ops";
 import { detailsForSize, sizeOptions } from "@/lib/product-details";
+import { sellerForProduct } from "@/lib/sellers";
 import { site } from "@/lib/site";
 
 export function ProductBuyBox({ product }: { product: Product }) {
   const [size, setSize] = useState<(typeof sizeOptions)[number]>(product.size);
   const details = useMemo(() => detailsForSize(product, size), [product, size]);
   const feeFrom = Math.min(...deliveryZones.map((z) => z.fee));
+  const seller = sellerForProduct(product);
 
   return (
     <div className="flex flex-col justify-center">
@@ -26,6 +28,18 @@ export function ProductBuyBox({ product }: { product: Product }) {
       <p className="mt-2 text-base font-semibold text-ink-soft md:text-lg">
         {details.subtitle}
       </p>
+      {seller ? (
+        <p className="mt-3 text-sm text-ink-soft">
+          Sold by{" "}
+          <Link
+            href={`/sell/shops/${seller.slug}`}
+            className="font-semibold text-leaf hover:underline"
+          >
+            {seller.name}
+          </Link>
+          {seller.neighborhood ? ` · ${seller.neighborhood}` : ""}
+        </p>
+      ) : null}
       <p className="mt-5 text-2xl text-ink">${details.price}</p>
       <p className="mt-2 text-sm text-ink-soft">
         Delivery from ${feeFrom} · Final fee + window after ZIP confirmation ·{" "}

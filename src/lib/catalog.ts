@@ -44,6 +44,8 @@ export type Product = {
   nextDay: boolean;
   bestseller?: boolean;
   size: "Classic" | "Signature" | "Grand";
+  /** Partner shop slug when sold by a marketplace seller (defaults to house atelier). */
+  sellerSlug?: string;
 };
 
 export const occasions: Occasion[] = [
@@ -236,6 +238,7 @@ export const products: Product[] = [
     nextDay: true,
     bestseller: true,
     size: "Classic",
+    sellerSlug: "petalswift-atelier",
   },
   {
     slug: "west-village-whisper",
@@ -254,6 +257,7 @@ export const products: Product[] = [
     nextDay: true,
     bestseller: true,
     size: "Signature",
+    sellerSlug: "chelsea-cut-flowers",
   },
   {
     slug: "brooklyn-botanic",
@@ -272,6 +276,7 @@ export const products: Product[] = [
     nextDay: true,
     bestseller: true,
     size: "Signature",
+    sellerSlug: "greenpoint-stem-co",
   },
   {
     slug: "soho-soiree",
@@ -307,6 +312,7 @@ export const products: Product[] = [
     sameDay: true,
     nextDay: true,
     size: "Grand",
+    sellerSlug: "chelsea-cut-flowers",
   },
   {
     slug: "hudson-dusk",

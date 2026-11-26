@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { occasions, products, styles } from "@/lib/catalog";
+import { partnerShops } from "@/lib/sellers";
 import { boroughs, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/updates", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/gallery", priority: 0.7, changeFrequency: "weekly" as const },
     { path: "/corporate", priority: 0.75, changeFrequency: "weekly" as const },
+    { path: "/sell", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/sell/apply", priority: 0.85, changeFrequency: "weekly" as const },
+    { path: "/sell/shops", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/subscribe", priority: 0.6, changeFrequency: "monthly" as const },
   ].map((route) => ({
     url: `${base}${route.path}`,
@@ -59,11 +63,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const sellerRoutes = partnerShops.map((shop) => ({
+    url: `${base}/sell/shops/${shop.slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
   return [
     ...staticRoutes,
     ...productRoutes,
     ...occasionRoutes,
     ...styleRoutes,
     ...boroughRoutes,
+    ...sellerRoutes,
   ];
 }

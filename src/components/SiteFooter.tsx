@@ -65,6 +65,16 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/sell" className="hover:text-porcelain">
+                Sell on Petalswift
+              </Link>
+            </li>
+            <li>
+              <Link href="/sell/apply" className="hover:text-porcelain">
+                Shop owner account
+              </Link>
+            </li>
+            <li>
               <Link href="/subscribe" className="hover:text-porcelain">
                 Subscriptions
               </Link>

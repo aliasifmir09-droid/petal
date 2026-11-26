@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
@@ -44,8 +45,9 @@ export default function PrivacyPage() {
             do not sell personal information.
           </p>
           <p>
-            Contact {site.email} or {site.phoneDisplay} to request access,
-            correction, or deletion of personal data where applicable.
+            Contact <ContactEmail className="text-leaf hover:underline" /> or{" "}
+            {site.phoneDisplay} to request access, correction, or deletion of
+            personal data where applicable.
           </p>
         </div>
         <Link href="/terms" className="mt-10 inline-flex text-sm font-semibold text-leaf hover:underline">

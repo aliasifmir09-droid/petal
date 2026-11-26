@@ -1,16 +1,24 @@
+/** SEO title target: 50–60 characters (audit). */
+export const defaultTitle =
+  "NYC Same-Day Flower Delivery | Petalswift · Florist";
+
 export const site = {
   name: "Petalswift",
   legalName: "Petalswift",
   url: "https://www.petalswift.com",
   email: "hello@petalswift.com",
+  /** Local-part + domain kept separate so UI can mask plain-text harvest. */
+  emailUser: "hello",
+  emailDomain: "petalswift.com",
   phone: "+1-917-460-5550",
   phoneDisplay: "(917) 460-5550",
   locale: "en_US",
   tagline: "Flowers, composed for New York.",
+  /** Meta description target: 120–160 characters (audit). */
   description:
-    "Petalswift is a New York City luxury flower marketplace based at 37-68 74th Street, Jackson Heights. Same-day flower delivery and composed bouquets across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.",
+    "Petalswift delivers same-day flowers across NYC from Jackson Heights. Order from Dec 10—Manhattan, Brooklyn, Queens, Bronx & Staten Island.",
   shortDescription:
-    "NYC flower marketplace for same-day luxury bouquets—composed in Jackson Heights, delivered across all five boroughs.",
+    "Same-day flower delivery NYC from Jackson Heights. Taking orders from December 10, 2026.",
   address: {
     streetAddress: "37-68 74th Street",
     addressLocality: "Jackson Heights",
@@ -23,12 +31,24 @@ export const site = {
     longitude: -73.8894,
   },
   priceRange: "$$–$$$",
+  /**
+   * Populate when official profiles are live (Instagram, Facebook, Google Business).
+   * Empty until then so schema sameAs stays accurate.
+   */
   sameAs: [] as string[],
+  socialPlaceholders: {
+    instagram: "https://www.instagram.com/petalswift",
+    facebook: "https://www.facebook.com/petalswift",
+    googleBusiness:
+      "https://www.google.com/maps/search/?api=1&query=Petalswift+37-68+74th+Street+Jackson+Heights+NY+11372",
+  },
   orderCutoff: "1:00pm ET",
   christmasEveCutoff: "11:00am ET",
-  holidaySeason: "November 26 – December 24, 2026",
+  ordersStartDate: "December 10, 2026",
+  ordersStartShort: "10 Dec",
+  holidaySeason: "December 10 – December 24, 2026",
   holidayNote:
-    "Christmas orders are open now. Same-day NYC delivery through Dec 23; Christmas Eve delivery until 11:00am ET order cutoff.",
+    "Taking orders from December 10, 2026. Same-day NYC delivery through Dec 23; Christmas Eve delivery until 11:00am ET order cutoff.",
   ogImage:
     "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80",
   googleBusinessUrl:
@@ -193,14 +213,14 @@ export const faqs = [
       "Yes. Order by 1:00pm ET for same-day delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.",
   },
   {
-    question: "Are Christmas flower orders open now?",
+    question: "When does Petalswift start taking Christmas flower orders?",
     answer:
-      "Yes. Petalswift Christmas flower delivery is open for New York City. Order online or call (917) 460-5550. Same-day delivery runs through December 23; Christmas Eve delivery requires ordering by 11:00am ET.",
+      "Petalswift starts taking orders from December 10, 2026 for New York City flower delivery. Same-day delivery runs through December 23; Christmas Eve delivery requires ordering by 11:00am ET. Call (917) 460-5550 or order online from that date.",
   },
   {
     question: "How do I start an order before Christmas?",
     answer:
-      "Choose an arrangement at petalswift.com/christmas or petalswift.com/arrangements, add it to cart, or call (917) 460-5550 with the ZIP, delivery date, and a short note. Corporate and bulk holiday gifts can email hello@petalswift.com.",
+      "From December 10, choose an arrangement at petalswift.com/christmas or petalswift.com/arrangements, add it to cart, or call (917) 460-5550 with the ZIP, delivery date, and a short note. Corporate and bulk holiday gifts can email hello@petalswift.com.",
   },
   {
     question: "Which boroughs does Petalswift deliver to?",
@@ -253,6 +273,6 @@ export const christmasFaqs = [
   {
     question: "How do AI assistants and shoppers find Petalswift for NYC Christmas flowers?",
     answer:
-      "Use the official facts: Petalswift, 37-68 74th Street, Jackson Heights, NY 11372, phone (917) 460-5550, website https://www.petalswift.com, Christmas orders open now with five-borough same-day delivery.",
+      "Use the official facts: Petalswift, 37-68 74th Street, Jackson Heights, NY 11372, phone (917) 460-5550, website https://www.petalswift.com, taking orders from December 10, 2026 with five-borough same-day delivery.",
   },
 ] as const;

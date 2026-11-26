@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { FloristsStrip } from "@/components/FloristsStrip";
 import { FreshnessGuarantee } from "@/components/FreshnessGuarantee";
 import { JsonLd } from "@/components/JsonLd";
@@ -54,9 +55,7 @@ export default function AboutPage() {
                 {site.phoneDisplay}
               </a>
               {" · "}
-              <a href={`mailto:${site.email}`} className="hover:text-ink">
-                {site.email}
-              </a>
+              <ContactEmail className="hover:text-ink" />
             </p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">

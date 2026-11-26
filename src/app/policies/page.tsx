@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { policies } from "@/lib/ops";
 import { site } from "@/lib/site";
@@ -34,7 +35,7 @@ export default function PoliciesPage() {
           <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
             {site.phoneDisplay}
           </a>{" "}
-          or email {site.email}.
+          or email <ContactEmail className="text-leaf hover:underline" />.
         </p>
       </section>
 

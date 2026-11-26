@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/structured-data";
@@ -36,7 +37,7 @@ export default function FaqPage() {
           <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
             {site.phoneDisplay}
           </a>{" "}
-          or email {site.email}.
+          or email <ContactEmail className="text-leaf hover:underline" />.
         </p>
       </section>
 

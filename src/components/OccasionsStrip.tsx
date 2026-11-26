@@ -22,12 +22,12 @@ export function OccasionsStrip() {
           </Link>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
+        <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8 lg:gap-10">
           {occasions.map((occasion) => (
             <Link
               key={occasion.slug}
               href={`/occasions/${occasion.slug}`}
-              className="group border border-line bg-canvas/50 px-5 py-7 transition-colors hover:border-leaf hover:bg-porcelain"
+              className="group border border-line bg-canvas/50 px-5 py-8 transition-colors hover:border-leaf hover:bg-porcelain md:px-6 md:py-10"
             >
               <p className="font-display text-xl tracking-[-0.02em] text-ink md:text-2xl">
                 {occasion.name}

@@ -163,7 +163,7 @@ export function ShopMarketplace({
         </div>
       </section>
 
-      <section className="site-shell grid gap-8 pb-10 lg:grid-cols-[240px_1fr]">
+      <section className="site-shell grid gap-10 pb-16 lg:grid-cols-[260px_1fr] lg:gap-14">
         {showAllFacets ? (
           <aside className="space-y-7 border border-line bg-porcelain/60 p-5">
             <Facet
@@ -234,7 +234,7 @@ export function ShopMarketplace({
             ))}
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 xl:grid-cols-3">
+          <div className="grid gap-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-16 xl:grid-cols-3 xl:gap-x-12">
             {filtered.map((product) => (
               <Link
                 key={product.slug}

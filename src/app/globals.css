@@ -15,10 +15,10 @@
   --line: rgba(15, 28, 46, 0.1);
   --background: var(--canvas);
   --foreground: var(--ink);
-  --section-y: 5.5rem;
-  --section-y-lg: 7.5rem;
-  --card-gap: 1.75rem;
-  --shell-max: 1320px;
+  --section-y: 6.5rem;
+  --section-y-lg: 9rem;
+  --card-gap: 2.25rem;
+  --shell-max: 1360px;
 }
 
 @theme inline {

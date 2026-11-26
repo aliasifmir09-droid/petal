@@ -20,12 +20,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/cart", "/cart/"],
+        disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/cart", "/cart/"],
+        disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {
         userAgent: "Googlebot-Image",
@@ -34,7 +34,7 @@ export default function robots(): MetadataRoute.Robots {
       ...aiBots.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: ["/cart", "/cart/"],
+        disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       })),
     ],
     sitemap: `${site.url}/sitemap.xml`,

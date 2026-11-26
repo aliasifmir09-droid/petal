@@ -35,7 +35,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40">
       <div className="bg-leaf text-porcelain">
-        <div className="site-shell flex flex-wrap items-center gap-3 py-3 md:gap-5 md:py-3.5">
+        <div className="site-shell flex flex-wrap items-center gap-3 py-3 lg:flex-nowrap lg:gap-4 lg:py-3.5">
           <Link
             href="/"
             className="shrink-0 font-display text-[1.65rem] leading-none tracking-[-0.03em] text-porcelain md:text-[1.85rem]"
@@ -54,7 +54,7 @@ export function SiteHeader() {
 
           <Link
             href="/delivery"
-            className="hidden min-w-[140px] rounded-full px-3 py-2 text-xs leading-tight text-porcelain/95 hover:bg-white/10 lg:block"
+            className="hidden min-w-[132px] shrink-0 rounded-full px-3 py-2 text-xs leading-tight text-porcelain/95 hover:bg-white/10 xl:block"
           >
             <span className="block font-semibold">Same-day delivery</span>
             <span className="block text-porcelain/75">
@@ -64,7 +64,7 @@ export function SiteHeader() {
 
           <form
             onSubmit={onSearch}
-            className="order-last flex w-full flex-1 basis-full md:order-none md:basis-auto"
+            className="order-last flex w-full min-w-0 flex-1 basis-full lg:order-none lg:basis-auto"
             role="search"
           >
             <label className="sr-only" htmlFor="site-search">

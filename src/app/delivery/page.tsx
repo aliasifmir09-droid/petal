@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function DeliveryPage() {
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },

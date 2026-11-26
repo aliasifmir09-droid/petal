@@ -44,7 +44,7 @@ export default async function BoroughPage({ params }: Props) {
   const featured = products.filter((p) => p.bestseller).slice(0, 4);
 
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <JsonLd
         data={[
           breadcrumbSchema([

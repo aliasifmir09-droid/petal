@@ -35,6 +35,7 @@ type Props = {
   initialColor?: string;
   initialBloom?: string;
   initialRecipient?: string;
+  initialQuery?: string;
   heading: string;
   intro: string;
   showAllFacets?: boolean;
@@ -46,6 +47,7 @@ export function ShopMarketplace({
   initialColor = "all",
   initialBloom = "all",
   initialRecipient = "all",
+  initialQuery = "",
   heading,
   intro,
   showAllFacets = true,
@@ -57,7 +59,7 @@ export function ShopMarketplace({
   const [recipient, setRecipient] = useState(initialRecipient);
   const [sameDayOnly, setSameDayOnly] = useState(false);
   const [nextDayOnly, setNextDayOnly] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const [sort, setSort] = useState<SortKey>("featured");
 
   const filtered = useMemo(() => {

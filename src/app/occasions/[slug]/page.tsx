@@ -30,7 +30,7 @@ export default async function OccasionPage({ params }: Props) {
   if (!occasion) notFound();
 
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },

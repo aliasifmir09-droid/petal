@@ -4,7 +4,6 @@ import { Craft } from "@/components/Craft";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { FinalCta } from "@/components/FinalCta";
 import { Hero } from "@/components/Hero";
-import { HolidayOpsBanner } from "@/components/HolidayOpsBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { NycPromise } from "@/components/NycPromise";
 import { OccasionsStrip } from "@/components/OccasionsStrip";
@@ -21,7 +20,7 @@ import {
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Petalswift | Luxury Same-Day Flower Marketplace in NYC",
+  title: "Petalswift | Same-Day Flower Marketplace in NYC",
   description: `${site.description} Christmas flower orders open now.`,
   alternates: { canonical: "/" },
 };
@@ -38,7 +37,6 @@ export default function Home() {
         ]}
       />
       <Hero />
-      <HolidayOpsBanner />
       <OccasionsStrip />
       <Craft />
       <Collection />

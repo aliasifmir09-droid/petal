@@ -51,6 +51,11 @@ export default function AboutPage() {
               {site.address.addressRegion} {site.address.postalCode}
             </p>
             <p>
+              Hours: {site.openingHours.days} {site.openingHours.opens}–
+              {site.openingHours.closes} ET
+            </p>
+            <p className="text-xs">{site.openingHours.note}</p>
+            <p>
               <a href={`tel:${site.phone}`} className="hover:text-ink">
                 {site.phoneDisplay}
               </a>

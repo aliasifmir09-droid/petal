@@ -57,6 +57,15 @@ export const site = {
     "If your flowers arrive damaged or significantly below our quality standard, contact us within 24 hours with a photo and we will arrange a replacement or appropriate resolution.",
   paymentMethods: ["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay"] as const,
   deliveryFeeFrom: 12,
+  /** Studio / phone order hours (ET) — keep in sync with schema openingHours. */
+  openingHours: {
+    days: "Monday–Sunday",
+    opens: "8:00am",
+    closes: "8:00pm",
+    opens24: "08:00",
+    closes24: "20:00",
+    note: "Same-day composition cutoff 1:00pm ET most days; Christmas Eve 11:00am ET.",
+  },
 } as const;
 
 export type Borough = {

@@ -79,6 +79,56 @@ export function SellerAccountDashboard() {
     });
   }
 
+  /** CSV: name,blurb,price,size,sameDay — one product per line (header optional). */
+  function onImportCsv(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!account) return;
+    const form = new FormData(e.currentTarget);
+    const raw = String(form.get("csv") || "").trim();
+    if (!raw) return;
+
+    const lines = raw
+      .split(/\r?\n/)
+      .map((l) => l.trim())
+      .filter(Boolean);
+    const start =
+      lines[0] && /name\s*,/i.test(lines[0]) ? lines.slice(1) : lines;
+
+    const imported: SellerListingDraft[] = [];
+    for (const line of start) {
+      const cols = line.split(",").map((c) => c.trim().replace(/^"|"$/g, ""));
+      if (cols.length < 3) continue;
+      const [name, blurb, priceRaw, sizeRaw, sameDayRaw] = cols;
+      const price = Number(priceRaw);
+      if (!name || !blurb || !Number.isFinite(price) || price < 1) continue;
+      const sizeNorm = (sizeRaw || "Signature").replace(/^\w/, (c) =>
+        c.toUpperCase(),
+      );
+      const size = (
+        ["Classic", "Signature", "Grand"].includes(sizeNorm)
+          ? sizeNorm
+          : "Signature"
+      ) as SellerListingDraft["size"];
+      const sameDay =
+        sameDayRaw == null || sameDayRaw === ""
+          ? true
+          : /^(1|true|yes|y)$/i.test(sameDayRaw);
+      imported.push({
+        id: `listing-${Date.now()}-${imported.length}`,
+        name,
+        blurb,
+        price,
+        size,
+        sameDay,
+        createdAt: new Date().toISOString(),
+      });
+    }
+
+    if (imported.length === 0) return;
+    persist({ ...account, listings: [...imported, ...account.listings] });
+    e.currentTarget.reset();
+  }
+
   function clearAccount() {
     localStorage.removeItem(SELLER_STORAGE_KEY);
     setAccount(null);
@@ -284,6 +334,30 @@ export function SellerAccountDashboard() {
               ))}
             </ul>
           )}
+
+          <form onSubmit={onImportCsv} className="mt-10 border-t border-line pt-8">
+            <h3 className="font-display text-2xl text-ink">Bulk CSV import</h3>
+            <p className="mt-2 text-sm text-ink-soft">
+              Paste rows as{" "}
+              <code className="text-ink">name,blurb,price,size,sameDay</code>.
+              Example:{" "}
+              <code className="text-ink">
+                Astoria Hand-Tie,Seasonal garden stems,88,Signature,yes
+              </code>
+            </p>
+            <textarea
+              name="csv"
+              required
+              rows={5}
+              placeholder={
+                "name,blurb,price,size,sameDay\nBrooklyn Stoop Bunch,Soft pastels for brownstones,96,Signature,yes"
+              }
+              className="mt-4 w-full rounded-lg border border-line bg-canvas px-4 py-3 font-mono text-xs outline-none focus:border-leaf"
+            />
+            <button type="submit" className="btn-brand mt-4">
+              Import listings
+            </button>
+          </form>
         </div>
       </section>
     </div>

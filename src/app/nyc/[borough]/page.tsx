@@ -7,6 +7,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reviews } from "@/components/Reviews";
 import { postsByBorough } from "@/lib/blog";
 import { products } from "@/lib/catalog";
+import {
+  neighborhoodPath,
+  neighborhoodsInBorough,
+} from "@/lib/neighborhoods";
 import { deliveryFeeForBorough } from "@/lib/ops";
 import { qaByBorough } from "@/lib/qa";
 import { boroughs, getBorough, site } from "@/lib/site";
@@ -139,14 +143,28 @@ export default async function BoroughPage({ params }: Props) {
               Neighborhoods we serve in {borough.name}
             </h2>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {borough.neighborhoods.map((neighborhood) => (
-                <li
-                  key={neighborhood}
-                  className="border-b border-line pb-3 text-ink-soft"
-                >
-                  {neighborhood}
-                </li>
-              ))}
+              {borough.neighborhoods.map((neighborhood) => {
+                const guide = neighborhoodsInBorough(borough.slug).find(
+                  (n) => n.name.toLowerCase() === neighborhood.toLowerCase(),
+                );
+                return (
+                  <li
+                    key={neighborhood}
+                    className="border-b border-line pb-3 text-ink-soft"
+                  >
+                    {guide ? (
+                      <Link
+                        href={neighborhoodPath(guide)}
+                        className="font-semibold text-ink hover:text-leaf"
+                      >
+                        {neighborhood} flower delivery
+                      </Link>
+                    ) : (
+                      neighborhood
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div>

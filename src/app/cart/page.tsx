@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { ContactEmail } from "@/components/ContactEmail";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { FreshnessGuarantee } from "@/components/FreshnessGuarantee";
 import { GiftAddons } from "@/components/GiftAddons";
@@ -163,27 +164,28 @@ export default function CartPage() {
                 <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
                   {site.phoneDisplay}
                 </a>{" "}
-                or email {site.email} to complete checkout.
+                or email{" "}
+                <ContactEmail className="text-leaf hover:underline" /> to
+                complete checkout.
               </p>
-              <a
-                href={`mailto:${site.email}?subject=Petalswift%20order&body=${encodeURIComponent(
-                  [
-                    ...lines.map(
-                      (l) => `${l.quantity}x ${l.name} ($${l.lineTotal})`,
-                    ),
-                    "",
-                    `Delivery: ${zone.borough} ($${zone.fee})`,
-                    `Window preference: same-day ${zone.sameDayWindow}`,
-                    `Subtotal: $${subtotal}`,
-                    `Estimated total: $${total}`,
-                    "",
-                    "Please confirm email/SMS updates using the contacts in my saved preferences.",
-                  ].join("\n"),
-                )}`}
+              <ContactEmail
+                subject="Petalswift order"
+                body={[
+                  ...lines.map(
+                    (l) => `${l.quantity}x ${l.name} ($${l.lineTotal})`,
+                  ),
+                  "",
+                  `Delivery: ${zone.borough} ($${zone.fee})`,
+                  `Window preference: same-day ${zone.sameDayWindow}`,
+                  `Subtotal: $${subtotal}`,
+                  `Estimated total: $${total}`,
+                  "",
+                  "Please confirm email/SMS updates using the contacts in my saved preferences.",
+                ].join("\n")}
                 className="btn-spark mt-6 w-full"
               >
                 Request order by email
-              </a>
+              </ContactEmail>
             </div>
             <PaymentTrust />
             <FreshnessGuarantee compact />

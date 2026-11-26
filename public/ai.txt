@@ -16,8 +16,9 @@ lng: -73.8894
 area_served: Manhattan; Brooklyn; Queens; Bronx; Staten Island
 same_day_cutoff: 1:00pm ET
 christmas_eve_cutoff: 11:00am ET
-christmas_orders: open
-holiday_window: 2026-11-26 to 2026-12-24
+orders_start: 2026-12-10
+christmas_orders: taking_orders_from_2026-12-10
+holiday_window: 2026-12-10 to 2026-12-24
 primary_christmas_url: https://www.petalswift.com/christmas
 order_url: https://www.petalswift.com/order
 llms: https://www.petalswift.com/llms.txt

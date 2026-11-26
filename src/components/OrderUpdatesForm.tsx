@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { site } from "@/lib/site";
+import { ContactEmail } from "@/components/ContactEmail";
 
 const STORAGE_KEY = "petalswift-notify-prefs";
 
@@ -111,7 +111,8 @@ export function OrderUpdatesForm() {
         {saved ? (
           <p className="text-sm text-leaf">
             Saved. We will also include these contacts when you email{" "}
-            {site.email} to complete an order.
+            <ContactEmail className="text-leaf hover:underline" /> to complete
+            an order.
           </p>
         ) : null}
       </form>

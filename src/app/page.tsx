@@ -22,9 +22,17 @@ import {
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Petalswift | Trusted Premium Same-Day Florist in NYC",
-  description: `${site.description} Freshness guarantee, published delivery fees, and Jackson Heights atelier proof.`,
-  alternates: { canonical: "/" },
+  title: {
+    absolute: "NYC Same-Day Flower Delivery | Petalswift · Florist",
+  },
+  description: site.description,
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
-import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -33,12 +33,13 @@ export default function SubscribePage() {
           waitlist and we will email when Classic / Signature recurring
           deliveries open.
         </p>
-        <a
-          href={`mailto:${site.email}?subject=Subscription%20waitlist&body=Please%20add%20me%20to%20the%20Petalswift%20subscription%20and%20gift-reminder%20waitlist.`}
+        <ContactEmail
+          subject="Subscription waitlist"
+          body="Please add me to the Petalswift subscription and gift-reminder waitlist."
           className="btn-spark mt-8"
         >
           Join waitlist by email
-        </a>
+        </ContactEmail>
         <p className="mt-6 text-sm text-ink-soft">
           Need flowers today?{" "}
           <Link href="/arrangements" className="font-semibold text-leaf hover:underline">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { JsonLd } from "@/components/JsonLd";
 import { ShopMarketplace } from "@/components/ShopMarketplace";
@@ -16,9 +17,11 @@ import {
 } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Christmas Flower Delivery NYC | Same-Day Holiday Bouquets",
+  title: {
+    absolute: "Christmas Flower Delivery in NYC | Same-Day Bouquets",
+  },
   description:
-    "Order Christmas flowers in NYC now. Same-day holiday bouquets, centerpieces, and hatboxes across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island from Petalswift, Jackson Heights. Call (917) 460-5550.",
+    "Taking Christmas flower orders from Dec 10. Same-day NYC bouquets, centerpieces & hatboxes from Petalswift in Jackson Heights. Call (917) 460-5550.",
   keywords: [
     "Christmas flower delivery NYC",
     "same day Christmas flowers New York",
@@ -27,7 +30,13 @@ export const metadata: Metadata = {
     "Christmas bouquet Queens Jackson Heights",
     "corporate Christmas flowers NYC",
   ],
-  alternates: { canonical: "/christmas" },
+  alternates: {
+    canonical: "/christmas",
+    languages: {
+      "en-US": "/christmas",
+      "x-default": "/christmas",
+    },
+  },
   openGraph: {
     title: "Christmas Flower Delivery NYC | Petalswift",
     description: site.holidayNote,
@@ -56,17 +65,17 @@ export default function ChristmasPage() {
 
       <section className="site-shell pb-12">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
-          Christmas 2026 · Orders open now
+          Christmas 2026 · Taking orders from {site.ordersStartDate}
         </p>
         <h1 className="xmas-headline font-display mt-4 max-w-5xl text-5xl tracking-[-0.035em] text-ink md:text-7xl">
           Christmas flower delivery across New York City.
         </h1>
         <p className="xmas-summary mt-6 max-w-3xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Petalswift is taking Christmas orders now from our Jackson Heights
-          atelier at {site.address.streetAddress}, {site.address.addressLocality}
-          , NY {site.address.postalCode}. Same-day holiday bouquets, evergreen
-          centerpieces, hatboxes, and corporate gifts delivered to all five
-          boroughs.
+          Petalswift starts taking Christmas orders from {site.ordersStartDate}{" "}
+          at our Jackson Heights atelier at {site.address.streetAddress},{" "}
+          {site.address.addressLocality}, NY {site.address.postalCode}. Same-day
+          holiday bouquets, evergreen centerpieces, hatboxes, and corporate
+          gifts delivered to all five boroughs.
         </p>
         <div className="xmas-ops mt-8 flex flex-wrap gap-3">
           <Link
@@ -102,7 +111,8 @@ export default function ChristmasPage() {
           </p>
           <ul className="mt-5 space-y-4 text-sm leading-relaxed text-ink-soft md:text-base">
             <li>
-              <strong className="text-ink">Open now:</strong> {site.holidaySeason}
+              <strong className="text-ink">Taking orders from:</strong>{" "}
+              {site.ordersStartDate} ({site.holidaySeason})
             </li>
             <li>
               <strong className="text-ink">Same-day cutoff:</strong>{" "}
@@ -119,7 +129,8 @@ export default function ChristmasPage() {
               </a>
             </li>
             <li>
-              <strong className="text-ink">Email / corporate:</strong> {site.email}
+              <strong className="text-ink">Email / corporate:</strong>{" "}
+              <ContactEmail className="text-leaf hover:underline" />
             </li>
             <li>
               <strong className="text-ink">Studio:</strong>{" "}

@@ -5,8 +5,8 @@ import { site } from "@/lib/site";
 const promos = [
   {
     href: "/christmas",
-    badge: "Holiday deals",
-    title: "Christmas flowers—same-day NYC",
+    badge: `Orders from ${site.ordersStartShort}`,
+    title: "Same-day flower delivery NYC",
     cta: "Shop Christmas",
     tone: "light" as const,
     image:
@@ -53,8 +53,8 @@ export function Hero() {
       <div className="site-shell">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 md:mb-5">
           <p className="text-sm text-ink-soft">
-            <span className="font-semibold text-ink">{site.name}</span> · Same-day
-            flower marketplace for New York
+            <span className="font-semibold text-ink">{site.name}</span> · Taking
+            orders from {site.ordersStartDate}
           </p>
           <Link
             href="/order"

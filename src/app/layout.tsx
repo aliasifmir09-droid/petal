@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Outfit } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
+import { HolidayOpsBanner } from "@/components/HolidayOpsBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { CartProvider } from "@/lib/cart";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
-import { site } from "@/lib/site";
+import { defaultTitle, site } from "@/lib/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -30,7 +32,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Petalswift | Luxury Same-Day Flowers & Bouquets in NYC",
+    default: defaultTitle,
     template: "%s | Petalswift",
   },
   description: site.description,
@@ -40,8 +42,9 @@ export const metadata: Metadata = {
   publisher: site.name,
   category: "shopping",
   keywords: [
-    "NYC florist",
     "same day flower delivery NYC",
+    "NYC florist",
+    "same-day flower delivery New York",
     "Christmas flower delivery NYC",
     "Christmas Eve flowers New York",
     "luxury bouquets Manhattan",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
     "holiday centerpiece NYC",
   ],
   openGraph: {
-    title: "Petalswift | Luxury Same-Day Flowers & Bouquets in NYC",
+    title: defaultTitle,
     description: site.shortDescription,
     url: site.url,
     siteName: site.name,
@@ -71,12 +74,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Petalswift | Luxury Same-Day Flowers & Bouquets in NYC",
+    title: defaultTitle,
     description: site.shortDescription,
     images: [site.ogImage],
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "x-default": "/",
+    },
   },
   robots: {
     index: true,
@@ -100,13 +107,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${outfit.variable} ${instrument.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <CartProvider>
+          <Analytics />
           <JsonLd data={[organizationSchema(), websiteSchema()]} />
           <SiteHeader />
+          <HolidayOpsBanner />
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </CartProvider>

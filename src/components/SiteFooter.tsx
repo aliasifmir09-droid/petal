@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { boroughs, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -136,18 +137,27 @@ export function SiteFooter() {
               </a>
             </p>
             <p>
-              <a className="hover:text-porcelain" href={`mailto:${site.email}`}>
-                {site.email}
-              </a>
+              <ContactEmail className="hover:text-porcelain" />
             </p>
           </address>
+          <p className="mt-6 text-[0.7rem] uppercase tracking-[0.2em] text-porcelain/50">
+            Social
+          </p>
+          <p className="mt-3 text-sm text-porcelain/60">
+            Instagram &amp; Facebook profiles launching with holiday orders
+            from {site.ordersStartShort}. Google Maps listing live via our
+            Jackson Heights NAP.
+          </p>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="site-shell flex flex-col gap-2 py-5 text-xs text-porcelain/50 md:flex-row md:justify-between">
           <p>© 2026 {site.name}. All rights reserved.</p>
-          <p>Same-day across the five boroughs · Order by {site.orderCutoff}</p>
+          <p>
+            Taking orders from {site.ordersStartDate} · Same-day by{" "}
+            {site.orderCutoff}
+          </p>
         </div>
       </div>
     </footer>

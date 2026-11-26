@@ -15,11 +15,12 @@ export function FinalCta() {
             className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-leaf/15 blur-3xl"
           />
           <p className="font-display relative text-4xl tracking-[-0.035em] text-ink md:text-6xl">
-            Start Christmas orders now.
+            Taking orders from {site.ordersStartDate}.
           </p>
           <p className="relative mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-            Operations are live for holiday gifts and same-day NYC delivery.
-            Shop Christmas, place an order online, or call the atelier.
+            Holiday gifts and same-day NYC flower delivery open{" "}
+            {site.ordersStartDate}. Shop Christmas, place an order online, or
+            call the atelier.
           </p>
           <div className="relative mt-11 flex flex-wrap gap-4">
             <Link href="/christmas" className="btn-spark">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import {
@@ -9,10 +10,18 @@ import {
 } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Start a Flower Order | NYC Same-Day & Christmas Delivery",
+  title: {
+    absolute: "Taking NYC Flower Orders from December 10th, 2026",
+  },
   description:
-    "Start Petalswift operations now: order Christmas and same-day flowers online, by phone (917) 460-5550, or email hello@petalswift.com for NYC delivery.",
-  alternates: { canonical: "/order" },
+    "Petalswift takes NYC flower orders from Dec 10. Same-day & Christmas delivery by phone (917) 460-5550 or online from Jackson Heights.",
+  alternates: {
+    canonical: "/order",
+    languages: {
+      "en-US": "/order",
+      "x-default": "/order",
+    },
+  },
 };
 
 const steps = [
@@ -24,13 +33,13 @@ const steps = [
   },
   {
     title: "2. Confirm ZIP + date",
-    body: `Same-day across five boroughs when ordered by ${site.orderCutoff}. Christmas Eve delivery needs orders by ${site.christmasEveCutoff}.`,
+    body: `Orders open ${site.ordersStartDate}. Same-day across five boroughs when ordered by ${site.orderCutoff}. Christmas Eve delivery needs orders by ${site.christmasEveCutoff}.`,
     href: "/delivery",
     cta: "Check delivery",
   },
   {
     title: "3. Checkout or call",
-    body: `Add to cart online, or place the order by phone at ${site.phoneDisplay}. Corporate holiday lists: ${site.email}.`,
+    body: `Add to cart online, or place the order by phone at ${site.phoneDisplay}. Corporate holiday lists: email the atelier.`,
     href: "/cart",
     cta: "Open cart",
   },
@@ -52,15 +61,15 @@ export default function OrderPage() {
 
       <section className="site-shell pb-12">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
-          Operations live · {site.holidaySeason}
+          Taking orders from {site.ordersStartDate} · {site.holidaySeason}
         </p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl tracking-[-0.035em] text-ink md:text-7xl">
           Start ordering before Christmas.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Petalswift is open for NYC flower operations now—holiday gifts,
-          same-day bouquets, and corporate Christmas deliveries. Use the site or
-          call the atelier directly.
+          Petalswift starts taking NYC flower orders from{" "}
+          {site.ordersStartDate}—holiday gifts, same-day bouquets, and corporate
+          Christmas deliveries. Use the site or call the atelier directly.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -75,12 +84,12 @@ export default function OrderPage() {
           >
             Christmas catalog
           </Link>
-          <a
-            href={`mailto:${site.email}?subject=Christmas%20flower%20order%20NYC`}
+          <ContactEmail
+            subject="Christmas flower order NYC"
             className="inline-flex border border-ink/15 px-7 py-3.5 text-sm text-ink transition-colors hover:border-leaf hover:text-leaf"
           >
             Email order
-          </a>
+          </ContactEmail>
         </div>
       </section>
 

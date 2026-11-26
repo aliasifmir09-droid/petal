@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { corporateCases } from "@/lib/ops";
 import { site } from "@/lib/site";
@@ -30,12 +31,13 @@ export default function CorporatePage() {
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
           Timed lobby handoffs, office suites, and multi-address holiday lists.
-          Email {site.email} or call {site.phoneDisplay} for volume orders.
+          Email the atelier or call {site.phoneDisplay} for volume orders.
+          Taking orders from {site.ordersStartDate}.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={`mailto:${site.email}?subject=Corporate%20flower%20order`} className="btn-spark">
+          <ContactEmail subject="Corporate flower order" className="btn-spark">
             Email corporate desk
-          </a>
+          </ContactEmail>
           <Link href="/updates" className="btn-brand">
             Order updates
           </Link>

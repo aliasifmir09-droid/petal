@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactEmail } from "@/components/ContactEmail";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
@@ -46,9 +47,9 @@ export default function TermsPage() {
             access notes, and reachable contact details for courier updates.
           </p>
           <p>
-            Questions: {site.email} · {site.phoneDisplay} ·{" "}
-            {site.address.streetAddress}, {site.address.addressLocality}, NY{" "}
-            {site.address.postalCode}.
+            Questions: <ContactEmail className="text-leaf hover:underline" /> ·{" "}
+            {site.phoneDisplay} · {site.address.streetAddress},{" "}
+            {site.address.addressLocality}, NY {site.address.postalCode}.
           </p>
         </div>
         <Link href="/privacy" className="mt-10 inline-flex text-sm font-semibold text-leaf hover:underline">

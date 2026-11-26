@@ -12,16 +12,19 @@ export function SiteHeader() {
       <div className="site-shell flex items-center justify-between py-5 md:py-7">
         <Link
           href="/"
-          className="font-display text-[1.65rem] leading-none tracking-[-0.03em] text-ink md:text-[1.85rem]"
+          className="font-display text-[1.65rem] leading-none tracking-[-0.03em] text-ink drop-shadow-[0_1px_12px_rgba(244,242,239,0.9)] md:text-[1.85rem]"
         >
           Petalswift
         </Link>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-8 rounded-sm bg-[#f4f2ef]/72 px-5 py-2.5 backdrop-blur-md md:flex"
+          aria-label="Primary"
+        >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm tracking-[0.01em] text-ink-soft transition-colors hover:text-ink"
+              className="text-sm tracking-[0.01em] text-ink transition-colors hover:text-leaf"
             >
               {link.label}
             </Link>

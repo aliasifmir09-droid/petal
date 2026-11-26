@@ -106,6 +106,10 @@ export default async function ProductPage({ params }: Props) {
               {product.sameDay
                 ? `Same-day available when ordered by ${site.orderCutoff}`
                 : "Available for next-day and scheduled delivery"}
+              {product.nextDay ? " · Next-day ready" : ""}
+            </li>
+            <li>
+              Style: {product.styles.map((s) => s.replace(/-/g, " ")).join(", ")}
             </li>
             <li>Composed in Jackson Heights · {site.address.streetAddress}</li>
             <li>Call {site.phoneDisplay} for timed corporate delivery</li>

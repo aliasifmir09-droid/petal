@@ -32,10 +32,10 @@ export function Hero() {
           </p>
           <div className="reveal reveal-delay-3 mt-9 flex flex-wrap items-center gap-3">
             <Link
-              href="/shop"
+              href="/arrangements"
               className="inline-flex bg-porcelain px-7 py-3.5 text-sm text-leaf transition-colors hover:bg-white"
             >
-              Shop bouquets
+              All arrangements
             </Link>
             <Link
               href="/delivery"

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { JsonLd } from "@/components/JsonLd";
 import { ShopMarketplace } from "@/components/ShopMarketplace";
-import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { breadcrumbSchema, itemListSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -23,9 +24,17 @@ export default function ShopPage() {
           itemListSchema(),
         ]}
       />
+      <div className="site-shell mb-6">
+        <Link
+          href="/arrangements"
+          className="text-sm text-leaf underline-offset-4 hover:underline"
+        >
+          Prefer the full arrangements catalog with every Interflora-class option? Open All Arrangements →
+        </Link>
+      </div>
       <ShopMarketplace
         heading="A flower marketplace composed for New York."
-        intro="Search by occasion, filter same-day, and send arrangements that feel considered—not catalog-generic. Better than the big networks because every bouquet is composed for NYC rooms from our Jackson Heights atelier."
+        intro="Browse every arrangement option—occasion, style, color, bloom, recipient, same-day and next-day—then send something considered."
       />
       <div className="site-shell pb-24">
         <DeliveryChecker />

@@ -7,11 +7,11 @@ import { useCart } from "@/lib/cart";
 import { site } from "@/lib/site";
 
 const links = [
+  { href: "/arrangements", label: "Arrangements" },
   { href: "/shop", label: "Marketplace" },
   { href: "/delivery", label: "NYC Delivery" },
   { href: "/nyc", label: "Boroughs" },
   { href: "/about", label: "Atelier" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {

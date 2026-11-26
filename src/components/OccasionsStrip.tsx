@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { occasions } from "@/lib/catalog";
+import { occasions, styles } from "@/lib/catalog";
 
 export function OccasionsStrip() {
   return (
@@ -8,17 +8,17 @@ export function OccasionsStrip() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
-              Shop by occasion
+              Shop every option
             </p>
             <h2 className="font-display mt-3 text-3xl tracking-[-0.03em] text-ink md:text-5xl">
-              Flowers that say exactly enough.
+              Occasions, styles, and more ways in.
             </h2>
           </div>
           <Link
-            href="/shop"
+            href="/arrangements"
             className="text-sm text-leaf underline-offset-4 hover:underline"
           >
-            Browse full marketplace
+            View all arrangements
           </Link>
         </div>
 
@@ -35,6 +35,18 @@ export function OccasionsStrip() {
               <p className="mt-2 text-xs leading-relaxed text-ink-soft md:text-sm">
                 {occasion.blurb}
               </p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-2">
+          {styles.map((style) => (
+            <Link
+              key={style.slug}
+              href={`/styles/${style.slug}`}
+              className="border border-line bg-white px-3 py-2 text-xs uppercase tracking-[0.14em] text-ink-soft transition-colors hover:border-leaf hover:text-leaf"
+            >
+              {style.name}
             </Link>
           ))}
         </div>

@@ -19,6 +19,11 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-porcelain/85">
             <li>
+              <Link href="/arrangements" className="hover:text-porcelain">
+                All arrangements
+              </Link>
+            </li>
+            <li>
               <Link href="/shop" className="hover:text-porcelain">
                 Marketplace
               </Link>

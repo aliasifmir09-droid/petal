@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" fill="none" role="img" aria-label="Petalswift">
+  <g transform="translate(48 48)">
+    <path transform="rotate(-18)" fill="#8EC5FF" d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"/>
+    <path transform="rotate(54)" fill="#E8F3FF" d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"/>
+    <path transform="rotate(126)" fill="#9FCEFF" d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"/>
+    <path transform="rotate(198)" fill="#D7EBFF" d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"/>
+    <path transform="rotate(270)" fill="#B8DBFF" d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"/>
+    <circle r="6" fill="#FFC220"/>
+    <circle cx="-1.4" cy="-1.6" r="1.8" fill="#FFF1B8" opacity=".92"/>
+  </g>
+  <text x="108" y="62" font-family="Georgia, 'Times New Roman', serif" font-size="46" letter-spacing="-0.8" fill="#FFFFFF">Petalswift</text>
+</svg>

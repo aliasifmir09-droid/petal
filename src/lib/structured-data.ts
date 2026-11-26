@@ -14,10 +14,10 @@ export function organizationSchema() {
     logo: {
       "@type": "ImageObject",
       url: `${site.url}/logo.png`,
-      width: 512,
-      height: 512,
+      width: 1200,
+      height: 400,
     },
-    image: [site.ogImage, `${site.url}/logo.png`],
+    image: [site.ogImage, `${site.url}/logo.png`, `${site.url}/icon.png`],
     description: site.description,
     email: site.email,
     telephone: site.phone,

@@ -4,8 +4,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
+import { GiftAddons } from "@/components/GiftAddons";
 import { JsonLd } from "@/components/JsonLd";
-import { getProduct, occasions, products } from "@/lib/catalog";
+import { PhotoStrip } from "@/components/PhotoStrip";
+import { Reviews } from "@/components/Reviews";
+import { SizeGuide } from "@/components/SizeGuide";
+import { getProduct, occasions, products, styles } from "@/lib/catalog";
+import { deliveryPhotos, deliveryZones, sizeTiers } from "@/lib/ops";
 import { site } from "@/lib/site";
 import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
 
@@ -23,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Bouquet" };
   return {
     title: `${product.name} — Same-Day NYC Flower Delivery`,
-    description: `${product.blurb} Order from Petalswift in Jackson Heights for delivery across New York City.`,
+    description: `${product.blurb} Order from Petalswift in Jackson Heights for delivery across New York City. Includes note, packaging, and published delivery fees.`,
     alternates: { canonical: `/shop/${product.slug}` },
     openGraph: {
       title: `${product.name} | Petalswift`,
@@ -43,6 +48,12 @@ export default async function ProductPage({ params }: Props) {
   const relatedOccasions = occasions.filter((o) =>
     product.occasions.includes(o.slug),
   );
+  const relatedStyles = styles.filter((s) => product.styles.includes(s.slug));
+  const sizeMeta = sizeTiers.find((t) => t.name === product.size);
+  const related = products
+    .filter((p) => p.slug !== product.slug)
+    .filter((p) => p.occasions.some((o) => product.occasions.includes(o)))
+    .slice(0, 3);
 
   return (
     <div className="pt-28 md:pt-36">
@@ -101,17 +112,58 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
 
-          <ul className="mt-8 space-y-2 text-sm text-ink-soft">
-            <li>
-              {product.sameDay
-                ? `Same-day available when ordered by ${site.orderCutoff}`
-                : "Available for next-day and scheduled delivery"}
-              {product.nextDay ? " · Next-day ready" : ""}
-            </li>
-            <li>
-              Style: {product.styles.map((s) => s.replace(/-/g, " ")).join(", ")}
-            </li>
+          <dl className="mt-8 grid gap-3 border border-line bg-porcelain/60 p-4 text-sm text-ink-soft">
+            <div className="flex justify-between gap-4 border-b border-line pb-2">
+              <dt>Size tier</dt>
+              <dd className="text-ink">
+                {product.size}
+                {sizeMeta ? ` · ${sizeMeta.stemGuide}` : ""}
+              </dd>
+            </div>
+            <div className="flex justify-between gap-4 border-b border-line pb-2">
+              <dt>Styles</dt>
+              <dd className="text-right text-ink">
+                {relatedStyles.map((s) => s.name).join(", ") ||
+                  product.styles.map((s) => s.replace(/-/g, " ")).join(", ")}
+              </dd>
+            </div>
+            <div className="flex justify-between gap-4 border-b border-line pb-2">
+              <dt>Colors / blooms</dt>
+              <dd className="text-right text-ink">
+                {product.colors.join(", ")} · {product.blooms.join(", ")}
+              </dd>
+            </div>
+            <div className="flex justify-between gap-4 border-b border-line pb-2">
+              <dt>Delivery</dt>
+              <dd className="text-right text-ink">
+                {product.sameDay
+                  ? `Same-day by ${site.orderCutoff}`
+                  : "Next-day / scheduled"}
+              </dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt>Delivery fees</dt>
+              <dd className="text-right text-ink">
+                From ${Math.min(...deliveryZones.map((z) => z.fee))} (Queens)
+              </dd>
+            </div>
+          </dl>
+
+          <ul className="mt-6 space-y-2 text-sm text-ink-soft">
             <li>Composed in Jackson Heights · {site.address.streetAddress}</li>
+            <li>
+              <Link href="/policies#freshness" className="text-leaf hover:underline">
+                Freshness guarantee
+              </Link>
+              {" · "}
+              <Link href="/policies#refunds" className="text-leaf hover:underline">
+                Refunds
+              </Link>
+              {" · "}
+              <Link href="/updates" className="text-leaf hover:underline">
+                Email & SMS updates
+              </Link>
+            </li>
             <li>Call {site.phoneDisplay} for timed corporate delivery</li>
           </ul>
 
@@ -121,26 +173,70 @@ export default async function ProductPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="site-shell grid gap-8 pb-28 lg:grid-cols-[1.1fr_0.9fr]">
-        <DeliveryChecker />
+      <div className="site-shell grid gap-8 pb-16 lg:grid-cols-2">
+        <GiftAddons />
+        <div className="space-y-8">
+          <SizeGuide compact />
+          <DeliveryChecker />
+        </div>
+      </div>
+
+      <PhotoStrip
+        title="How this style arrives in New York."
+        intro="Delivery photography from recent handoffs—presentation-ready, not warehouse-generic."
+        photos={deliveryPhotos}
+      />
+
+      <Reviews limit={3} heading="What customers say after delivery" />
+
+      <div className="site-shell grid gap-8 py-16 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="border border-line bg-porcelain/70 p-6 md:p-8">
           <p className="text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft/75">
-            Why Petalswift over big networks
+            Care & policies
           </p>
           <h2 className="font-display mt-3 text-3xl tracking-[-0.03em] text-ink">
-            Local atelier. Citywide reach.
+            Built to last 5–7 days with simple care.
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-ink-soft md:text-base">
-            Interflora-style marketplaces route orders through a generic network.
-            Petalswift composes in one New York atelier and delivers with
-            borough-level care—so quality stays consistent and the design feels
-            intentional.
+          <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ink-soft">
+            <li>Trim stems and change water daily.</li>
+            <li>Keep away from heat vents and direct midday sun.</li>
+            <li>
+              Seasonal substitutions keep the same palette and value—see our{" "}
+              <Link href="/policies#substitution" className="text-leaf hover:underline">
+                substitution policy
+              </Link>
+              .
+            </li>
+            <li>
+              Quality issues within 24 hours: remake or refund per{" "}
+              <Link href="/policies" className="text-leaf hover:underline">
+                policies
+              </Link>
+              .
+            </li>
+          </ul>
+        </div>
+        <div className="border border-line bg-porcelain/70 p-6 md:p-8">
+          <p className="text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft/75">
+            You may also like
           </p>
+          <ul className="mt-5 space-y-4">
+            {related.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`/shop/${item.slug}`}
+                  className="text-lg text-ink-soft transition-colors hover:text-ink"
+                >
+                  {item.name} — ${item.price}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <Link
-            href="/shop"
+            href="/arrangements"
             className="mt-6 inline-flex text-sm text-leaf underline-offset-4 hover:underline"
           >
-            Back to marketplace
+            All arrangements
           </Link>
         </div>
       </div>

@@ -19,10 +19,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/cart", "/cart/"],
       },
       ...aiBots.map((userAgent) => ({
         userAgent,
         allow: "/",
+        disallow: ["/cart", "/cart/"],
       })),
     ],
     sitemap: "https://www.petalswift.com/sitemap.xml",

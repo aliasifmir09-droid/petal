@@ -45,7 +45,22 @@ export function SiteFooter() {
             </li>
             <li>
               <Link href="/delivery" className="hover:text-porcelain">
-                NYC Delivery
+                Fees & windows
+              </Link>
+            </li>
+            <li>
+              <Link href="/policies" className="hover:text-porcelain">
+                Policies
+              </Link>
+            </li>
+            <li>
+              <Link href="/sizes" className="hover:text-porcelain">
+                Size guide
+              </Link>
+            </li>
+            <li>
+              <Link href="/updates" className="hover:text-porcelain">
+                Email & SMS
               </Link>
             </li>
             <li>

@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { PhotoStrip } from "@/components/PhotoStrip";
+import { atelierPhotos } from "@/lib/ops";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Our Atelier in Jackson Heights, Queens",
   description:
-    "Petalswift is a New York flower atelier in Jackson Heights composing premium bouquets with same-day delivery across the five boroughs.",
+    "Visit the Petalswift flower atelier in Jackson Heights—florist photography, composition process, and same-day NYC delivery from 37-68 74th Street.",
   alternates: { canonical: "/about" },
 };
 
@@ -22,7 +24,7 @@ export default function AboutPage() {
         ])}
       />
 
-      <section className="site-shell grid items-center gap-14 pb-24 lg:grid-cols-2 lg:gap-20">
+      <section className="site-shell grid items-center gap-14 pb-16 lg:grid-cols-2 lg:gap-20">
         <div>
           <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
             Our atelier
@@ -55,23 +57,38 @@ export default function AboutPage() {
               </a>
             </p>
           </div>
-          <Link
-            href="/shop"
-            className="mt-10 inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
-          >
-            Explore bouquets
-          </Link>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href="/arrangements"
+              className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+            >
+              Explore arrangements
+            </Link>
+            <Link
+              href="/policies"
+              className="inline-flex border border-ink/15 px-7 py-3.5 text-sm text-ink transition-colors hover:border-ink/35"
+            >
+              Our policies
+            </Link>
+          </div>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden bg-mist/30">
           <Image
-            src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1600&q=80"
-            alt="Florist arranging premium blooms at the Petalswift atelier"
+            src={atelierPhotos[0].src}
+            alt={atelierPhotos[0].alt}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
           />
         </div>
       </section>
+
+      <PhotoStrip
+        title="Atelier and florist photography."
+        intro="Morning stems, conditioning, and composition at 37-68 74th Street—the work behind every same-day New York delivery."
+        photos={atelierPhotos}
+      />
     </div>
   );
 }

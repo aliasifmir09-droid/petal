@@ -10,28 +10,28 @@ export function Reviews({
   const list = reviews.slice(0, limit);
 
   return (
-    <section className="border-y border-line bg-porcelain/55 py-16 md:py-20">
+    <section className="section-gap border-y border-line bg-porcelain">
       <div className="site-shell">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
               Customer reviews
             </p>
-            <h2 className="font-display mt-3 text-3xl tracking-[-0.03em] text-ink md:text-5xl">
+            <h2 className="font-display mt-4 text-3xl tracking-[-0.03em] text-ink md:text-5xl">
               {heading}
             </h2>
           </div>
-          <p className="text-sm text-ink-soft">
+          <p className="text-sm font-semibold text-ink-soft">
             {reviewAggregate.ratingValue}/5 · {reviewAggregate.reviewCount}{" "}
             verified deliveries
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {list.map((review) => (
             <article
               key={review.id}
-              className="border border-line bg-canvas/40 p-5 md:p-6"
+              className="commerce-card bg-canvas/40"
             >
               <p className="text-[0.7rem] uppercase tracking-[0.16em] text-leaf">
                 {"★".repeat(review.rating)}

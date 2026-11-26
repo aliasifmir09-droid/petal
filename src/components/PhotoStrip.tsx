@@ -11,18 +11,18 @@ export function PhotoStrip({
   photos: StudioPhoto[];
 }) {
   return (
-    <section className="py-16 md:py-20">
+    <section className="section-gap">
       <div className="site-shell">
-        <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
           Photography
         </p>
-        <h2 className="font-display mt-3 max-w-3xl text-3xl tracking-[-0.03em] text-ink md:text-5xl">
+        <h2 className="font-display mt-4 max-w-3xl text-3xl tracking-[-0.03em] text-ink md:text-5xl">
           {title}
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft">
           {intro}
         </p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {photos.map((photo) => (
             <figure key={photo.src + photo.caption} className="group">
               <div className="relative aspect-[4/5] overflow-hidden bg-mist/30">

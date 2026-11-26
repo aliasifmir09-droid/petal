@@ -14,32 +14,32 @@ export function Hero() {
           className="hero-media object-cover object-[center_32%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#004f9a]/85 via-[#0071dc]/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1c2e]/70 via-transparent to-[#004f9a]/25" />
       </div>
 
-      <div className="relative site-shell flex min-h-[100svh] flex-col justify-end pb-16 pt-36 md:justify-center md:pb-28 md:pt-32">
+      <div className="relative site-shell flex min-h-[100svh] flex-col justify-end pb-20 pt-40 md:justify-center md:pb-32 md:pt-36">
         <div className="max-w-2xl text-porcelain">
-          <p className="reveal font-display text-[4.2rem] leading-[0.88] tracking-[-0.045em] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+          <p className="reveal inline-flex bg-petal px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink">
+            Same-day NYC · Orders open
+          </p>
+          <p className="reveal reveal-delay-1 font-display mt-8 text-[4.2rem] leading-[0.88] tracking-[-0.045em] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
             {site.name}
           </p>
-          <h1 className="reveal reveal-delay-1 mt-7 max-w-lg text-2xl leading-snug text-porcelain md:text-[2rem]">
+          <h1 className="reveal reveal-delay-2 mt-8 max-w-lg text-2xl leading-snug text-porcelain md:text-[2rem]">
             {site.tagline}
           </h1>
-          <p className="reveal reveal-delay-2 mt-5 max-w-md text-base leading-relaxed text-porcelain/78 md:text-lg">
+          <p className="reveal reveal-delay-3 mt-6 max-w-md text-base leading-relaxed text-porcelain/85 md:text-lg">
             Christmas orders are open. Same-day bouquets across the five
             boroughs—composed in Jackson Heights, delivered with quiet precision.
           </p>
-          <div className="reveal reveal-delay-3 mt-9 flex flex-wrap items-center gap-3">
-            <Link
-              href="/christmas"
-              className="inline-flex bg-porcelain px-7 py-3.5 text-sm text-leaf transition-colors hover:bg-white"
-            >
+          <div className="reveal reveal-delay-3 mt-11 flex flex-wrap items-center gap-4">
+            <Link href="/christmas" className="btn-spark">
               Shop Christmas
             </Link>
             <Link
               href="/order"
-              className="inline-flex border border-porcelain/35 px-7 py-3.5 text-sm text-porcelain transition-colors hover:border-porcelain/70 hover:bg-white/10"
+              className="inline-flex border border-porcelain/50 px-7 py-3.5 text-sm font-semibold text-porcelain transition-colors hover:border-porcelain hover:bg-white/10"
             >
               Start an order
             </Link>

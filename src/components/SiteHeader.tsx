@@ -32,22 +32,22 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-[background,backdrop-filter,border-color] duration-300 ${
         scrolled || open
-          ? "border-b border-line bg-porcelain/85 backdrop-blur-xl"
+          ? "border-b border-line bg-porcelain/95 shadow-[0_1px_0_rgba(15,28,46,0.04)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="site-shell flex items-center justify-between py-4 md:py-5">
+      <div className="site-shell flex items-center justify-between py-5 md:py-6">
         <Link
           href="/"
           className={`font-display text-[1.7rem] leading-none tracking-[-0.04em] md:text-[1.95rem] ${
-            inverted ? "text-porcelain" : "text-ink"
+            inverted ? "text-porcelain" : "text-leaf"
           }`}
           onClick={() => setOpen(false)}
         >
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -86,10 +86,10 @@ export function SiteHeader() {
           </Link>
           <Link
             href="/shop"
-            className={`inline-flex items-center px-4 py-2.5 text-sm transition-colors ${
+            className={`inline-flex items-center px-5 py-2.5 text-sm font-semibold transition-colors ${
               inverted
-                ? "bg-porcelain text-leaf hover:bg-white"
-                : "bg-leaf text-porcelain hover:bg-leaf-deep"
+                ? "bg-petal text-ink hover:bg-petal-deep"
+                : "bg-petal text-ink hover:bg-petal-deep"
             }`}
           >
             Order same-day

@@ -23,9 +23,9 @@ export function NycPromise() {
         aria-hidden
         className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-petal/15 blur-3xl"
       />
-      <div className="site-shell py-24 md:py-32">
+      <div className="site-shell section-gap">
         <div className="max-w-2xl">
-          <p className="text-[0.7rem] uppercase tracking-[0.22em] text-porcelain/55">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-petal">
             Built for New York
           </p>
           <h2 className="font-display mt-5 text-4xl leading-[1.02] tracking-[-0.035em] md:text-6xl">

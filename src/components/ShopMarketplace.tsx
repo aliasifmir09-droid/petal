@@ -234,7 +234,7 @@ export function ShopMarketplace({
             ))}
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 xl:grid-cols-3">
             {filtered.map((product) => (
               <Link
                 key={product.slug}

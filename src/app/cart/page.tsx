@@ -40,7 +40,7 @@ export default function CartPage() {
         <section className="site-shell space-y-10 pb-28">
           <Link
             href="/arrangements"
-            className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+            className="btn-spark"
           >
             Browse arrangements
           </Link>
@@ -174,7 +174,7 @@ export default function CartPage() {
                     "Please confirm email/SMS updates using the contacts in my saved preferences.",
                   ].join("\n"),
                 )}`}
-                className="mt-6 inline-flex w-full items-center justify-center bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+                className="btn-spark mt-6 w-full"
               >
                 Request order by email
               </a>

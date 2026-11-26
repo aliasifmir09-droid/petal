@@ -53,6 +53,14 @@ export function LocalNap({ className = "", compact = false }: LocalNapProps) {
           </a>
         </p>
         <p className="mt-2">
+          Hours:{" "}
+          <span itemProp="openingHours" content="Mo-Su 08:00-20:00">
+            {site.openingHours.days} {site.openingHours.opens}–
+            {site.openingHours.closes} ET
+          </span>
+        </p>
+        <p className="mt-1 text-xs text-ink-soft/80">{site.openingHours.note}</p>
+        <p className="mt-2">
           <a
             href={site.googleBusinessUrl}
             className="text-leaf hover:underline"

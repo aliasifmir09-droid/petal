@@ -96,6 +96,16 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/press" className="hover:text-porcelain">
+                Press & brand kit
+              </Link>
+            </li>
+            <li>
+              <Link href="/nyc" className="hover:text-porcelain">
+                NYC neighborhoods
+              </Link>
+            </li>
+            <li>
               <Link href="/privacy" className="hover:text-porcelain">
                 Privacy
               </Link>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { occasions, products, styles } from "@/lib/catalog";
+import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { qaItems } from "@/lib/qa";
 import { partnerShops } from "@/lib/sellers";
 import { boroughs, site } from "@/lib/site";
@@ -32,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/qa", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/blog", priority: 0.95, changeFrequency: "daily" as const },
     { path: "/faq", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/press", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/subscribe", priority: 0.6, changeFrequency: "monthly" as const },
   ].map((route) => ({
     url: `${base}${route.path}`,
@@ -68,6 +70,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const neighborhoodRoutes = neighborhoods.map((n) => ({
+    url: `${base}${neighborhoodPath(n)}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.82,
+  }));
+
   const sellerRoutes = partnerShops.map((shop) => ({
     url: `${base}/sell/shops/${shop.slug}`,
     lastModified,
@@ -95,6 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...occasionRoutes,
     ...styleRoutes,
     ...boroughRoutes,
+    ...neighborhoodRoutes,
     ...sellerRoutes,
     ...blogRoutes,
     ...qaRoutes,

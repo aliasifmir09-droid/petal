@@ -22,6 +22,8 @@ function bloom({ fills, scale = 1, cx = 0, cy = 0 }) {
 
 const bright = ["#8EC5FF", "#E8F3FF", "#9FCEFF", "#D7EBFF", "#B8DBFF"];
 const deep = ["#1F7FE8", "#005CBC", "#2B8AF0", "#004F9A", "#0071DC"];
+const FONT =
+  "'Instrument Serif', Georgia, 'Times New Roman', serif";
 
 const iconSvg = (size) => `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 512 512">
@@ -35,7 +37,10 @@ const iconSvg = (size) => `<?xml version="1.0" encoding="UTF-8"?>
   ${bloom({ fills: bright, scale: 6.4, cx: 256, cy: 256 })}
 </svg>`;
 
-/** Horizontal brand lockup for schema / press (mark + wordmark on brand blue). */
+/**
+ * Centered horizontal lockup: mark + wordmark balanced in the frame.
+ * Tuned so left/right padding stay within ~40px of each other.
+ */
 const logoLockupSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
   <defs>
@@ -45,15 +50,15 @@ const logoLockupSvg = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect width="1200" height="400" rx="48" fill="url(#ps-banner)"/>
-  ${bloom({ fills: bright, scale: 4.6, cx: 210, cy: 200 })}
-  <text x="360" y="235" font-family="Georgia, 'Times New Roman', serif" font-size="118" letter-spacing="-2.5" fill="#FFFFFF">Petalswift</text>
+  ${bloom({ fills: bright, scale: 4.5, cx: 387, cy: 200 })}
+  <text x="563" y="200" dominant-baseline="middle" font-family="${FONT}" font-size="128" letter-spacing="-3.2" fill="#FFFFFF">Petalswift</text>
 </svg>`;
 
-/** Transparent horizontal wordmark for light backgrounds. */
+/** Transparent horizontal wordmark for light backgrounds — content centered in frame. */
 const wordmarkSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 600 160">
-  ${bloom({ fills: deep, scale: 1.7, cx: 80, cy: 80 })}
-  <text x="175" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="78" letter-spacing="-1.4" fill="#0F1C2E">Petalswift</text>
+  ${bloom({ fills: deep, scale: 1.7, cx: 78, cy: 80 })}
+  <text x="156" y="80" dominant-baseline="middle" font-family="${FONT}" font-size="78" letter-spacing="-1.8" fill="#0F1C2E">Petalswift</text>
 </svg>`;
 
 /** Square social tile with mark only (no cramped caption). */
@@ -71,7 +76,10 @@ const logoSquareSvg = `<?xml version="1.0" encoding="UTF-8"?>
 
 async function writeSquarePng(name, svg, size) {
   const buf = await sharp(Buffer.from(svg))
-    .resize(size, size, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .resize(size, size, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
     .png({ compressionLevel: 9 })
     .toBuffer();
   writeFileSync(join(publicDir, name), buf);
@@ -80,7 +88,10 @@ async function writeSquarePng(name, svg, size) {
 
 async function writeSvgPng(name, svg, width, height) {
   const buf = await sharp(Buffer.from(svg))
-    .resize(width, height, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .resize(width, height, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
     .png({ compressionLevel: 9 })
     .toBuffer();
   writeFileSync(join(publicDir, name), buf);

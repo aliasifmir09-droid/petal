@@ -8,10 +8,15 @@ import { HolidayOpsBanner } from "@/components/HolidayOpsBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { NycPromise } from "@/components/NycPromise";
 import { OccasionsStrip } from "@/components/OccasionsStrip";
+import { PhotoStrip } from "@/components/PhotoStrip";
+import { Reviews } from "@/components/Reviews";
+import { SizeGuide } from "@/components/SizeGuide";
+import { atelierPhotos, deliveryPhotos } from "@/lib/ops";
 import {
   breadcrumbSchema,
   flowerDeliveryServiceSchema,
   howToOrderSchema,
+  reviewsSchema,
 } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
@@ -29,6 +34,7 @@ export default function Home() {
           breadcrumbSchema([{ name: "Home", path: "/" }]),
           howToOrderSchema(),
           flowerDeliveryServiceSchema(),
+          reviewsSchema(),
         ]}
       />
       <Hero />
@@ -36,6 +42,13 @@ export default function Home() {
       <OccasionsStrip />
       <Craft />
       <Collection />
+      <SizeGuide />
+      <PhotoStrip
+        title="Atelier craft and delivery photography."
+        intro="Florist work in Jackson Heights and real NYC handoffs—so shoppers see the standard before they order."
+        photos={[...atelierPhotos.slice(0, 2), ...deliveryPhotos.slice(0, 2)]}
+      />
+      <Reviews />
       <NycPromise />
       <section className="site-shell pb-24 md:pb-28">
         <DeliveryChecker />

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { JsonLd } from "@/components/JsonLd";
+import { deliveryZones } from "@/lib/ops";
 import { boroughs, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Same-Day Flower Delivery Across NYC",
+  title: "NYC Flower Delivery Fees & Windows",
   description:
-    "Same-day flower delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. Order by 1pm ET from Petalswift in Jackson Heights.",
+    "Petalswift same-day flower delivery fees and time windows for Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. Order by 1pm ET.",
   alternates: { canonical: "/delivery" },
 };
 
@@ -21,25 +23,69 @@ export default function DeliveryPage() {
         ])}
       />
 
-      <section className="site-shell pb-16">
+      <section className="site-shell pb-12">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
           NYC Delivery
         </p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl tracking-[-0.035em] text-ink md:text-7xl">
-          Same-day across the five boroughs.
+          Delivery fees and windows—shown upfront.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Order by {site.orderCutoff} for delivery the same day. Arrangements
-          leave our Jackson Heights atelier upright, cool, and
-          presentation-ready.
+          Order by {site.orderCutoff} for same-day. Christmas Eve cutoff{" "}
+          {site.christmasEveCutoff}. Fees are flat by borough—no surprise
+          surcharges at the door.
         </p>
       </section>
 
-      <section className="border-y border-line bg-porcelain/60 py-20">
-        <div className="site-shell grid gap-14 md:grid-cols-2">
+      <section className="site-shell pb-16">
+        <div className="overflow-x-auto border border-line">
+          <table className="min-w-full text-left text-sm">
+            <thead className="bg-porcelain/80 text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft">
+              <tr>
+                <th className="px-4 py-3 font-medium">Borough</th>
+                <th className="px-4 py-3 font-medium">Delivery fee</th>
+                <th className="px-4 py-3 font-medium">Same-day window</th>
+                <th className="px-4 py-3 font-medium">Next-day window</th>
+              </tr>
+            </thead>
+            <tbody>
+              {deliveryZones.map((zone) => (
+                <tr key={zone.slug} className="border-t border-line">
+                  <td className="px-4 py-4">
+                    <Link
+                      href={`/nyc/${zone.slug}`}
+                      className="text-ink hover:text-leaf"
+                    >
+                      {zone.borough}
+                    </Link>
+                    <p className="mt-1 text-xs text-ink-soft">{zone.notes}</p>
+                  </td>
+                  <td className="px-4 py-4 text-ink">${zone.fee}</td>
+                  <td className="px-4 py-4 text-ink-soft">{zone.sameDayWindow}</td>
+                  <td className="px-4 py-4 text-ink-soft">{zone.nextDayWindow}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-sm text-ink-soft">
+          Timed corporate arrivals and hotel handoffs available—call{" "}
+          <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
+            {site.phoneDisplay}
+          </a>
+          . See{" "}
+          <Link href="/policies" className="text-leaf hover:underline">
+            refund & freshness policies
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section className="border-y border-line bg-porcelain/60 py-16">
+        <div className="site-shell grid gap-10 md:grid-cols-2">
           <div>
             <h2 className="font-display text-3xl tracking-[-0.03em] text-ink md:text-4xl">
-              Coverage
+              Borough coverage
             </h2>
             <ul className="mt-8 space-y-4">
               {boroughs.map((borough) => (
@@ -57,37 +103,20 @@ export default function DeliveryPage() {
               ))}
             </ul>
           </div>
-          <div>
-            <h2 className="font-display text-3xl tracking-[-0.03em] text-ink md:text-4xl">
-              What to expect
-            </h2>
-            <div className="mt-8 space-y-6 text-ink-soft">
-              <p className="leading-relaxed">
-                You’ll receive confirmation, a delivery window, and a short
-                message when the courier is en route.
-              </p>
-              <p className="leading-relaxed">
-                Buildings, doormen, and office lobbies are handled with clear
-                recipient instructions—so the gift doesn’t sit in a mailroom.
-              </p>
-              <p className="leading-relaxed">
-                Atelier: {site.address.streetAddress},{" "}
-                {site.address.addressLocality}, {site.address.addressRegion}{" "}
-                {site.address.postalCode}. Call{" "}
-                <a className="text-leaf underline-offset-2 hover:underline" href={`tel:${site.phone}`}>
-                  {site.phoneDisplay}
-                </a>{" "}
-                for timed arrivals.
-              </p>
-            </div>
-          </div>
+          <DeliveryChecker />
         </div>
       </section>
 
-      <section className="site-shell py-16">
+      <section className="site-shell flex flex-wrap gap-3 py-16">
+        <Link
+          href="/updates"
+          className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+        >
+          Email & SMS updates
+        </Link>
         <Link
           href="/shop"
-          className="inline-flex bg-leaf px-7 py-3.5 text-sm text-porcelain transition-colors hover:bg-leaf-deep"
+          className="inline-flex border border-ink/15 px-7 py-3.5 text-sm text-ink transition-colors hover:border-ink/35"
         >
           Choose a bouquet
         </Link>

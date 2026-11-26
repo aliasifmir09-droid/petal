@@ -38,7 +38,10 @@ export type Borough = {
   name: string;
   headline: string;
   blurb: string;
+  seoExtra: string;
+  heroImage: string;
   neighborhoods: string[];
+  landmarks: string[];
 };
 
 export const boroughs: Borough[] = [
@@ -48,6 +51,10 @@ export const boroughs: Borough[] = [
     headline: "Same-day flowers across Manhattan.",
     blurb:
       "From Midtown boardrooms to West Village stoops, Petalswift delivers composed bouquets across Manhattan the same day—fresh stems, careful handoff.",
+    seoExtra:
+      "Order Christmas and everyday flower delivery in Manhattan with clear delivery fees, SMS tracking, and lobby-ready presentation from our Jackson Heights atelier.",
+    heroImage:
+      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80",
     neighborhoods: [
       "Upper East Side",
       "Upper West Side",
@@ -58,6 +65,12 @@ export const boroughs: Borough[] = [
       "Tribeca",
       "Financial District",
     ],
+    landmarks: [
+      "Hotel arrivals Midtown",
+      "Doorman buildings UES/UWS",
+      "Gallery openings Chelsea",
+      "Office lobbies FiDi",
+    ],
   },
   {
     slug: "brooklyn",
@@ -65,6 +78,10 @@ export const boroughs: Borough[] = [
     headline: "Brooklyn flower delivery, same day.",
     blurb:
       "Williamsburg lofts to Park Slope brownstones—Petalswift brings atelier-level bouquets across Brooklyn with same-day reliability.",
+    seoExtra:
+      "Same-day Brooklyn florist delivery with published fees and windows—ideal for brownstones, walk-ups, and weekend host gifts.",
+    heroImage:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80",
     neighborhoods: [
       "Williamsburg",
       "Greenpoint",
@@ -75,6 +92,12 @@ export const boroughs: Borough[] = [
       "Cobble Hill",
       "Bushwick",
     ],
+    landmarks: [
+      "Park Slope stoops",
+      "Williamsburg lofts",
+      "DUMBO waterfront apartments",
+      "Fort Greene townhouses",
+    ],
   },
   {
     slug: "queens",
@@ -82,6 +105,10 @@ export const boroughs: Borough[] = [
     headline: "Luxury bouquets delivered in Queens.",
     blurb:
       "Astoria, Long Island City, Forest Hills, and beyond—same-day Petalswift arrangements composed for Queens rooms and celebrations.",
+    seoExtra:
+      "Queens flower delivery from our home atelier in Jackson Heights—fastest same-day windows and the lowest delivery fee in NYC.",
+    heroImage:
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1600&q=80",
     neighborhoods: [
       "Long Island City",
       "Astoria",
@@ -91,6 +118,12 @@ export const boroughs: Borough[] = [
       "Flushing",
       "Ridgewood",
     ],
+    landmarks: [
+      "Jackson Heights atelier pickup",
+      "LIC high-rises",
+      "Astoria apartments",
+      "Forest Hills homes",
+    ],
   },
   {
     slug: "bronx",
@@ -98,6 +131,10 @@ export const boroughs: Borough[] = [
     headline: "Same-day florist delivery in the Bronx.",
     blurb:
       "Thoughtful, elevated bouquets delivered across the Bronx—fresh composition, clear tracking, and a calm delivery experience.",
+    seoExtra:
+      "Bronx same-day flower delivery with email and SMS updates—Riverdale to Mott Haven, including building access notes.",
+    heroImage:
+      "https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=1600&q=80",
     neighborhoods: [
       "Riverdale",
       "Fordham",
@@ -106,6 +143,12 @@ export const boroughs: Borough[] = [
       "Mott Haven",
       "Kingsbridge",
     ],
+    landmarks: [
+      "Riverdale residences",
+      "Fordham campus-area gifts",
+      "Mott Haven lofts",
+      "Family homes citywide",
+    ],
   },
   {
     slug: "staten-island",
@@ -113,12 +156,22 @@ export const boroughs: Borough[] = [
     headline: "Staten Island same-day flower delivery.",
     blurb:
       "Petalswift delivers composed bouquets across Staten Island with the same freshness and care as our Manhattan atelier work.",
+    seoExtra:
+      "Staten Island flower delivery with transparent fees, next-day reliability, and Christmas Eve windows when ordered early.",
+    heroImage:
+      "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1600&q=80",
     neighborhoods: [
       "St. George",
       "Todt Hill",
       "Great Kills",
       "New Dorp",
       "Tottenville",
+    ],
+    landmarks: [
+      "St. George waterfront",
+      "Todt Hill homes",
+      "New Dorp celebrations",
+      "Family gatherings island-wide",
     ],
   },
 ];

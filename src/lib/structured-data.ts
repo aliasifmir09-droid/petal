@@ -1,4 +1,5 @@
 import { products } from "@/lib/catalog";
+import { reviewAggregate, reviews } from "@/lib/ops";
 import { boroughs, christmasFaqs, faqs, site } from "@/lib/site";
 
 export function organizationSchema() {
@@ -44,6 +45,38 @@ export function organizationSchema() {
       },
     ],
     sameAs: site.sameAs,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: reviewAggregate.ratingValue,
+      reviewCount: reviewAggregate.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+}
+
+export function reviewsSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    name: site.name,
+    review: reviews.map((review) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.name,
+      },
+      datePublished: review.date,
+      reviewBody: review.body,
+      name: review.title,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    })),
   };
 }
 

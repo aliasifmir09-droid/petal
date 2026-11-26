@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { deliveryFeeForBorough } from "@/lib/ops";
 import { boroughs, site } from "@/lib/site";
 
 const nycZips = new Set([
@@ -106,7 +107,11 @@ export function DeliveryChecker({ compact = false }: { compact?: boolean }) {
             <>
               Yes — we deliver to {result.clean}
               {result.borough ? ` (${result.borough})` : ""}. Same-day available
-              when ordered by {site.orderCutoff}.
+              when ordered by {site.orderCutoff}
+              {result.borough && deliveryFeeForBorough(result.borough)
+                ? ` · Fee $${deliveryFeeForBorough(result.borough)!.fee} · Window ${deliveryFeeForBorough(result.borough)!.sameDayWindow}`
+                : ""}
+              .
             </>
           ) : (
             <>

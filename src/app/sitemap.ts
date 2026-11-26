@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     "",
+    "/christmas",
+    "/order",
     "/shop",
     "/arrangements",
     "/cart",
@@ -18,8 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((path) => ({
     url: `${base}${path}`,
     lastModified,
-    changeFrequency: "weekly" as const,
-    priority: path === "" || path === "/arrangements" ? 1 : 0.8,
+    changeFrequency:
+      path === "/christmas" || path === "/order"
+        ? ("daily" as const)
+        : ("weekly" as const),
+    priority:
+      path === "" || path === "/christmas" || path === "/arrangements"
+        ? 1
+        : 0.8,
   }));
 
   const productRoutes = products.map((product) => ({

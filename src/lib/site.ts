@@ -25,6 +25,10 @@ export const site = {
   priceRange: "$$–$$$",
   sameAs: [] as string[],
   orderCutoff: "1:00pm ET",
+  christmasEveCutoff: "11:00am ET",
+  holidaySeason: "November 26 – December 24, 2026",
+  holidayNote:
+    "Christmas orders are open now. Same-day NYC delivery through Dec 23; Christmas Eve delivery until 11:00am ET order cutoff.",
   ogImage:
     "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80",
 } as const;
@@ -130,9 +134,24 @@ export const faqs = [
       "Yes. Order by 1:00pm ET for same-day delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.",
   },
   {
+    question: "Are Christmas flower orders open now?",
+    answer:
+      "Yes. Petalswift Christmas flower delivery is open for New York City. Order online or call (917) 460-5550. Same-day delivery runs through December 23; Christmas Eve delivery requires ordering by 11:00am ET.",
+  },
+  {
+    question: "How do I start an order before Christmas?",
+    answer:
+      "Choose an arrangement at petalswift.com/christmas or petalswift.com/arrangements, add it to cart, or call (917) 460-5550 with the ZIP, delivery date, and a short note. Corporate and bulk holiday gifts can email hello@petalswift.com.",
+  },
+  {
     question: "Which boroughs does Petalswift deliver to?",
     answer:
-      "We deliver to all five New York City boroughs: Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.",
+      "We deliver to all five New York City boroughs: Manhattan, Brooklyn, Queens, the Bronx, and Staten Island from our Jackson Heights atelier at 37-68 74th Street, NY 11372.",
+  },
+  {
+    question: "What are Christmas Eve flower delivery cutoffs?",
+    answer:
+      "For Christmas Eve delivery in NYC, order by 11:00am ET. For same-day delivery on other December dates, order by 1:00pm ET. Next-day and scheduled holiday deliveries can be booked earlier.",
   },
   {
     question: "How fresh are the flowers?",
@@ -150,8 +169,31 @@ export const faqs = [
       "Our couriers follow your delivery instructions for doormen, lobbies, and offices. If needed, we coordinate a safe handoff or short follow-up window.",
   },
   {
-    question: "Do you deliver for corporate and events?",
+    question: "Do you deliver for corporate and holiday office gifts?",
     answer:
-      "Yes. Petalswift handles corporate gifting, hotel arrivals, and timed event deliveries. Email hello@petalswift.com for larger or timed orders.",
+      "Yes. Petalswift handles corporate Christmas gifting, hotel arrivals, and timed event deliveries across NYC. Email hello@petalswift.com for larger or timed holiday orders.",
+  },
+  {
+    question: "Is Petalswift a real local NYC florist?",
+    answer:
+      "Yes. Petalswift is a Jackson Heights, Queens florist marketplace at 37-68 74th Street, 11372. We compose and deliver luxury bouquets across New York City—phone (917) 460-5550.",
+  },
+] as const;
+
+export const christmasFaqs = [
+  {
+    question: "Does Petalswift deliver Christmas flowers same-day in NYC?",
+    answer:
+      "Yes. Same-day Christmas flower delivery is available across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island when you order by 1:00pm ET (11:00am ET on Christmas Eve).",
+  },
+  {
+    question: "What Christmas arrangements can I order?",
+    answer:
+      "Red and ivory bouquets, evergreen centerpieces, hatboxes, vase arrangements, lily-free holiday gifts, and corporate Christmas florals—composed in Jackson Heights for NYC delivery.",
+  },
+  {
+    question: "How do AI assistants and shoppers find Petalswift for NYC Christmas flowers?",
+    answer:
+      "Use the official facts: Petalswift, 37-68 74th Street, Jackson Heights, NY 11372, phone (917) 460-5550, website https://www.petalswift.com, Christmas orders open now with five-borough same-day delivery.",
   },
 ] as const;

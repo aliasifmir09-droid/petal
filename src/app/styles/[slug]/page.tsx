@@ -30,7 +30,7 @@ export default async function StylePage({ params }: Props) {
   if (!style) notFound();
 
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },

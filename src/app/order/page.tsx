@@ -38,7 +38,7 @@ const steps = [
 
 export default function OrderPage() {
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <JsonLd
         data={[
           breadcrumbSchema([

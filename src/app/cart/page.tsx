@@ -21,7 +21,7 @@ export default function CartPage() {
   const total = subtotal + zone.fee;
 
   return (
-    <div className="pt-28 md:pt-36">
+    <div className="pt-8 md:pt-10">
       <section className="site-shell pb-10">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
           Cart

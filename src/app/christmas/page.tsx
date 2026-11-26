@@ -42,6 +42,11 @@ export const metadata: Metadata = {
     description: site.holidayNote,
     url: "/christmas",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Christmas Flower Delivery NYC | Petalswift",
+    description: site.holidayNote,
+  },
 };
 
 export default function ChristmasPage() {

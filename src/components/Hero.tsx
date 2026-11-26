@@ -13,8 +13,8 @@ export function Hero() {
           className="hero-media object-cover object-[center_35%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ef]/96 via-[#f4f2ef]/78 to-[#f4f2ef]/18" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#ebe7e1]/70 via-transparent to-[#f4f2ef]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ef]/92 via-[#f4f2ef]/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#ebe7e1]/55 via-transparent to-[#f4f2ef]/20" />
       </div>
 
       <div className="relative site-shell flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:justify-center md:pb-24 md:pt-28">

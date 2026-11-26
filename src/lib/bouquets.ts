@@ -15,7 +15,7 @@ export const bouquets: Bouquet[] = [
     blurb: "Soft whites and blush garden roses with airy greenery—quiet luxury for any table.",
     price: 78,
     image:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Soft blush and white rose bouquet",
     occasion: "Everyday",
   },
@@ -25,7 +25,7 @@ export const bouquets: Bouquet[] = [
     blurb: "Peonies, ranunculus, and eucalyptus—romantic without trying too hard.",
     price: 98,
     image:
-      "https://images.unsplash.com/photo-1561181286-d3fee7f4530e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Romantic peony and ranunculus bouquet",
     occasion: "Romance",
   },
@@ -65,7 +65,7 @@ export const bouquets: Bouquet[] = [
     blurb: "Moody plum and dusty mauve stems for evenings that linger.",
     price: 108,
     image:
-      "https://images.unsplash.com/photo-1455659817273-f9680774153e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Moody dusk-toned floral bouquet",
     occasion: "Thank you",
   },

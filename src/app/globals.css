@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f4f2ef;
-  --canvas-deep: #ebe7e1;
-  --ink: #141816;
-  --ink-soft: #3d4540;
-  --mist: #d8ddd6;
-  --leaf: #1f3d32;
-  --leaf-deep: #142820;
-  --petal: #c9a39a;
-  --line: rgba(20, 24, 22, 0.1);
-  --glow: rgba(31, 61, 50, 0.08);
+  --canvas: #f6f3ef;
+  --canvas-deep: #ebe6df;
+  --ink: #101412;
+  --ink-soft: #4a524c;
+  --mist: #d6dbd4;
+  --leaf: #17362c;
+  --leaf-deep: #0d211a;
+  --petal: #b99289;
+  --porcelain: #fbfaf7;
+  --line: rgba(16, 20, 18, 0.1);
   --background: var(--canvas);
   --foreground: var(--ink);
 }
@@ -26,6 +26,7 @@
   --color-leaf: var(--leaf);
   --color-leaf-deep: var(--leaf-deep);
   --color-petal: var(--petal);
+  --color-porcelain: var(--porcelain);
   --color-line: var(--line);
   --font-sans: var(--font-outfit);
   --font-display: var(--font-instrument);
@@ -43,54 +44,80 @@ body {
   margin: 0;
   min-height: 100%;
   background:
-    radial-gradient(1200px 600px at 12% -10%, rgba(201, 163, 154, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 8%, rgba(31, 61, 50, 0.1), transparent 50%),
-    linear-gradient(180deg, #f7f5f2 0%, var(--canvas) 42%, var(--canvas-deep) 100%);
+    radial-gradient(1100px 520px at 8% -8%, rgba(185, 146, 137, 0.16), transparent 58%),
+    radial-gradient(900px 480px at 92% 0%, rgba(23, 54, 44, 0.09), transparent 52%),
+    linear-gradient(180deg, #faf8f5 0%, var(--canvas) 38%, var(--canvas-deep) 100%);
   color: var(--ink);
   font-family: var(--font-outfit), ui-sans-serif, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: rgba(31, 61, 50, 0.18);
+  background: rgba(23, 54, 44, 0.18);
   color: var(--ink);
 }
 
 .font-display {
   font-family: var(--font-instrument), ui-serif, Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .site-shell {
-  width: min(1180px, calc(100% - 2.5rem));
+  width: min(1240px, calc(100% - 2rem));
   margin-inline: auto;
 }
 
+@media (min-width: 768px) {
+  .site-shell {
+    width: min(1240px, calc(100% - 3rem));
+  }
+}
+
 .reveal {
-  animation: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: rise 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .reveal-delay-1 {
-  animation-delay: 120ms;
+  animation-delay: 140ms;
 }
 
 .reveal-delay-2 {
-  animation-delay: 240ms;
+  animation-delay: 260ms;
 }
 
 .reveal-delay-3 {
-  animation-delay: 360ms;
+  animation-delay: 380ms;
 }
 
 .hero-media {
-  animation: drift 18s ease-in-out infinite alternate;
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.img-zoom {
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.045);
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
@@ -100,10 +127,10 @@ body {
 
 @keyframes drift {
   from {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: scale(1.03) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+    transform: scale(1.09) translate3d(-1.2%, 0.8%, 0);
   }
 }
 
@@ -116,7 +143,9 @@ body {
   .reveal-delay-1,
   .reveal-delay-2,
   .reveal-delay-3,
-  .hero-media {
+  .hero-media,
+  .img-zoom {
     animation: none !important;
+    transition: none !important;
   }
 }

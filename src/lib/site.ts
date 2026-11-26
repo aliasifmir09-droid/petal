@@ -31,6 +31,12 @@ export const site = {
     "Christmas orders are open now. Same-day NYC delivery through Dec 23; Christmas Eve delivery until 11:00am ET order cutoff.",
   ogImage:
     "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80",
+  googleBusinessUrl:
+    "https://www.google.com/maps/search/?api=1&query=Petalswift+37-68+74th+Street+Jackson+Heights+NY+11372",
+  freshnessGuarantee:
+    "If your flowers arrive damaged or significantly below our quality standard, contact us within 24 hours with a photo and we will arrange a replacement or appropriate resolution.",
+  paymentMethods: ["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay"] as const,
+  deliveryFeeFrom: 12,
 } as const;
 
 export type Borough = {

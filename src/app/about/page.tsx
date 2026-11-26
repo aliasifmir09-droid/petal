@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FloristsStrip } from "@/components/FloristsStrip";
+import { FreshnessGuarantee } from "@/components/FreshnessGuarantee";
 import { JsonLd } from "@/components/JsonLd";
 import { PhotoStrip } from "@/components/PhotoStrip";
 import { atelierPhotos } from "@/lib/ops";
@@ -84,11 +86,19 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div id="florists">
+        <FloristsStrip />
+      </div>
+
       <PhotoStrip
         title="Atelier and florist photography."
         intro="Morning stems, conditioning, and composition at 37-68 74th Street—the work behind every same-day New York delivery."
         photos={atelierPhotos}
       />
+
+      <div className="site-shell pb-24">
+        <FreshnessGuarantee />
+      </div>
     </div>
   );
 }

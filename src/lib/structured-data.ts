@@ -45,17 +45,22 @@ export function organizationSchema() {
       },
     ],
     sameAs: site.sameAs,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: reviewAggregate.ratingValue,
-      reviewCount: reviewAggregate.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    ...(reviewAggregate.reviewCount > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: reviewAggregate.ratingValue,
+            reviewCount: reviewAggregate.reviewCount,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
   };
 }
 
 export function reviewsSchema() {
+  if (reviews.length === 0) return null;
   return {
     "@context": "https://schema.org",
     "@type": "Organization",

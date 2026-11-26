@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/catalog";
+import { productSubtitle } from "@/lib/product-details";
 
 export function Collection() {
   const featured = products.filter((p) => p.bestseller).slice(0, 3);
@@ -52,6 +53,9 @@ export function Collection() {
                   <h3 className="font-display mt-3 text-4xl tracking-[-0.03em] text-ink md:text-5xl">
                     {bouquet.name}
                   </h3>
+                  <p className="mt-2 text-sm font-semibold text-ink-soft">
+                    {productSubtitle(bouquet)}
+                  </p>
                   <p className="mt-3 text-lg text-ink-soft">${bouquet.price}</p>
                   <p className="mt-5 max-w-md text-base leading-relaxed text-ink-soft">
                     {bouquet.blurb}

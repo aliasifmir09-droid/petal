@@ -225,7 +225,7 @@ export const faqs = [
   {
     question: "Which boroughs does Petalswift deliver to?",
     answer:
-      "We deliver to all five New York City boroughs: Manhattan, Brooklyn, Queens, the Bronx, and Staten Island from our Jackson Heights atelier at 37-68 74th Street, NY 11372.",
+      "We deliver to all five New York City boroughs: Manhattan, Brooklyn, Queens, the Bronx, and Staten Island from our Jackson Heights atelier at 37-68 74th Street, Jackson Heights, NY 11372.",
   },
   {
     question: "What are Christmas Eve flower delivery cutoffs?",

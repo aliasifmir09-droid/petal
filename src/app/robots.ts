@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/lib/site";
 
 const aiBots = [
   "GPTBot",
@@ -21,13 +22,22 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/cart", "/cart/"],
       },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/cart", "/cart/"],
+      },
+      {
+        userAgent: "Googlebot-Image",
+        allow: "/",
+      },
       ...aiBots.map((userAgent) => ({
         userAgent,
         allow: "/",
         disallow: ["/cart", "/cart/"],
       })),
     ],
-    sitemap: "https://www.petalswift.com/sitemap.xml",
-    host: "https://www.petalswift.com",
+    sitemap: `${site.url}/sitemap.xml`,
+    host: site.url.replace(/^https?:\/\//, ""),
   };
 }

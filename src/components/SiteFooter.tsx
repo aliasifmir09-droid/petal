@@ -126,10 +126,13 @@ export function SiteFooter() {
           </p>
           <address className="mt-4 space-y-2.5 text-sm not-italic leading-relaxed text-porcelain/85">
             <p>
+              {/* Full street for local SEO — keep “37-68”, never truncate */}
               {site.address.streetAddress}
               <br />
               {site.address.addressLocality}, {site.address.addressRegion}{" "}
               {site.address.postalCode}
+              <br />
+              United States
             </p>
             <p>
               <a className="hover:text-porcelain" href={`tel:${site.phone}`}>
@@ -139,14 +142,24 @@ export function SiteFooter() {
             <p>
               <ContactEmail className="hover:text-porcelain" />
             </p>
+            <p>
+              <a
+                className="hover:text-porcelain"
+                href={site.googleBusinessUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Google Maps / Business Profile
+              </a>
+            </p>
           </address>
           <p className="mt-6 text-[0.7rem] uppercase tracking-[0.2em] text-porcelain/50">
             Social
           </p>
           <p className="mt-3 text-sm text-porcelain/60">
-            Instagram &amp; Facebook profiles launching with holiday orders
-            from {site.ordersStartShort}. Google Maps listing live via our
-            Jackson Heights NAP.
+            Instagram, Facebook, X, LinkedIn, and YouTube profiles launch with
+            holiday orders from {site.ordersStartShort}. Link them in schema{" "}
+            <code className="text-porcelain/80">sameAs</code> once live.
           </p>
         </div>
       </div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Petalswift">
+  <rect width="512" height="512" rx="64" fill="#0071dc"/>
+  <circle cx="256" cy="210" r="78" fill="#ffc220"/>
+  <path d="M256 288c-70 0-128 42-148 98h296c-20-56-78-98-148-98z" fill="#ffffff"/>
+  <text x="256" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#ffffff">Petalswift</text>
+</svg>

@@ -1,14 +1,18 @@
 import Script from "next/script";
 
 /**
- * Optional analytics hook. Set NEXT_PUBLIC_GA_MEASUREMENT_ID (G-…) or
- * NEXT_PUBLIC_GTM_ID (GTM-…) in the environment to enable.
+ * Optional analytics / ads pixels for Google market ops.
+ * Set any of:
+ * - NEXT_PUBLIC_GA_MEASUREMENT_ID (G-…)
+ * - NEXT_PUBLIC_GTM_ID (GTM-…)
+ * - NEXT_PUBLIC_FB_PIXEL_ID
  */
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
+  const fbPixel = process.env.NEXT_PUBLIC_FB_PIXEL_ID?.trim();
 
-  if (!gaId && !gtmId) return null;
+  if (!gaId && !gtmId && !fbPixel) return null;
 
   return (
     <>
@@ -34,6 +38,17 @@ export function Analytics() {
             gtag('config', '${gaId}');
           `}</Script>
         </>
+      ) : null}
+      {fbPixel ? (
+        <Script id="fb-pixel" strategy="afterInteractive">{`
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+          n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${fbPixel}');
+          fbq('track', 'PageView');
+        `}</Script>
       ) : null}
     </>
   );

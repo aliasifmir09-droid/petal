@@ -300,7 +300,7 @@ export const florists = [
     role: "Color stories & vessels",
     bio: "Builds Classic, Signature, and Grand tiers with consistent scale so product pages match what arrives.",
     image:
-      "https://images.unsplash.com/photo-1525310072745-f8161a250063?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Dispatch",
@@ -359,7 +359,7 @@ export const atelierPhotos: StudioPhoto[] = [
     caption: "Morning composition bench — Jackson Heights",
   },
   {
-    src: "https://images.unsplash.com/photo-1525310072745-f8161a250063?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=1400&q=80",
     alt: "Fresh stems prepared on a florist worktable",
     caption: "Stem conditioning before design",
   },

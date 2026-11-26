@@ -6,6 +6,7 @@ import { FinalCta } from "@/components/FinalCta";
 import { FloristsStrip } from "@/components/FloristsStrip";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
+import { MarketSeoCopy } from "@/components/MarketSeoCopy";
 import { NycPromise } from "@/components/NycPromise";
 import { OccasionsStrip } from "@/components/OccasionsStrip";
 import { PhotoStrip } from "@/components/PhotoStrip";
@@ -15,6 +16,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { atelierPhotos, deliveryPhotos } from "@/lib/ops";
 import {
   breadcrumbSchema,
+  faqSchema,
   flowerDeliveryServiceSchema,
   howToOrderSchema,
   reviewsSchema,
@@ -45,6 +47,7 @@ export default function Home() {
           breadcrumbSchema([{ name: "Home", path: "/" }]),
           howToOrderSchema(),
           flowerDeliveryServiceSchema(),
+          faqSchema(),
           ...(reviewLd ? [reviewLd] : []),
         ]}
       />
@@ -62,6 +65,7 @@ export default function Home() {
       />
       <Reviews />
       <NycPromise />
+      <MarketSeoCopy />
       <section className="site-shell pb-24 md:pb-28">
         <DeliveryChecker />
       </section>

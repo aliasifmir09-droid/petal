@@ -2,6 +2,7 @@ import { products } from "@/lib/catalog";
 import { reviewAggregate, reviews } from "@/lib/ops";
 import { boroughs, christmasFaqs, faqs, site } from "@/lib/site";
 
+/** Google LocalBusiness / Florist — required name + address; recommended NAP, hours, geo, map. */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -10,24 +11,53 @@ export function organizationSchema() {
     name: site.name,
     legalName: site.legalName,
     url: site.url,
-    logo: `${site.url}/icon.png`,
-    image: site.ogImage,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.url}/logo.png`,
+      width: 512,
+      height: 512,
+    },
+    image: [site.ogImage, `${site.url}/logo.png`],
     description: site.description,
     email: site.email,
     telephone: site.phone,
     priceRange: site.priceRange,
+    currenciesAccepted: "USD",
+    paymentAccepted: site.paymentMethods.join(", "),
     address: {
       "@type": "PostalAddress",
-      ...site.address,
+      streetAddress: site.address.streetAddress,
+      addressLocality: site.address.addressLocality,
+      addressRegion: site.address.addressRegion,
+      postalCode: site.address.postalCode,
+      addressCountry: site.address.addressCountry,
     },
     geo: {
       "@type": "GeoCoordinates",
-      ...site.geo,
+      latitude: site.geo.latitude,
+      longitude: site.geo.longitude,
     },
+    hasMap: site.googleBusinessUrl,
     areaServed: boroughs.map((b) => ({
       "@type": "AdministrativeArea",
       name: `${b.name}, New York`,
     })),
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: site.phone,
+        contactType: "customer service",
+        areaServed: "US-NY",
+        availableLanguage: ["English"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: site.phone,
+        contactType: "sales",
+        areaServed: "US-NY",
+        availableLanguage: ["English"],
+      },
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -44,7 +74,25 @@ export function organizationSchema() {
         closes: "20:00",
       },
     ],
-    sameAs: site.sameAs,
+    knowsAbout: [
+      "same-day flower delivery NYC",
+      "Christmas flower delivery New York",
+      "Jackson Heights florist",
+      "luxury bouquets Manhattan Brooklyn Queens Bronx Staten Island",
+    ],
+    potentialAction: {
+      "@type": "OrderAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site.url}/order`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      deliveryMethod: ["http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"],
+    },
+    ...(site.sameAs.length > 0 ? { sameAs: [...site.sameAs] } : {}),
     ...(reviewAggregate.reviewCount > 0
       ? {
           aggregateRating: {
@@ -97,7 +145,10 @@ export function websiteSchema() {
     inLanguage: "en-US",
     potentialAction: {
       "@type": "SearchAction",
-      target: `${site.url}/shop?q={search_term_string}`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site.url}/arrangements?q={search_term_string}`,
+      },
       "query-input": "required name=search_term_string",
     },
   };
@@ -130,15 +181,47 @@ export function productSchema(slug: string) {
       "@type": "Brand",
       name: site.name,
     },
+    category: "Flowers",
     offers: {
       "@type": "Offer",
       url: `${site.url}/shop/${product.slug}`,
       priceCurrency: "USD",
       price: product.price.toFixed(2),
+      priceValidUntil: "2026-12-31",
       availability: product.sameDay
         ? "https://schema.org/InStock"
         : "https://schema.org/PreOrder",
+      availabilityStarts: "2026-12-10",
       itemCondition: "https://schema.org/NewCondition",
+      seller: { "@id": `${site.url}/#organization` },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: String(site.deliveryFeeFrom),
+          currency: "USD",
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+          addressRegion: ["NY"],
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 0,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 1,
+            unitCode: "DAY",
+          },
+        },
+      },
     },
   };
 }
@@ -218,13 +301,13 @@ export function howToOrderSchema() {
       {
         "@type": "HowToStep",
         name: "Confirm delivery details",
-        text: `Enter the NYC ZIP, preferred date, and note. Same-day cutoff is ${site.orderCutoff}; Christmas Eve cutoff is ${site.christmasEveCutoff}.`,
+        text: `Enter the NYC ZIP, preferred date, and note. Same-day cutoff is ${site.orderCutoff}; Christmas Eve cutoff is ${site.christmasEveCutoff}. Taking orders from ${site.ordersStartDate}.`,
         url: `${site.url}/order`,
       },
       {
         "@type": "HowToStep",
         name: "Checkout or call",
-        text: `Add to cart online or call ${site.phoneDisplay} / email ${site.email} to place the order with Petalswift in Jackson Heights.`,
+        text: `Add to cart online or call ${site.phoneDisplay} to place the order with Petalswift in Jackson Heights.`,
         url: `${site.url}/order`,
       },
     ],
@@ -258,7 +341,8 @@ export function flowerDeliveryServiceSchema() {
       url: `${site.url}/christmas`,
       priceCurrency: "USD",
       price: "72.00",
-      availability: "https://schema.org/InStock",
+      availability: "https://schema.org/PreOrder",
+      availabilityStarts: "2026-12-10",
       description: site.holidayNote,
     },
   };

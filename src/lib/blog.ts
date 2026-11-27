@@ -1,3 +1,5 @@
+import { guidePosts } from "@/lib/blog-guides";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,6 +7,8 @@ export type BlogPost = {
   publishedAt: string;
   updatedAt: string;
   borough?: "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island" | "nyc";
+  /** Launch city. Older posts omit this and are New York City. */
+  city?: "nyc" | "los-angeles";
   tags: string[];
   heroImage: string;
   heroAlt: string;
@@ -13,6 +17,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...guidePosts,
   {
     slug: "same-day-flower-delivery-nyc-five-boroughs",
     title: "Same-Day Flower Delivery Across NYC’s Five Boroughs",

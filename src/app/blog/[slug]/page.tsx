@@ -45,12 +45,20 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const related = postsByBorough(post.borough ?? "nyc")
-    .filter((p) => p.slug !== post.slug)
+  const related = (
+    post.city === "los-angeles"
+      ? blogPosts.filter((item) => item.city === "los-angeles")
+      : postsByBorough(post.borough ?? "nyc")
+  )
+    .filter((item) => item.slug !== post.slug)
     .slice(0, 3);
 
-  const boroughLink =
-    post.borough && post.borough !== "nyc" ? `/nyc/${post.borough}` : "/nyc";
+  const isLosAngeles = post.city === "los-angeles";
+  const boroughLink = isLosAngeles
+    ? "/los-angeles"
+    : post.borough && post.borough !== "nyc"
+      ? `/nyc/${post.borough}`
+      : "/nyc";
 
   return (
     <div className="pt-8 md:pt-10">
@@ -98,17 +106,21 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         <div className="mx-auto mt-12 max-w-3xl rounded-xl border border-line bg-porcelain p-6 md:p-8">
-          <p className="font-semibold text-ink">Ready to send flowers in NYC?</p>
+          <p className="font-semibold text-ink">
+            {isLosAngeles
+              ? "Ready to send a bouquet in Los Angeles?"
+              : "Ready to send a bouquet in New York City?"}
+          </p>
           <p className="mt-2 text-sm text-ink-soft">
-            Taking orders from {site.ordersStartDate}. Same-day across five
-            boroughs when ordered by {site.orderCutoff}.
+            Taking orders from {site.ordersStartDate}. Same-day when ordered by{" "}
+            {isLosAngeles ? "4:00pm PT" : site.orderCutoff}.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/arrangements" className="btn-spark">
-              Shop arrangements
+            <Link href="/flower-bouquets" className="btn-spark">
+              Shop flower bouquets
             </Link>
             <Link href={boroughLink} className="btn-brand">
-              Borough guide
+              {isLosAngeles ? "Los Angeles guide" : "Borough guide"}
             </Link>
             <Link href="/qa" className="inline-flex border border-ink/15 px-7 py-3.5 text-sm font-semibold text-ink hover:border-leaf hover:text-leaf">
               NYC Q&amp;A

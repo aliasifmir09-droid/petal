@@ -100,7 +100,7 @@ export function BrandLogo({
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <LogoMark
         tone={markTone}
-        className={`${MARK_SIZE[size]} transition-transform duration-500 ease-out group-hover:rotate-[18deg]`}
+        className={`${MARK_SIZE[size]} lotus-roll`}
       />
       {showWordmark ? (
         <span

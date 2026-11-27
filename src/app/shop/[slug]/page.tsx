@@ -143,6 +143,17 @@ export default async function ProductPage({ params }: Props) {
             <li>Trim stems and change water daily.</li>
             <li>Keep away from heat vents and direct midday sun.</li>
             <li>
+              Full steps:{" "}
+              <Link href="/care/vase-life" className="text-leaf hover:underline">
+                vase-life care guide
+              </Link>{" "}
+              and all{" "}
+              <Link href="/care" className="text-leaf hover:underline">
+                flower care guides
+              </Link>
+              .
+            </li>
+            <li>
               Seasonal substitutions keep the same palette and value—see{" "}
               <Link href="/policies#substitution" className="text-leaf hover:underline">
                 substitution policy
@@ -151,8 +162,19 @@ export default async function ProductPage({ params }: Props) {
             </li>
             <li>
               Quality issues within 24 hours: remake or refund per{" "}
-              <Link href="/policies" className="text-leaf hover:underline">
-                policies
+              <Link href="/returns" className="text-leaf hover:underline">
+                returns & remakes
+              </Link>{" "}
+              and{" "}
+              <Link href="/policies#freshness" className="text-leaf hover:underline">
+                freshness policy
+              </Link>
+              .
+            </li>
+            <li>
+              Delivery fees and windows:{" "}
+              <Link href="/shipping" className="text-leaf hover:underline">
+                shipping & delivery
               </Link>
               .
             </li>

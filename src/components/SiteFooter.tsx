@@ -6,7 +6,7 @@ import { boroughs, site } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-leaf-deep text-porcelain">
-      <div className="site-shell grid gap-14 py-20 md:grid-cols-[1.5fr_1fr_1fr_1.1fr] md:gap-16 md:py-24">
+      <div className="site-shell grid gap-14 py-20 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_0.9fr_1.1fr] md:gap-12 md:py-24">
         <div>
           <BrandLogo variant="on-dark" size="lg" href="/" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-porcelain/72">
@@ -46,16 +46,6 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/delivery" className="hover:text-porcelain">
-                Fees & windows
-              </Link>
-            </li>
-            <li>
-              <Link href="/policies" className="hover:text-porcelain">
-                Policies
-              </Link>
-            </li>
-            <li>
               <Link href="/gallery" className="hover:text-porcelain">
                 Photo gallery
               </Link>
@@ -81,16 +71,6 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/sizes" className="hover:text-porcelain">
-                Size guide
-              </Link>
-            </li>
-            <li>
-              <Link href="/updates" className="hover:text-porcelain">
-                Email & SMS
-              </Link>
-            </li>
-            <li>
               <Link href="/about" className="hover:text-porcelain">
                 Our Atelier
               </Link>
@@ -106,13 +86,61 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-porcelain">
-                Privacy
+              <Link href="/qa" className="hover:text-porcelain">
+                NYC Q&amp;A
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-porcelain">
-                Terms
+              <Link href="/blog" className="hover:text-porcelain">
+                Flower blog
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-[0.7rem] uppercase tracking-[0.2em] text-porcelain/50">
+            Customer service
+          </p>
+          <ul className="mt-4 space-y-2.5 text-sm text-porcelain/85">
+            <li>
+              <Link href="/contact" className="hover:text-porcelain">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/shipping" className="hover:text-porcelain">
+                Shipping & delivery
+              </Link>
+            </li>
+            <li>
+              <Link href="/delivery" className="hover:text-porcelain">
+                Fees & windows
+              </Link>
+            </li>
+            <li>
+              <Link href="/delivery-zips" className="hover:text-porcelain">
+                Delivery ZIP codes
+              </Link>
+            </li>
+            <li>
+              <Link href="/returns" className="hover:text-porcelain">
+                Returns & remakes
+              </Link>
+            </li>
+            <li>
+              <Link href="/care" className="hover:text-porcelain">
+                Flower care guides
+              </Link>
+            </li>
+            <li>
+              <Link href="/sizes" className="hover:text-porcelain">
+                Size guide
+              </Link>
+            </li>
+            <li>
+              <Link href="/updates" className="hover:text-porcelain">
+                Order updates
               </Link>
             </li>
             <li>
@@ -121,13 +149,28 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/qa" className="hover:text-porcelain">
-                NYC Q&amp;A
+              <Link href="/policies" className="hover:text-porcelain">
+                Policies
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-porcelain">
-                Flower blog
+              <Link href="/accessibility" className="hover:text-porcelain">
+                Accessibility
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="hover:text-porcelain">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link href="/cookies" className="hover:text-porcelain">
+                Cookies
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-porcelain">
+                Terms
               </Link>
             </li>
           </ul>

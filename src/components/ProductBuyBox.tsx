@@ -119,6 +119,23 @@ export function ProductBuyBox({ product }: { product: Product }) {
 
       <ul className="mt-6 space-y-2 text-sm text-ink-soft">
         <li>
+          <Link href="/shipping" className="text-leaf hover:underline">
+            Shipping
+          </Link>
+          {" · "}
+          <Link href="/returns" className="text-leaf hover:underline">
+            Returns
+          </Link>
+          {" · "}
+          <Link href="/care" className="text-leaf hover:underline">
+            Care guides
+          </Link>
+          {" · "}
+          <Link href="/contact" className="text-leaf hover:underline">
+            Contact
+          </Link>
+        </li>
+        <li>
           <Link href="/policies#substitution" className="text-leaf hover:underline">
             Substitution rules
           </Link>

@@ -9,13 +9,14 @@ import {
   type SellerAccount,
 } from "@/lib/sellers";
 import { boroughs, site } from "@/lib/site";
+import { postInquiry } from "@/lib/post-inquiry";
 
 export function SellerApplyForm() {
   const router = useRouter();
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
     setSaving(true);
@@ -70,35 +71,36 @@ export function SellerApplyForm() {
       return;
     }
 
-    const subject = encodeURIComponent(`Shop owner application: ${name}`);
-    const body = encodeURIComponent(
-      [
-        `New Petalswift marketplace seller application`,
-        ``,
-        `Shop: ${name}`,
-        `Owner: ${ownerName}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Borough: ${borough}`,
-        `Neighborhood: ${neighborhood}`,
-        `Address: ${addressLine}`,
-        `Same-day: ${sameDay ? "yes" : "no"}`,
-        `Specialties: ${account.shop.specialties.join(", ")}`,
-        ``,
-        blurb,
-        ``,
-        `Commission: ${PLATFORM_COMMISSION_PERCENT}% platform fee`,
-        `Local seller dashboard: ${site.url}/sell/account`,
-      ].join("\n"),
-    );
-    // Stash a ready-to-send ops email; dashboard offers the mailto (no blank popup).
-    try {
-      sessionStorage.setItem(
-        "petalswift-seller-mailto",
-        `mailto:${site.email}?subject=${subject}&body=${body}`,
-      );
-    } catch {
-      /* ignore */
+    const subject = `Shop owner application: ${name}`;
+    const body = [
+      `New Petalswift marketplace seller application`,
+      ``,
+      `Shop: ${name}`,
+      `Owner: ${ownerName}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Borough: ${borough}`,
+      `Neighborhood: ${neighborhood}`,
+      `Address: ${addressLine}`,
+      `Same-day: ${sameDay ? "yes" : "no"}`,
+      `Specialties: ${account.shop.specialties.join(", ")}`,
+      ``,
+      blurb,
+      ``,
+      `Commission: ${PLATFORM_COMMISSION_PERCENT}% platform fee`,
+      `Local seller dashboard: ${site.url}/sell/account`,
+    ].join("\n");
+    const sent = await postInquiry({
+      kind: "seller",
+      name: ownerName,
+      email,
+      subject,
+      message: body,
+    });
+    if (!sent.ok) {
+      setError(sent.error);
+      setSaving(false);
+      return;
     }
     router.push("/sell/account");
   }

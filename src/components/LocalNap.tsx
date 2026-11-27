@@ -30,6 +30,7 @@ export function LocalNap({ className = "", compact = false }: LocalNapProps) {
         <p className={compact ? "font-semibold text-ink" : "mt-3 font-semibold text-ink"}>
           <span itemProp="name">{site.name}</span>
         </p>
+        <p className="mt-1 text-ink">{site.legalName}</p>
         <p
           className="mt-2"
           itemProp="address"

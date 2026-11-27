@@ -10,8 +10,8 @@ export function SiteFooter() {
         <div>
           <BrandLogo variant="on-dark" size="lg" href="/" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-porcelain/72">
-            Luxury flowers and composed bouquets for New York City—arranged
-            delivered across New York City and Los Angeles.
+            Luxury flowers and composed bouquets for New York City and Los
+            Angeles.
           </p>
         </div>
 
@@ -250,7 +250,9 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="site-shell flex flex-col gap-2 py-5 text-xs text-porcelain/50 md:flex-row md:justify-between">
-          <p>© 2026 {site.name}. All rights reserved.</p>
+          <p>
+            © 2026 {site.legalName}. {site.name} is a brand of {site.legalName}.
+          </p>
           <p>
             Taking orders from {site.ordersStartDate} · Same-day by{" "}
             {site.orderCutoff}

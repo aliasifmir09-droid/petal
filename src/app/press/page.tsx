@@ -89,10 +89,11 @@ export default function PressPage() {
           <div>
             <h2 className="font-display text-2xl text-ink">Boilerplate</h2>
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              Petalswift is a New York City same-day flower marketplace and
-              florist for New York City and Los Angeles. We compose Classic,
-              Signature, and Grand arrangements and deliver across Manhattan,
-              Brooklyn, Queens, the Bronx, and Staten Island. Taking orders from{" "}
+              {site.name} is a brand of {site.legalName}. Petalswift is a
+              same-day flower marketplace for New York City and Los Angeles. We
+              compose Classic, Signature, and Grand arrangements and deliver
+              across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island,
+              and across the City of Los Angeles. Taking orders from{" "}
               {site.ordersStartDate}.
             </p>
             <p className="mt-4 text-sm text-ink-soft">

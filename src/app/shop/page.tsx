@@ -6,7 +6,7 @@ import { ShopMarketplace } from "@/components/ShopMarketplace";
 import { breadcrumbSchema, itemListSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Flower Marketplace — Same-Day NYC Bouquets",
+  title: "Flower Marketplace — NYC and Los Angeles",
   description:
     "Shop the Petalswift flower marketplace: birthday, anniversary, sympathy, corporate and same-day bouquets delivered across New York City and Los Angeles.",
   alternates: { canonical: "/shop" },
@@ -33,7 +33,7 @@ export default function ShopPage() {
         </Link>
       </div>
       <ShopMarketplace
-        heading="A flower marketplace composed for New York."
+        heading="A flower marketplace for New York City and Los Angeles."
         intro="Browse every arrangement option—occasion, style, color, bloom, recipient, same-day and next-day—then send something considered."
       />
       <div className="site-shell pb-24">

@@ -22,12 +22,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/llms.txt", "/facts", ...marketPaths],
+        allow: ["/", "/llms.txt", "/ai.txt", "/facts", ...marketPaths],
         disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {
         userAgent: "Googlebot",
-        allow: ["/", "/llms.txt", "/facts", ...marketPaths],
+        allow: ["/", "/llms.txt", "/ai.txt", "/facts", ...marketPaths],
         disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {

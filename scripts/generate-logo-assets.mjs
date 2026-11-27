@@ -7,35 +7,27 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(root, "public");
 
 const petalPath =
-  "M0 2.2C7.4-0.4 13.6-8 11.4-15.6C9.6-21.6 4.2-23.6 0-24.4C-4.2-23.6-9.6-21.6-11.4-15.6C-13.6-8-7.4-0.4 0 2.2Z";
+  "M0-3.2C6.2-8.4 12.4-17.6 9.2-25.2C6.8-30.6 2.2-30.2 0-27.6C-2.2-30.2-6.8-30.6-9.2-25.2C-12.4-17.6-6.2-8.4 0-3.2Z";
 
-function bloom({ fills, scale = 1, cx = 0, cy = 0 }) {
-  const outer = [0, 45, 90, 135, 180, 225, 270, 315];
-  const petals = outer
+function bloom({ outer, inner, scale = 1, cx = 0, cy = 0 }) {
+  const angles = [0, 60, 120, 180, 240, 300];
+  const petals = angles
     .map(
-      (angle, i) =>
-        `<path transform="rotate(${angle})" fill="${fills[i % fills.length]}" d="${petalPath}"/>`,
+      (angle) =>
+        `<path transform="rotate(${angle})" fill="${outer}" d="${petalPath}"/>`,
     )
     .join("");
-  const inner = outer
-    .map((angle, i) => {
-      const fill = fills[(i + 2) % fills.length];
-      return `<path transform="rotate(${angle + 22.5}) scale(0.72)" fill="${fill}" d="${petalPath}"/>`;
-    })
+  const innerPetals = angles
+    .map(
+      (angle) =>
+        `<path transform="rotate(${angle + 30}) scale(0.56)" fill="${inner}" d="${petalPath}"/>`,
+    )
     .join("");
-  const seeds = [0, 60, 120, 180, 240, 300]
-    .map((angle) => {
-      const rad = (angle * Math.PI) / 180;
-      const x = (Math.cos(rad) * 4.15).toFixed(2);
-      const y = (Math.sin(rad) * 4.15).toFixed(2);
-      return `<circle cx="${x}" cy="${y}" r="1.15" fill="#C4841D"/>`;
-    })
-    .join("");
-  return `<g transform="translate(${cx} ${cy}) scale(${scale})">${petals}${inner}<circle r="8.2" fill="#FFC220"/>${seeds}<circle r="1.35" fill="#E09A1A"/></g>`;
+  return `<g transform="translate(${cx} ${cy}) scale(${scale})">${petals}${innerPetals}<circle r="5.2" fill="#FFC220"/><circle cx="-1.15" cy="-1.25" r="1.55" fill="#FFF6D0"/></g>`;
 }
 
-const bright = ["#E8F3FF", "#8EC5FF", "#FFFFFF", "#B8DBFF"];
-const deep = ["#1F7FE8", "#005CBC", "#2B8AF0", "#004F9A"];
+const bright = { outer: "#FFFFFF", inner: "#D6EBFF" };
+const deep = { outer: "#0071DC", inner: "#004F9A" };
 const FONT =
   "'Instrument Serif', Georgia, 'Times New Roman', serif";
 
@@ -48,7 +40,7 @@ const iconSvg = (size) => `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="${Math.round(size > 64 ? 96 : 72)}" fill="url(#ps-tile)"/>
-  ${bloom({ fills: bright, scale: 8, cx: 256, cy: 256 })}
+  ${bloom({ ...bright, scale: 6.7, cx: 256, cy: 256 })}
 </svg>`;
 
 /**
@@ -64,14 +56,14 @@ const logoLockupSvg = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect width="1200" height="400" rx="48" fill="url(#ps-banner)"/>
-  ${bloom({ fills: bright, scale: 5.4, cx: 370, cy: 200 })}
+  ${bloom({ ...bright, scale: 4.6, cx: 360, cy: 200 })}
   <text x="563" y="200" dominant-baseline="middle" font-family="${FONT}" font-size="128" letter-spacing="-3.2" fill="#FFFFFF">Petalswift</text>
 </svg>`;
 
 /** Transparent horizontal wordmark for light backgrounds — content centered in frame. */
 const wordmarkSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 600 160">
-  ${bloom({ fills: deep, scale: 2.15, cx: 86, cy: 80 })}
+  ${bloom({ ...deep, scale: 1.75, cx: 74, cy: 80 })}
   <text x="156" y="80" dominant-baseline="middle" font-family="${FONT}" font-size="78" letter-spacing="-1.8" fill="#0F1C2E">Petalswift</text>
 </svg>`;
 
@@ -85,7 +77,7 @@ const logoSquareSvg = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="96" fill="url(#ps-tile)"/>
-  ${bloom({ fills: bright, scale: 8, cx: 256, cy: 256 })}
+  ${bloom({ ...bright, scale: 6.7, cx: 256, cy: 256 })}
 </svg>`;
 
 async function writeSquarePng(name, svg, size) {
@@ -115,7 +107,7 @@ async function writeSvgPng(name, svg, width, height) {
 async function main() {
   const markSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Petalswift lotus">
-  ${bloom({ fills: deep, scale: 1.18, cx: 32, cy: 32 })}
+  ${bloom({ ...deep, scale: 0.98, cx: 32, cy: 32 })}
 </svg>`;
   writeFileSync(join(publicDir, "logo-mark.svg"), markSvg);
   writeFileSync(join(publicDir, "logo.svg"), logoLockupSvg);

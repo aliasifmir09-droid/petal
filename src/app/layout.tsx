@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Outfit } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { HolidayOpsBanner } from "@/components/HolidayOpsBanner";
+import { MarketIdentity } from "@/components/MarketIdentity";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -139,6 +140,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <SiteHeader />
           <HolidayOpsBanner />
           <main className="flex-1">{children}</main>
+          <MarketIdentity />
           <SiteFooter />
         </CartProvider>
       </body>

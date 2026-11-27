@@ -30,8 +30,9 @@ export default function TermsPage() {
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-ink-soft">
           <p>
-            By ordering from Petalswift you agree to the product descriptions,
-            published delivery fees/windows, and policies at{" "}
+            {site.name} is operated by {site.legalName}. By ordering from
+            Petalswift you agree to the product descriptions, published delivery
+            fees and windows, and policies at{" "}
             <Link href="/policies" className="text-leaf hover:underline">
               /policies
             </Link>

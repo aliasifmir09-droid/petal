@@ -30,9 +30,10 @@ export default function PrivacyPage() {
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-ink-soft">
           <p>
-            Petalswift ({site.address.streetAddress}, {site.address.addressLocality},{" "}
-            {site.address.addressRegion} {site.address.postalCode}) collects the
-            information needed to fulfill flower orders and support customers.
+            {site.legalName} operates {site.name} ({site.address.streetAddress},{" "}
+            {site.address.addressLocality}, {site.address.addressRegion}{" "}
+            {site.address.postalCode}) and collects the information needed to
+            fulfill flower orders and support customers.
           </p>
           <p>
             We may collect name, email, phone, delivery address, ZIP, order

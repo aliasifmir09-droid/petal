@@ -4,7 +4,7 @@ export const defaultTitle =
 
 export const site = {
   name: "Petalswift",
-  legalName: "Petalswift",
+  legalName: "AJ Fashion Inc",
   url: "https://www.petalswift.com",
   email: "hello@petalswift.com",
   /** Local-part + domain kept separate so UI can mask plain-text harvest. */

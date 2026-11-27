@@ -36,11 +36,11 @@ export default function AboutPage() {
             A flower brand New York City can trust at a glance.
           </h1>
           <p className="mt-7 text-base leading-relaxed text-ink-soft md:text-lg">
-            Petalswift exists for people who want flowers to feel considered—not
-            transactional. We compose with restraint, source for longevity, and
-            deliver in New York City and Los Angeles. Office:{" "}
-            {site.address.streetAddress}, {site.address.addressLocality},{" "}
-            {site.address.addressRegion} {site.address.postalCode}.
+            Petalswift is a brand of {site.legalName}. We compose with
+            restraint, source for longevity, and deliver in New York City and
+            Los Angeles. Office: {site.address.streetAddress},{" "}
+            {site.address.addressLocality}, {site.address.addressRegion}{" "}
+            {site.address.postalCode}.
           </p>
           <p className="mt-4 text-base leading-relaxed text-ink-soft md:text-lg">
             When someone receives a Petalswift arrangement, they should feel the

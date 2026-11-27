@@ -27,9 +27,15 @@ Petalswift composes and delivers holiday and everyday bouquets across all five N
 - [All arrangements](https://www.petalswift.com/arrangements): Full marketplace with style, color, bloom, recipient filters
 - [Marketplace](https://www.petalswift.com/shop): Browse bouquets
 - [NYC delivery](https://www.petalswift.com/delivery): Borough delivery + ZIP checker
+- [Shipping & delivery](https://www.petalswift.com/shipping): Fees, cutoffs, handoffs explained
+- [Delivery ZIP codes](https://www.petalswift.com/delivery-zips): Representative five-borough ZIP lists
+- [Contact](https://www.petalswift.com/contact): Phone, email, hours, message form
+- [Returns & remakes](https://www.petalswift.com/returns): 24-hour freshness remake/refund process
+- [Flower care guides](https://www.petalswift.com/care): Vase life, hand-tied, sympathy, delivery day
 - [FAQ](https://www.petalswift.com/faq): Delivery, freshness, corporate, Christmas ops
-- [Delivery fees](https://www.petalswift.com/delivery): Borough fees and time windows
 - [Policies](https://www.petalswift.com/policies): Refund, cancellation, substitution, freshness
+- [Accessibility](https://www.petalswift.com/accessibility): Assistance and barrier reporting
+- [Cookies](https://www.petalswift.com/cookies): Cookie and storage notice
 - [Sizes](https://www.petalswift.com/sizes): Classic, Signature, Grand explained
 - [Order updates](https://www.petalswift.com/updates): Email and SMS notifications
 - [About](https://www.petalswift.com/about): Atelier story and florist photography

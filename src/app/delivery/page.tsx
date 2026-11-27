@@ -73,7 +73,15 @@ export default function DeliveryPage() {
           <a href={`tel:${site.phone}`} className="text-leaf hover:underline">
             {site.phoneDisplay}
           </a>
-          . See{" "}
+          . Browse{" "}
+          <Link href="/delivery-zips" className="text-leaf hover:underline">
+            ZIP codes by borough
+          </Link>
+          , read{" "}
+          <Link href="/shipping" className="text-leaf hover:underline">
+            shipping & delivery
+          </Link>
+          , or see{" "}
           <Link href="/policies" className="text-leaf hover:underline">
             refund & freshness policies
           </Link>

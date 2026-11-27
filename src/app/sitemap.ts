@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
+import { careGuides } from "@/lib/care-guides";
 import { occasions, products, styles } from "@/lib/catalog";
 import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { qaItems } from "@/lib/qa";
@@ -21,6 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/faq", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/policies", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/contact", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/shipping", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/returns", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/care", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/delivery-zips", priority: 0.75, changeFrequency: "monthly" as const },
+    { path: "/accessibility", priority: 0.5, changeFrequency: "yearly" as const },
+    { path: "/cookies", priority: 0.5, changeFrequency: "yearly" as const },
     { path: "/privacy", priority: 0.5, changeFrequency: "yearly" as const },
     { path: "/terms", priority: 0.5, changeFrequency: "yearly" as const },
     { path: "/sizes", priority: 0.7, changeFrequency: "monthly" as const },
@@ -98,6 +106,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const careRoutes = careGuides.map((guide) => ({
+    url: `${base}/care/${guide.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes,
     ...productRoutes,
@@ -108,5 +123,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sellerRoutes,
     ...blogRoutes,
     ...qaRoutes,
+    ...careRoutes,
   ];
 }

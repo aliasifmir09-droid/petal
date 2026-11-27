@@ -1,0 +1,11 @@
+{
+  "name": "petal",
+  "install": "./.cursor/install.sh",
+  "start": "./.cursor/start.sh",
+  "ports": [
+    {
+      "name": "web",
+      "port": 3000
+    }
+  ]
+}

@@ -1,3 +1,10 @@
+import {
+  getLaArea,
+  getLaNeighborhood,
+  laMarketLandings,
+  laNeighborhoodPath,
+  losAngeles,
+} from "@/lib/los-angeles";
 import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { deliveryFeeForBorough } from "@/lib/ops";
 import { site } from "@/lib/site";
@@ -11,7 +18,11 @@ export type MarketLanding = {
   kicker: string;
   lead: string;
   details: string[];
+  /** Schema city. New York City is the default for existing pages. */
+  cityName?: "New York City" | "Los Angeles";
   boroughSlug?: string;
+  /** Los Angeles area slug when this page is not a New York City borough page. */
+  areaSlug?: string;
   neighborhoodSlug?: string;
 };
 
@@ -70,7 +81,7 @@ export const marketLandings: MarketLanding[] = [
       "Looking for flowers near you in NYC? Petalswift delivers from Jackson Heights to Queens, Brooklyn, Manhattan, the Bronx, and Staten Island.",
     h1: "Flowers near you in New York City.",
     kicker: "Local atelier · citywide delivery",
-    lead: "If you are in New York and searching for flowers nearby, Petalswift’s atelier is in Jackson Heights, Queens. Delivery—not a walk-in cooler—is how most orders arrive.",
+    lead: "If you are in New York City and searching for flowers nearby, Petalswift’s atelier is in Jackson Heights, Queens. Delivery—not a walk-in cooler—is how most orders arrive.",
     details: [
       "Same-day in the neighborhood list below when ordered by 1:00pm ET.",
       "Enter a ZIP on the homepage to confirm we cover it.",
@@ -82,7 +93,7 @@ export const marketLandings: MarketLanding[] = [
     title: "Luxury Bouquets NYC",
     description:
       "Luxury bouquets in NYC: Classic, Signature, and Grand compositions from $72, arranged in Jackson Heights and delivered same-day.",
-    h1: "Luxury bouquets, composed for New York rooms.",
+    h1: "Luxury bouquets, composed for New York City rooms.",
     kicker: "Classic · Signature · Grand",
     lead: "Price follows stem count and presence in the room. Classic is about 15–20 stems, Signature 25–35, and Grand is statement scale for tables, suites, and client gifts.",
     details: [
@@ -406,6 +417,7 @@ export const marketLandings: MarketLanding[] = [
       "The Bushwick guide covers the handoff details.",
     ],
   },
+  ...laMarketLandings,
 ];
 
 export function getMarketLanding(slug: string) {
@@ -420,8 +432,25 @@ export function marketLandingLinks(page: MarketLanding) {
   const links: { href: string; label: string }[] = [
     { href: "/arrangements", label: "Shop arrangements" },
     { href: "/delivery", label: "Fees and windows" },
-    { href: "/nyc", label: "NYC neighborhood guides" },
   ];
+  if (page.areaSlug) {
+    links.push({ href: losAngeles.path, label: "Los Angeles guides" });
+    links.push({
+      href: `/los-angeles/${page.areaSlug}`,
+      label: "Area delivery guide",
+    });
+    if (page.neighborhoodSlug) {
+      const neighborhood = getLaNeighborhood(page.areaSlug, page.neighborhoodSlug);
+      if (neighborhood) {
+        links.push({
+          href: laNeighborhoodPath(neighborhood),
+          label: `${neighborhood.name} guide`,
+        });
+      }
+    }
+    return links;
+  }
+  links.push({ href: "/nyc", label: "New York City guides" });
   if (page.boroughSlug) {
     links.push({
       href: `/nyc/${page.boroughSlug}`,
@@ -443,6 +472,11 @@ export function marketLandingLinks(page: MarketLanding) {
 }
 
 export function marketLandingFee(page: MarketLanding) {
+  if (page.areaSlug) {
+    const area = getLaArea(page.areaSlug);
+    return area ? { fee: area.fee, sameDayWindow: area.sameDayWindow } : null;
+  }
   if (!page.boroughSlug) return null;
-  return deliveryFeeForBorough(page.boroughSlug);
+  const zone = deliveryFeeForBorough(page.boroughSlug);
+  return zone ? { fee: zone.fee, sameDayWindow: zone.sameDayWindow } : null;
 }

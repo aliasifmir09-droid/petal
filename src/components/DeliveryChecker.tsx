@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { lookupLaZip, losAngeles } from "@/lib/los-angeles";
 import { deliveryFeeForBorough } from "@/lib/ops";
 import { boroughs, site } from "@/lib/site";
 
@@ -44,9 +45,32 @@ export function DeliveryChecker({ compact = false }: { compact?: boolean }) {
   const result = useMemo(() => {
     const clean = zip.replace(/\D/g, "").slice(0, 5);
     if (clean.length < 5) return null;
-    const eligible = nycZips.has(clean);
-    const borough = guessBorough(clean);
-    return { clean, eligible, borough };
+    if (nycZips.has(clean)) {
+      const borough = guessBorough(clean);
+      const zone = borough ? deliveryFeeForBorough(borough) : null;
+      return {
+        clean,
+        eligible: true as const,
+        place: borough,
+        city: "New York City" as const,
+        fee: zone?.fee ?? null,
+        window: zone?.sameDayWindow ?? null,
+        cutoff: site.orderCutoff,
+      };
+    }
+    const la = lookupLaZip(clean);
+    if (la) {
+      return {
+        clean,
+        eligible: true as const,
+        place: la.label,
+        city: "Los Angeles" as const,
+        fee: la.area.fee,
+        window: la.area.sameDayWindow,
+        cutoff: losAngeles.orderCutoff,
+      };
+    }
+    return { clean, eligible: false as const };
   }, [zip]);
 
   return (
@@ -64,7 +88,8 @@ export function DeliveryChecker({ compact = false }: { compact?: boolean }) {
         Can we reach them today?
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-        Enter a NYC ZIP. Same-day when ordered by {site.orderCutoff}.
+        Enter a New York City or Los Angeles ZIP. Same-day by {site.orderCutoff}{" "}
+        in New York City, or {losAngeles.orderCutoff} in Los Angeles.
       </p>
       <form
         className="mt-5 flex flex-col gap-3 sm:flex-row"
@@ -106,17 +131,18 @@ export function DeliveryChecker({ compact = false }: { compact?: boolean }) {
           {result.eligible ? (
             <>
               Yes — we deliver to {result.clean}
-              {result.borough ? ` (${result.borough})` : ""}. Same-day available
-              when ordered by {site.orderCutoff}
-              {result.borough && deliveryFeeForBorough(result.borough)
-                ? ` · Fee $${deliveryFeeForBorough(result.borough)!.fee} · Window ${deliveryFeeForBorough(result.borough)!.sameDayWindow}`
+              {result.place ? ` (${result.place}, ${result.city})` : ""}. Same-day
+              available when ordered by {result.cutoff}
+              {result.fee && result.window
+                ? ` · Fee $${result.fee} · Window ${result.window}`
                 : ""}
               .
             </>
           ) : (
             <>
-              That ZIP is outside our NYC service area. We currently deliver
-              across {boroughs.map((b) => b.name).join(", ")}.
+              That ZIP is outside the cities we deliver to now. We start in New
+              York City ({boroughs.map((b) => b.name).join(", ")}) and in the
+              City of Los Angeles.
             </>
           )}
         </p>

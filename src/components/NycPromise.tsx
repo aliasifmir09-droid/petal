@@ -26,15 +26,16 @@ export function NycPromise() {
       <div className="site-shell section-gap">
         <div className="max-w-2xl">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-petal">
-            Built for New York
+            Built for New York City
           </p>
           <h2 className="font-display mt-5 text-4xl leading-[1.02] tracking-[-0.035em] md:text-6xl">
             Trust, earned in hours—not ads.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-porcelain/72 md:text-lg">
-            New Yorkers judge florists on punctuality, freshness, and presence.
-            Petalswift is designed around those three—from Jackson Heights to
-            every borough.
+            New York City and Los Angeles customers judge florists on
+            punctuality, freshness, and presence. Petalswift is designed around
+            those three—from Jackson Heights across New York City, and across
+            Los Angeles.
           </p>
         </div>
 

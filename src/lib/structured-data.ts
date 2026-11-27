@@ -13,9 +13,9 @@ export function organizationSchema() {
     url: site.url,
     logo: {
       "@type": "ImageObject",
-      url: `${site.url}/logo.png`,
-      width: 1200,
-      height: 400,
+      url: `${site.url}/icon.png`,
+      width: 512,
+      height: 512,
     },
     image: [site.ogImage, `${site.url}/logo.png`, `${site.url}/icon.png`],
     description: site.description,

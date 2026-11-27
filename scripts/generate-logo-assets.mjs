@@ -106,7 +106,7 @@ async function writeSvgPng(name, svg, width, height) {
 
 async function main() {
   const markSvg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Petalswift lotus">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Petalswift flower">
   ${bloom({ ...deep, scale: 0.98, cx: 32, cy: 32 })}
 </svg>`;
   writeFileSync(join(publicDir, "logo-mark.svg"), markSvg);
@@ -120,6 +120,43 @@ async function main() {
   await writeSvgPng("logo-wordmark.png", wordmarkSvg, 1200, 320);
   await writeSquarePng("apple-touch-icon.png", iconSvg(180), 180);
   await writeSquarePng("favicon-32.png", iconSvg(32), 32);
+  await writeSquarePng("favicon-48.png", iconSvg(48), 48);
+  await writeFaviconIco();
+}
+
+/** Google reads /favicon.ico and wants a square multiple of 48px. PNG-inside-ICO. */
+async function writeFaviconIco() {
+  const sizes = [48, 32, 16];
+  const pngs = await Promise.all(
+    sizes.map(async (size) => {
+      const buffer = await sharp(Buffer.from(iconSvg(size)))
+        .resize(size, size)
+        .png()
+        .toBuffer();
+      return { size, buffer };
+    }),
+  );
+  const count = pngs.length;
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0);
+  header.writeUInt16LE(1, 2);
+  header.writeUInt16LE(count, 4);
+  let offset = 6 + 16 * count;
+  const entries = pngs.map(({ size, buffer }) => {
+    const entry = Buffer.alloc(16);
+    entry.writeUInt8(size >= 256 ? 0 : size, 0);
+    entry.writeUInt8(size >= 256 ? 0 : size, 1);
+    entry.writeUInt16LE(1, 4);
+    entry.writeUInt16LE(32, 6);
+    entry.writeUInt32LE(buffer.length, 8);
+    entry.writeUInt32LE(offset, 12);
+    offset += buffer.length;
+    return entry;
+  });
+  const ico = Buffer.concat([header, ...entries, ...pngs.map((png) => png.buffer)]);
+  const dest = join(root, "src", "app", "favicon.ico");
+  writeFileSync(dest, ico);
+  console.log(`wrote src/app/favicon.ico (${ico.length} bytes)`);
 }
 
 main().catch((err) => {

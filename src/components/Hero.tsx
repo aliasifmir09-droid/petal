@@ -4,14 +4,14 @@ import { site } from "@/lib/site";
 
 const promos = [
   {
-    href: "/christmas",
+    href: "/flower-bouquets",
     badge: `Orders from ${site.ordersStartShort}`,
-    title: "Same-day flower delivery NYC",
-    cta: "Shop Christmas",
+    title: "Petalswift flower bouquets",
+    cta: "Shop bouquets",
     tone: "light" as const,
     image:
       "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Christmas floral arrangement",
+    imageAlt: "Petalswift flower bouquet",
   },
   {
     href: "/arrangements",

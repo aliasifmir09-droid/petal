@@ -1,6 +1,6 @@
 /** SEO title target: 50–60 characters (audit). */
 export const defaultTitle =
-  "New York City and Los Angeles Florist | Petalswift";
+  "Petalswift | Flower Bouquets, New York City and LA";
 
 export const site = {
   name: "Petalswift",

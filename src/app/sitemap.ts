@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/los-angeles", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/faq", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/facts", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/policies", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/shipping", priority: 0.85, changeFrequency: "monthly" as const },

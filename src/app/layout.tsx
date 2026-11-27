@@ -136,6 +136,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en-US"
       className={`${outfit.variable} ${instrument.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Petalswift facts" />
+      </head>
       <body className="min-h-full flex flex-col">
         <CartProvider>
           <Analytics />

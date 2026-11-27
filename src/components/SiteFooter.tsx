@@ -71,6 +71,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/facts" className="hover:text-porcelain">
+                Official facts
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="hover:text-porcelain">
                 Our Atelier
               </Link>

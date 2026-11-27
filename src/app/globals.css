@@ -180,6 +180,17 @@ body {
   }
 }
 
+@keyframes lotus-roll {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lotus-roll {
+  animation: lotus-roll 12s linear infinite;
+  transform-origin: center;
+}
+
 @keyframes drift {
   from {
     transform: scale(1.03) translate3d(0, 0, 0);
@@ -199,7 +210,8 @@ body {
   .reveal-delay-2,
   .reveal-delay-3,
   .hero-media,
-  .img-zoom {
+  .img-zoom,
+  .lotus-roll {
     animation: none !important;
     transition: none !important;
   }

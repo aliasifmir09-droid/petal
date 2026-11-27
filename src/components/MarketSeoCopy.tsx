@@ -14,12 +14,14 @@ export function MarketSeoCopy() {
             Same-day flower delivery in New York City
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-            Petalswift is a Jackson Heights florist for same-day flower delivery
-            across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.
-            We compose Classic, Signature, and Grand bouquets to order—Christmas
+            Petalswift delivers same-day flowers in New York City and in the
+            City of Los Angeles. In New York City we compose Classic, Signature,
+            and Grand bouquets at our Jackson Heights studio—Christmas
             centerpieces, hatboxes, lily-free gifts, and corporate lobby
-            florals—then hand them off with published borough fees and email/SMS
-            updates. Taking orders from {site.ordersStartDate}.
+            florals—then hand them off with published borough fees. Los Angeles
+            neighborhoods inside the city have their own fees and a 1:00pm PT
+            cutoff. Taking orders from {site.ordersStartDate}. More cities, then
+            nationwide delivery, come after these two.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-ink-soft md:text-base">
             <li>
@@ -42,8 +44,14 @@ export function MarketSeoCopy() {
               — from ${site.deliveryFeeFrom}, order by {site.orderCutoff}.
             </li>
             <li>
+              <Link href="/los-angeles" className="font-semibold text-leaf hover:underline">
+                Los Angeles flower delivery
+              </Link>{" "}
+              — City of Los Angeles neighborhoods, fees from $16, order by 1:00pm PT.
+            </li>
+            <li>
               <Link href="/nyc" className="font-semibold text-leaf hover:underline">
-                Borough flower delivery guides
+                New York City borough guides
               </Link>{" "}
               — Manhattan through Staten Island.
             </li>

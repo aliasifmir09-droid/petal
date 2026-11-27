@@ -7,9 +7,9 @@ import { boroughs, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "NYC Flower Delivery Fees & Windows",
+  title: "New York City Flower Delivery Fees",
   description:
-    "Petalswift same-day flower delivery fees and time windows for Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. Order by 1pm ET.",
+    "Petalswift same-day flower delivery fees and time windows for New York City: Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. Order by 1pm ET.",
   alternates: { canonical: "/delivery" },
 };
 
@@ -19,21 +19,25 @@ export default function DeliveryPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "NYC Delivery", path: "/delivery" },
+          { name: "New York City delivery", path: "/delivery" },
         ])}
       />
 
       <section className="site-shell pb-12">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
-          NYC Delivery
+          New York City delivery
         </p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl tracking-[-0.035em] text-ink md:text-7xl">
-          Delivery fees and windows—shown upfront.
+          New York City fees and windows—shown upfront.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Order by {site.orderCutoff} for same-day. Christmas Eve cutoff{" "}
-          {site.christmasEveCutoff}. Fees are flat by borough—no surprise
-          surcharges at the door.
+          Order by {site.orderCutoff} for same-day in New York City. Christmas Eve
+          cutoff {site.christmasEveCutoff}. Fees are flat by borough—no surprise
+          surcharges at the door. Los Angeles uses its own area fees;{" "}
+          <Link href="/los-angeles" className="font-semibold text-leaf hover:underline">
+            see Los Angeles
+          </Link>
+          .
         </p>
       </section>
 

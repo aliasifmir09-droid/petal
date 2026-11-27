@@ -25,7 +25,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "NYC Same-Day Flower Delivery | Petalswift · Florist",
+    absolute: "New York City and Los Angeles Florist | Petalswift",
   },
   description: site.description,
   alternates: {

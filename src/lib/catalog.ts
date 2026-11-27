@@ -52,7 +52,7 @@ export const occasions: Occasion[] = [
   {
     slug: "birthday",
     name: "Birthday",
-    blurb: "Joyful compositions that arrive same-day across New York.",
+    blurb: "Joyful compositions that arrive same-day in New York City and Los Angeles.",
     seoTitle: "Birthday Flower Delivery NYC",
   },
   {
@@ -130,7 +130,7 @@ export const occasions: Occasion[] = [
   {
     slug: "just-because",
     name: "Just Because",
-    blurb: "Everyday luxury for New York rooms and tables.",
+    blurb: "Everyday luxury for New York City and Los Angeles rooms and tables.",
     seoTitle: "Same-Day Everyday Flowers NYC",
   },
   {

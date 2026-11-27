@@ -181,6 +181,11 @@ export function SiteFooter() {
             NYC Boroughs
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-porcelain/85">
+            <li>
+              <Link href="/nyc" className="hover:text-porcelain">
+                New York City
+              </Link>
+            </li>
             {boroughs.map((borough) => (
               <li key={borough.slug}>
                 <Link
@@ -191,6 +196,11 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/los-angeles" className="font-semibold hover:text-porcelain">
+                Los Angeles
+              </Link>
+            </li>
           </ul>
         </div>
 

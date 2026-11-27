@@ -9,8 +9,8 @@ export function HolidayOpsBanner() {
           <span className="font-semibold">
             Taking orders from {site.ordersStartDate}.
           </span>{" "}
-          Same-day NYC flower delivery through Dec 23 · Eve cutoff{" "}
-          {site.christmasEveCutoff}.
+          Same-day in New York City through Dec 23 · Eve cutoff{" "}
+          {site.christmasEveCutoff}. Los Angeles same-day by 1:00pm PT.
         </p>
         <div className="flex flex-wrap gap-2">
           <Link

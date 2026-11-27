@@ -35,8 +35,8 @@ const promos = [
   },
   {
     href: "/delivery",
-    badge: "NYC delivery",
-    title: "Race into same-day across 5 boroughs",
+    badge: "New York City",
+    title: "Same-day across five boroughs",
     cta: "See fees & windows",
     tone: "blue" as const,
     image:

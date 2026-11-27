@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { careGuides } from "@/lib/care-guides";
 import { occasions, products, styles } from "@/lib/catalog";
+import { laAreas, laNeighborhoodPath, laNeighborhoods } from "@/lib/los-angeles";
 import { marketLandingPath, marketLandings } from "@/lib/market-landings";
 import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { qaItems } from "@/lib/qa";
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/shop", priority: 0.85, changeFrequency: "weekly" as const },
     { path: "/delivery", priority: 0.85, changeFrequency: "weekly" as const },
     { path: "/nyc", priority: 0.85, changeFrequency: "weekly" as const },
+    { path: "/los-angeles", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/faq", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/policies", priority: 0.7, changeFrequency: "monthly" as const },
@@ -86,6 +88,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.82,
   }));
 
+  const laAreaRoutes = laAreas.map((area) => ({
+    url: `${base}/los-angeles/${area.slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.84,
+  }));
+
+  const laNeighborhoodRoutes = laNeighborhoods.map((n) => ({
+    url: `${base}${laNeighborhoodPath(n)}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.82,
+  }));
+
   const marketRoutes = marketLandings.map((page) => ({
     url: `${base}${marketLandingPath(page)}`,
     lastModified,
@@ -128,6 +144,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...styleRoutes,
     ...boroughRoutes,
     ...neighborhoodRoutes,
+    ...laAreaRoutes,
+    ...laNeighborhoodRoutes,
     ...marketRoutes,
     ...sellerRoutes,
     ...blogRoutes,

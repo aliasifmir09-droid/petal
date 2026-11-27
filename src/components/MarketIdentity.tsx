@@ -1,8 +1,13 @@
 import Link from "next/link";
+import {
+  laNeighborhoodPath,
+  laNeighborhoods,
+  losAngeles,
+} from "@/lib/los-angeles";
 import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { site } from "@/lib/site";
 
-const neighborhoodOrder = [
+const newYorkCityOrder = [
   "jackson-heights",
   "astoria",
   "long-island-city",
@@ -20,53 +25,79 @@ const neighborhoodOrder = [
   "harlem",
 ] as const;
 
-/** Crawlable company and neighborhood facts, on every page, same role as Petshiwu’s market copy. */
+function listLabel(slug: string, name: string) {
+  if (slug === "upper-east-side") return "the Upper East Side";
+  if (slug === "upper-west-side") return "the Upper West Side";
+  if (slug === "west-village") return "the West Village";
+  return name;
+}
+
+function LinkedPlaces({
+  places,
+}: {
+  places: { key: string; href: string; label: string }[];
+}) {
+  return (
+    <>
+      {places.map((place, index) => {
+        const separator =
+          index === places.length - 1
+            ? ""
+            : index === places.length - 2
+              ? ", and "
+              : ", ";
+        return (
+          <span key={place.key}>
+            <Link href={place.href} className="font-semibold text-leaf hover:underline">
+              {place.label}
+            </Link>
+            {separator}
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
+/** Crawlable city facts on every page. The city is New York City, not New York. */
 export function MarketIdentity() {
-  const places = neighborhoodOrder.map((slug) => {
-    const neighborhood = neighborhoods.find((n) => n.slug === slug);
-    if (!neighborhood) return null;
-    return neighborhood;
-  }).filter((n) => n !== null);
+  const newYorkCity = newYorkCityOrder
+    .map((slug) => neighborhoods.find((n) => n.slug === slug))
+    .filter((n) => n !== undefined)
+    .map((place) => ({
+      key: place.slug,
+      href: neighborhoodPath(place),
+      label: listLabel(place.slug, place.name),
+    }));
+
+  const losAngelesPlaces = laNeighborhoods.map((place) => ({
+    key: place.slug,
+    href: laNeighborhoodPath(place),
+    label: place.listLabel,
+  }));
 
   return (
     <section className="border-t border-line bg-canvas">
-      <div className="site-shell grid gap-10 py-12 md:grid-cols-2 md:py-14">
+      <div className="site-shell grid gap-10 py-12 lg:grid-cols-3 lg:py-14">
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-ink">
-            NYC Neighborhood Delivery
+            New York City Neighborhood Delivery
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-base">
-            We deliver flowers across all five NYC boroughs including Queens,
-            Brooklyn, Manhattan, the Bronx, and Staten Island. Same-day delivery
-            when ordered by {site.orderCutoff} in{" "}
-            {places.map((place, index) => {
-              const label =
-                place.slug === "upper-east-side"
-                  ? "the Upper East Side"
-                  : place.slug === "upper-west-side"
-                    ? "the Upper West Side"
-                    : place.slug === "west-village"
-                      ? "the West Village"
-                      : place.name;
-              const separator =
-                index === places.length - 1
-                  ? ""
-                  : index === places.length - 2
-                    ? ", and "
-                    : ", ";
-              return (
-                <span key={place.slug}>
-                  <Link
-                    href={neighborhoodPath(place)}
-                    className="font-semibold text-leaf hover:underline"
-                  >
-                    {label}
-                  </Link>
-                  {separator}
-                </span>
-              );
-            })}
-            .
+            We deliver flowers across New York City, including Queens, Brooklyn,
+            Manhattan, the Bronx, and Staten Island. Same-day delivery when
+            ordered by {site.orderCutoff} in <LinkedPlaces places={newYorkCity} />.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-ink">
+            Los Angeles Neighborhood Delivery
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-base">
+            We also deliver in the City of Los Angeles. Same-day delivery when
+            ordered by {losAngeles.orderCutoff} in{" "}
+            <LinkedPlaces places={losAngelesPlaces} />. Separate cities such as
+            Beverly Hills and Santa Monica come later.
           </p>
         </div>
         <div>
@@ -74,11 +105,12 @@ export function MarketIdentity() {
             About {site.name}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-base">
-            {site.name} is a US florist and flower delivery company based in{" "}
-            {site.address.addressLocality}, {site.address.addressRegion}{" "}
-            {site.address.postalCode}. Same-day flower delivery in NYC when
-            ordered by {site.orderCutoff}. Studio at {site.address.streetAddress}.
-            Phone:{" "}
+            {site.name} is a US florist starting in New York City and Los
+            Angeles on {site.ordersStartDate}. The studio is at{" "}
+            {site.address.streetAddress}, {site.address.addressLocality},{" "}
+            {site.address.addressRegion} {site.address.postalCode}. Same-day in
+            New York City by {site.orderCutoff}, and in Los Angeles by{" "}
+            {losAngeles.orderCutoff}. Phone:{" "}
             <a className="font-semibold text-leaf hover:underline" href={`tel:${site.phone}`}>
               {site.phoneDisplay}
             </a>
@@ -86,23 +118,22 @@ export function MarketIdentity() {
             <a className="font-semibold text-leaf hover:underline" href={`mailto:${site.email}`}>
               {site.email}
             </a>
-            . Call or email to order. Taking orders from {site.ordersStartDate}.
+            . More cities, then nationwide delivery, follow these two.
           </p>
           <p className="mt-4 text-sm">
-            <Link href="/same-day-flower-delivery-nyc" className="font-semibold text-leaf hover:underline">
-              Same-day flower delivery NYC
+            <Link href="/nyc" className="font-semibold text-leaf hover:underline">
+              New York City
             </Link>
             {" · "}
-            <Link href="/florist-queens-ny" className="font-semibold text-leaf hover:underline">
-              Queens florist
+            <Link href="/los-angeles" className="font-semibold text-leaf hover:underline">
+              Los Angeles
             </Link>
             {" · "}
-            <Link href="/flower-delivery-brooklyn-ny" className="font-semibold text-leaf hover:underline">
-              Brooklyn
-            </Link>
-            {" · "}
-            <Link href="/flower-delivery-manhattan-ny" className="font-semibold text-leaf hover:underline">
-              Manhattan
+            <Link
+              href="/same-day-flower-delivery-los-angeles"
+              className="font-semibold text-leaf hover:underline"
+            >
+              LA same-day
             </Link>
           </p>
         </div>

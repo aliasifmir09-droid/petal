@@ -1,6 +1,6 @@
 /** SEO title target: 50–60 characters (audit). */
 export const defaultTitle =
-  "NYC Same-Day Flower Delivery | Petalswift · Florist";
+  "New York City and Los Angeles Florist | Petalswift";
 
 export const site = {
   name: "Petalswift",
@@ -13,12 +13,12 @@ export const site = {
   phone: "+1-917-460-5550",
   phoneDisplay: "(917) 460-5550",
   locale: "en_US",
-  tagline: "Flowers, composed for New York.",
+  tagline: "Flowers for New York City and Los Angeles.",
   /** Meta description target: 120–160 characters (audit). */
   description:
-    "Petalswift delivers same-day flowers across NYC from Jackson Heights. Order from Dec 10—Manhattan, Brooklyn, Queens, Bronx & Staten Island.",
+    "Same-day flowers in New York City and Los Angeles from Dec 10. NYC boroughs from Jackson Heights; Los Angeles city neighborhoods with published fees.",
   shortDescription:
-    "Same-day flower delivery NYC from Jackson Heights. Taking orders from December 10, 2026.",
+    "Same-day flower delivery in New York City and Los Angeles. Orders open December 10, 2026.",
   address: {
     streetAddress: "37-68 74th Street",
     addressLocality: "Jackson Heights",
@@ -48,7 +48,7 @@ export const site = {
   ordersStartShort: "10 Dec",
   holidaySeason: "December 10 – December 24, 2026",
   holidayNote:
-    "Taking orders from December 10, 2026. Same-day NYC delivery through Dec 23; Christmas Eve delivery until 11:00am ET order cutoff.",
+    "Taking orders from December 10, 2026. Same-day New York City delivery through Dec 23; Christmas Eve cutoff 11:00am ET. Los Angeles same-day by 1:00pm PT.",
   ogImage:
     "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1200&q=80",
   googleBusinessUrl:

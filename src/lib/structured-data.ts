@@ -39,10 +39,11 @@ export function organizationSchema() {
     },
     hasMap: site.googleBusinessUrl,
     areaServed: [
-      { "@type": "City", name: "New York" },
+      { "@type": "City", name: "New York City" },
+      { "@type": "City", name: "Los Angeles" },
       ...boroughs.map((b) => ({
         "@type": "AdministrativeArea",
-        name: `${b.name}, New York`,
+        name: `${b.name}, New York City`,
       })),
     ],
     contactPoint: [
@@ -321,14 +322,15 @@ export function flowerDeliveryServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "NYC Same-Day Flower & Christmas Delivery",
+    name: "Same-Day Flower Delivery in New York City and Los Angeles",
     serviceType: "Flower delivery",
     provider: { "@id": `${site.url}/#organization` },
     areaServed: [
-      { "@type": "City", name: "New York" },
+      { "@type": "City", name: "New York City" },
+      { "@type": "City", name: "Los Angeles" },
       ...boroughs.map((b) => ({
         "@type": "AdministrativeArea",
-        name: `${b.name}, New York`,
+        name: `${b.name}, New York City`,
       })),
     ],
     availableChannel: {

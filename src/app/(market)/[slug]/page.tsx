@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BouquetShelf } from "@/components/BouquetShelf";
 import { DeliveryChecker } from "@/components/DeliveryChecker";
 import { JsonLd } from "@/components/JsonLd";
+import { productsForBouquet } from "@/lib/bouquet-landings";
 import {
   getMarketLanding,
   marketLandingFee,
@@ -12,7 +14,7 @@ import {
 } from "@/lib/market-landings";
 import { losAngeles } from "@/lib/los-angeles";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/structured-data";
+import { breadcrumbSchema, faqSchemaFrom, itemListSchema } from "@/lib/structured-data";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -50,6 +52,7 @@ export default async function MarketLandingPage({ params }: Props) {
   const path = marketLandingPath(page);
   const fee = marketLandingFee(page);
   const links = marketLandingLinks(page);
+  const bouquets = page.faqs ? productsForBouquet(page) : [];
 
   return (
     <div className="pt-8 md:pt-10">
@@ -84,6 +87,10 @@ export default async function MarketLandingPage({ params }: Props) {
                 }
               : undefined,
           },
+          ...(page.faqs ? [faqSchemaFrom(page.faqs)] : []),
+          ...(bouquets.length
+            ? [itemListSchema(bouquets.map((product) => product.slug))]
+            : []),
         ]}
       />
       <section className="site-shell pb-12">
@@ -115,6 +122,24 @@ export default async function MarketLandingPage({ params }: Props) {
           ))}
         </div>
       </section>
+      <BouquetShelf products={bouquets} />
+      {page.faqs ? (
+        <section className="site-shell pb-16">
+          <h2 className="font-display text-3xl tracking-[-0.03em] text-ink md:text-4xl">
+            {page.title.split(",")[0]} FAQ
+          </h2>
+          <div className="mt-8 max-w-3xl space-y-6">
+            {page.faqs.map((faq) => (
+              <article key={faq.question}>
+                <h3 className="text-lg font-semibold text-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft md:text-base">
+                  {faq.answer}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
       <section className="site-shell pb-20">
         <DeliveryChecker />
       </section>

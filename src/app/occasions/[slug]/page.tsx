@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!occasion) return { title: "Occasions" };
   return {
     title: occasion.seoTitle,
-    description: `${occasion.blurb} Same-day New York City flower delivery from Petalswift.`,
+    description: `${occasion.name} flower bouquets with same-day delivery in New York City and Los Angeles. Order by 4:00pm. Fees shown before you pay.`,
     alternates: { canonical: `/occasions/${occasion.slug}` },
   };
 }

@@ -53,19 +53,19 @@ export const occasions: Occasion[] = [
     slug: "birthday",
     name: "Birthday",
     blurb: "Joyful compositions that arrive same-day in New York City and Los Angeles.",
-    seoTitle: "Birthday Flower Delivery NYC",
+    seoTitle: "Birthday Flower Bouquet, NYC and LA",
   },
   {
     slug: "anniversary",
     name: "Anniversary",
     blurb: "Romantic bouquets composed for presence, not cliché.",
-    seoTitle: "Anniversary Flowers NYC Same-Day",
+    seoTitle: "Anniversary Flower Bouquet, NYC and LA",
   },
   {
     slug: "romance",
     name: "Romance",
     blurb: "Soft, intentional blooms for evenings that linger.",
-    seoTitle: "Romantic Flower Delivery NYC",
+    seoTitle: "Romantic Flower Bouquet, NYC and LA",
   },
   {
     slug: "thinking-of-you",
@@ -77,7 +77,7 @@ export const occasions: Occasion[] = [
     slug: "thank-you",
     name: "Thank You",
     blurb: "Quiet luxury that says gratitude without overstatement.",
-    seoTitle: "Thank You Flower Delivery NYC",
+    seoTitle: "Thank You Flower Bouquet, NYC and LA",
   },
   {
     slug: "congratulations",
@@ -131,7 +131,7 @@ export const occasions: Occasion[] = [
     slug: "just-because",
     name: "Just Because",
     blurb: "Everyday luxury for New York City and Los Angeles rooms and tables.",
-    seoTitle: "Same-Day Everyday Flowers NYC",
+    seoTitle: "Just Because Flower Bouquet, NYC and LA",
   },
   {
     slug: "christmas",

@@ -27,6 +27,16 @@ export type MarketLanding = {
   neighborhoodSlug?: string;
   /** Keyword page that serves both launch cities. */
   serveBoth?: boolean;
+  /** Catalog slice shown on collection-style keyword pages. */
+  match?: {
+    occasion?: string;
+    bloom?: string;
+    styles?: string[];
+    /** Signature, Grand, or $98 and up. */
+    luxury?: boolean;
+    sameDay?: boolean;
+  };
+  faqs?: { question: string; answer: string }[];
 };
 
 /**

@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
+import { marketLandingPath, marketLandings } from "@/lib/market-landings";
 import { site } from "@/lib/site";
+
+const marketPaths = marketLandings.map((page) => marketLandingPath(page));
 
 const aiBots = [
   "GPTBot",
@@ -19,12 +22,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", ...marketPaths],
         disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {
         userAgent: "Googlebot",
-        allow: "/",
+        allow: ["/", ...marketPaths],
         disallow: ["/cart", "/cart/", "/sell/account", "/sell/account/"],
       },
       {

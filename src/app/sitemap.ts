@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { careGuides } from "@/lib/care-guides";
 import { occasions, products, styles } from "@/lib/catalog";
+import { marketLandingPath, marketLandings } from "@/lib/market-landings";
 import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { qaItems } from "@/lib/qa";
 import { partnerShops } from "@/lib/sellers";
@@ -85,6 +86,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.82,
   }));
 
+  const marketRoutes = marketLandings.map((page) => ({
+    url: `${base}${marketLandingPath(page)}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.84,
+  }));
+
   const sellerRoutes = partnerShops.map((shop) => ({
     url: `${base}/sell/shops/${shop.slug}`,
     lastModified,
@@ -120,6 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...styleRoutes,
     ...boroughRoutes,
     ...neighborhoodRoutes,
+    ...marketRoutes,
     ...sellerRoutes,
     ...blogRoutes,
     ...qaRoutes,

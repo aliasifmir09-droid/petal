@@ -38,10 +38,13 @@ export function organizationSchema() {
       longitude: site.geo.longitude,
     },
     hasMap: site.googleBusinessUrl,
-    areaServed: boroughs.map((b) => ({
-      "@type": "AdministrativeArea",
-      name: `${b.name}, New York`,
-    })),
+    areaServed: [
+      { "@type": "City", name: "New York" },
+      ...boroughs.map((b) => ({
+        "@type": "AdministrativeArea",
+        name: `${b.name}, New York`,
+      })),
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -321,10 +324,13 @@ export function flowerDeliveryServiceSchema() {
     name: "NYC Same-Day Flower & Christmas Delivery",
     serviceType: "Flower delivery",
     provider: { "@id": `${site.url}/#organization` },
-    areaServed: boroughs.map((b) => ({
-      "@type": "AdministrativeArea",
-      name: `${b.name}, New York`,
-    })),
+    areaServed: [
+      { "@type": "City", name: "New York" },
+      ...boroughs.map((b) => ({
+        "@type": "AdministrativeArea",
+        name: `${b.name}, New York`,
+      })),
+    ],
     availableChannel: {
       "@type": "ServiceChannel",
       serviceUrl: `${site.url}/order`,

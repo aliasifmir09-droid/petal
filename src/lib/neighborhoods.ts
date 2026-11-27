@@ -273,6 +273,36 @@ export const neighborhoods: NeighborhoodGuide[] = [
     landmarks: ["St. George ferry area", "Local residences", "Downtown SI offices"],
     keywords: ["St. George flower delivery", "Staten Island florist St George"],
   },
+  {
+    slug: "bushwick",
+    name: "Bushwick",
+    boroughSlug: "brooklyn",
+    headline: "Bushwick same-day flower delivery.",
+    blurb:
+      "Lofts, walk-ups, and studio buildings in Bushwick—Petalswift delivers composed bouquets from Jackson Heights with Brooklyn fees and same-day windows when ordered by cutoff.",
+    tips: [
+      "Many Bushwick buildings need a buzzer code—add it in delivery notes.",
+      "Garden-style and lily-free bouquets travel well for weekend hosts.",
+      "Order by 1:00pm ET for same-day Bushwick delivery.",
+    ],
+    landmarks: ["Myrtle-Broadway area", "Warehouse lofts", "Residential walk-ups"],
+    keywords: ["Bushwick flower delivery", "same-day florist Bushwick Brooklyn"],
+  },
+  {
+    slug: "harlem",
+    name: "Harlem",
+    boroughSlug: "manhattan",
+    headline: "Harlem same-day flower delivery.",
+    blurb:
+      "Brownstones and residences across Harlem—Petalswift delivers same-day bouquets with Manhattan fees, doorman notes, and a 1:00pm ET order cutoff most days.",
+    tips: [
+      "Include buzzer or doorman instructions for the first handoff.",
+      "Celebrations and sympathy sends are common—lily-free on request.",
+      "Manhattan same-day window is shown before you pay.",
+    ],
+    landmarks: ["125th Street corridor", "Brownstone blocks", "Residential avenues"],
+    keywords: ["Harlem flower delivery", "same-day florist Harlem NYC"],
+  },
 ];
 
 export function getNeighborhood(boroughSlug: string, neighborhoodSlug: string) {

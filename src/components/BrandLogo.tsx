@@ -22,9 +22,17 @@ const WORD_SIZE = {
 } as const;
 
 const PETAL_FILLS = {
-  light: ["#1F7FE8", "#005CBC", "#2B8AF0", "#004F9A", "#0071DC"],
-  bright: ["#8EC5FF", "#E8F3FF", "#9FCEFF", "#D7EBFF", "#B8DBFF"],
+  light: ["#1F7FE8", "#005CBC", "#2B8AF0", "#004F9A"],
+  bright: ["#E8F3FF", "#8EC5FF", "#FFFFFF", "#B8DBFF"],
 } as const;
+
+/** Wide lotus petal. The large seed pod is what makes the mark a lotus. */
+const LOTUS_PETAL =
+  "M0 2.2C7.4-0.4 13.6-8 11.4-15.6C9.6-21.6 4.2-23.6 0-24.4C-4.2-23.6-9.6-21.6-11.4-15.6C-13.6-8-7.4-0.4 0 2.2Z";
+
+const OUTER_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
+const INNER_ANGLES = OUTER_ANGLES.map((angle) => angle + 22.5);
+const SEED_ANGLES = [0, 60, 120, 180, 240, 300];
 
 function LogoMark({
   className = "",
@@ -34,7 +42,6 @@ function LogoMark({
   tone: "light" | "bright";
 }) {
   const fills = PETAL_FILLS[tone];
-  const angles = [-18, 54, 126, 198, 270];
 
   return (
     <svg
@@ -44,17 +51,34 @@ function LogoMark({
       aria-hidden
       focusable="false"
     >
-      <g transform="translate(32 32)">
-        {angles.map((angle, i) => (
+      <g transform="translate(32 32) scale(1.18)">
+        {OUTER_ANGLES.map((angle, i) => (
           <path
-            key={angle}
+            key={`outer-${angle}`}
             transform={`rotate(${angle})`}
-            fill={fills[i]}
-            d="M0-2.5c7.5-6.5 14.2-16.8 11.8-24.2C9.2-32.4 2.8-33.8 0-31.2c-2.8-2.6-9.2-1.2-11.8 4.5C-14.2-19.3-7.5-9 0-2.5Z"
+            fill={fills[i % fills.length]}
+            d={LOTUS_PETAL}
           />
         ))}
-        <circle r="6" fill="#FFC220" />
-        <circle cx="-1.4" cy="-1.6" r="1.8" fill="#FFF1B8" opacity=".92" />
+        {INNER_ANGLES.map((angle, i) => (
+          <path
+            key={`inner-${angle}`}
+            transform={`rotate(${angle}) scale(0.72)`}
+            fill={fills[(i + 2) % fills.length]}
+            d={LOTUS_PETAL}
+          />
+        ))}
+        <circle r="8.2" fill="#FFC220" />
+        {SEED_ANGLES.map((angle) => (
+          <circle
+            key={angle}
+            cx={Math.cos((angle * Math.PI) / 180) * 4.15}
+            cy={Math.sin((angle * Math.PI) / 180) * 4.15}
+            r="1.15"
+            fill="#C4841D"
+          />
+        ))}
+        <circle r="1.35" fill="#E09A1A" />
       </g>
     </svg>
   );

@@ -25,7 +25,7 @@ export async function sendInquiry(input: InquiryInput) {
 
   const from =
     process.env.RESEND_FROM_EMAIL?.trim() ||
-    "Petalswift <onboarding@resend.dev>";
+    `Petalswift <${site.email}>`;
   const to = process.env.INQUIRY_TO_EMAIL?.trim() || site.email;
   const subject = input.subject?.trim() || `${kindLabel[input.kind]} from ${input.name}`;
   const resend = new Resend(key);

@@ -1,46 +1,69 @@
 "use client";
 
 import { useState } from "react";
-import { ContactEmail } from "@/components/ContactEmail";
+import { postInquiry } from "@/lib/post-inquiry";
 import { site } from "@/lib/site";
 
-type Status = "idle" | "ready" | "error";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [orderId, setOrderId] = useState("");
   const [message, setMessage] = useState("");
+  const [company, setCompany] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
       setStatus("error");
+      setError("Please fill in name, email, and message.");
       return;
     }
-    const subject = encodeURIComponent(
-      orderId.trim()
-        ? `Petalswift order ${orderId.trim()} — ${name.trim()}`
-        : `Petalswift inquiry — ${name.trim()}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${name.trim()}`,
-        `Email: ${email.trim()}`,
-        orderId.trim() ? `Order ID: ${orderId.trim()}` : null,
-        "",
-        message.trim(),
-      ]
-        .filter(Boolean)
-        .join("\n")
-    );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    setStatus("ready");
+    setStatus("sending");
+    setError("");
+    const subject = orderId.trim()
+      ? `Order ${orderId.trim()} — ${name.trim()}`
+      : `Inquiry — ${name.trim()}`;
+    const body = [
+      `Name: ${name.trim()}`,
+      `Email: ${email.trim()}`,
+      orderId.trim() ? `Order ID: ${orderId.trim()}` : null,
+      "",
+      message.trim(),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const result = await postInquiry({
+      kind: "contact",
+      name: name.trim(),
+      email: email.trim(),
+      subject,
+      message: body,
+      company,
+    });
+    if (!result.ok) {
+      setStatus("error");
+      setError(result.error);
+      return;
+    }
+    setStatus("sent");
+    setMessage("");
   }
 
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
+      <input
+        tabIndex={-1}
+        autoComplete="off"
+        value={company}
+        onChange={(e) => setCompany(e.target.value)}
+        className="hidden"
+        aria-hidden="true"
+        name="company"
+      />
       <div>
         <label htmlFor="contact-name" className="block text-sm font-medium text-ink">
           Name
@@ -99,20 +122,20 @@ export function ContactForm() {
       </div>
       {status === "error" ? (
         <p className="text-sm text-red-700" role="alert">
-          Please fill in name, email, and message.
+          {error}
         </p>
       ) : null}
-      {status === "ready" ? (
-        <p className="text-sm text-ink-soft">
-          Your mail app should open with a draft to <ContactEmail />. If nothing opens, email us
-          directly or call {site.phoneDisplay}.
+      {status === "sent" ? (
+        <p className="text-sm text-leaf" role="status">
+          Sent. We reply to the email you entered. You can also call {site.phoneDisplay}.
         </p>
       ) : null}
       <button
         type="submit"
-        className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-porcelain hover:bg-leaf"
+        disabled={status === "sending"}
+        className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-porcelain hover:bg-leaf disabled:opacity-60"
       >
-        Open email draft
+        {status === "sending" ? "Sending…" : "Send message"}
       </button>
     </form>
   );

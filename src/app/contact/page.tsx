@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Contact Petalswift — NYC Florist Help",
   description:
-    "Contact Petalswift for NYC flower delivery help—phone, email, hours, and order support from our Jackson Heights atelier.",
+    "Contact Petalswift for flower delivery help—phone, email, hours, and the office address.",
   alternates: { canonical: "/contact" },
 };
 

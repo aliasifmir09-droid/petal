@@ -156,7 +156,7 @@ export default async function NeighborhoodPage({ params }: Props) {
               ))}
             </ul>
             <p className="mt-6 text-sm text-ink-soft">
-              Composed in Jackson Heights at {site.address.streetAddress}. Email{" "}
+              Office: {site.address.streetAddress}. Email{" "}
               <ContactEmail className="text-leaf hover:underline" /> or see{" "}
               <Link href="/delivery" className="font-semibold text-leaf hover:underline">
                 borough fees

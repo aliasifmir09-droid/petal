@@ -52,7 +52,7 @@ export function SiteHeader() {
           >
             <span className="block font-semibold">Same-day delivery</span>
             <span className="block text-porcelain/75">
-              to {site.address.addressLocality} & NYC
+              to New York City &amp; Los Angeles
             </span>
           </Link>
 

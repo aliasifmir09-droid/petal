@@ -11,9 +11,9 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Our Atelier in Jackson Heights, Queens",
+  title: "About Petalswift",
   description:
-    "Visit the Petalswift flower atelier in Jackson Heights—florist photography, composition process, and same-day NYC delivery from 37-68 74th Street.",
+    "Petalswift delivers in New York City and Los Angeles. Office: 37-68 74th Street, Jackson Heights, NY 11372.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,16 +30,17 @@ export default function AboutPage() {
       <section className="site-shell grid items-center gap-14 pb-16 lg:grid-cols-2 lg:gap-20">
         <div>
           <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft/75">
-            Our atelier
+            Our office
           </p>
           <h1 className="font-display mt-4 text-5xl tracking-[-0.035em] text-ink md:text-7xl">
-            A flower brand New York can trust at a glance.
+            A flower brand New York City can trust at a glance.
           </h1>
           <p className="mt-7 text-base leading-relaxed text-ink-soft md:text-lg">
             Petalswift exists for people who want flowers to feel considered—not
-            transactional. From our atelier at {site.address.streetAddress} in
-            Jackson Heights, we compose with restraint, source for longevity,
-            and deliver with the reliability the city demands.
+            transactional. We compose with restraint, source for longevity, and
+            deliver in New York City and Los Angeles. Office:{" "}
+            {site.address.streetAddress}, {site.address.addressLocality},{" "}
+            {site.address.addressRegion} {site.address.postalCode}.
           </p>
           <p className="mt-4 text-base leading-relaxed text-ink-soft md:text-lg">
             When someone receives a Petalswift arrangement, they should feel the

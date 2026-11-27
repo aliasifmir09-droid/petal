@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { boroughs, site } from "@/lib/site";
+import { boroughs } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Flower Delivery by NYC Borough",
   description:
-    "Same-day Petalswift flower delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island from our Jackson Heights atelier.",
+    "Same-day Petalswift flower delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island.",
   alternates: { canonical: "/nyc" },
 };
 
@@ -29,9 +29,8 @@ export default function NycIndexPage() {
           Same-day flowers in every borough.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Petalswift delivers luxury bouquets citywide from{" "}
-          {site.address.streetAddress}, Jackson Heights. Choose your borough for
-          neighborhoods and local delivery details.
+          Petalswift delivers luxury bouquets across every borough. Choose a
+          borough for neighborhoods and local delivery details.
         </p>
       </section>
 

@@ -16,10 +16,10 @@ export function MarketSeoCopy() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
             Petalswift delivers same-day flowers in New York City and in the
             City of Los Angeles. In New York City we compose Classic, Signature,
-            and Grand bouquets at our Jackson Heights studio—Christmas
+            and Grand bouquets—Christmas
             centerpieces, hatboxes, lily-free gifts, and corporate lobby
             florals—then hand them off with published borough fees. Los Angeles
-            neighborhoods inside the city have their own fees and a 1:00pm PT
+            neighborhoods inside the city have their own fees and a 4:00pm PT
             cutoff. Taking orders from {site.ordersStartDate}. More cities, then
             nationwide delivery, come after these two.
           </p>
@@ -47,7 +47,7 @@ export function MarketSeoCopy() {
               <Link href="/los-angeles" className="font-semibold text-leaf hover:underline">
                 Los Angeles flower delivery
               </Link>{" "}
-              — City of Los Angeles neighborhoods, fees from $16, order by 1:00pm PT.
+              — City of Los Angeles neighborhoods, fees from $16, order by 4:00pm PT.
             </li>
             <li>
               <Link href="/nyc" className="font-semibold text-leaf hover:underline">

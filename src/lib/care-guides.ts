@@ -51,7 +51,7 @@ export const careGuides: CareGuide[] = [
       "Timing, lily-free options, and what to write on cards for NYC funeral homes and homes.",
     steps: [
       "Confirm venue name, chapel time, and delivery desk with the funeral home when possible.",
-      "Order earlier on peak service days; same-day still available by 1:00pm ET most days.",
+      "Order earlier on peak service days; same-day still available by 4:00pm ET most days.",
       "Choose lily-free when pets or scent sensitivity are a concern.",
       "Keep card messages short, personal, and clear for desk handoff.",
     ],

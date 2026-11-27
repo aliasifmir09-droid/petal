@@ -182,7 +182,7 @@ export default async function BoroughPage({ params }: Props) {
               ))}
             </ul>
             <p className="mt-6 text-sm leading-relaxed text-ink-soft">
-              {zone?.notes} Composed in Jackson Heights and routed with
+              {zone?.notes} Routed with
               borough-level care—not a generic national network.
             </p>
           </div>

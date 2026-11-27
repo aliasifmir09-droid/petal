@@ -10,6 +10,7 @@ import {
   marketLandingPath,
   marketLandings,
 } from "@/lib/market-landings";
+import { losAngeles } from "@/lib/los-angeles";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
@@ -98,7 +99,7 @@ export default async function MarketLandingPage({ params }: Props) {
         {fee ? (
           <p className="mt-6 text-sm font-semibold text-ink">
             Delivery fee ${fee.fee} · same-day window {fee.sameDayWindow} · order
-            by {site.orderCutoff}
+            by {page.cityName === "Los Angeles" ? losAngeles.orderCutoff : site.orderCutoff}
           </p>
         ) : null}
         <div className="mt-8 flex flex-wrap gap-3">

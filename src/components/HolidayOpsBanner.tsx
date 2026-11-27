@@ -10,7 +10,7 @@ export function HolidayOpsBanner() {
             Taking orders from {site.ordersStartDate}.
           </span>{" "}
           Same-day in New York City through Dec 23 · Eve cutoff{" "}
-          {site.christmasEveCutoff}. Los Angeles same-day by 1:00pm PT.
+          {site.christmasEveCutoff}. Los Angeles same-day by 4:00pm PT.
         </p>
         <div className="flex flex-wrap gap-2">
           <Link

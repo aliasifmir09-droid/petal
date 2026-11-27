@@ -24,7 +24,7 @@ export function LocalNap({ className = "", compact = false }: LocalNapProps) {
       >
         {!compact ? (
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-leaf">
-            Same-day flower delivery NYC · Jackson Heights florist
+            Office
           </p>
         ) : null}
         <p className={compact ? "font-semibold text-ink" : "mt-3 font-semibold text-ink"}>

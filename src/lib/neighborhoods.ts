@@ -23,7 +23,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
       "Hotel desks, corporate lobbies, and timed Midtown handoffs—Petalswift delivers vase-ready bouquets with clear recipient notes for doormen and concierges.",
     tips: [
       "Add lobby, suite, and recipient mobile number for faster Midtown handoffs.",
-      "Order by 1:00pm ET for same-day Midtown delivery most days.",
+      "Order by 4:00pm ET for same-day Midtown delivery most days.",
       "Corporate and hotel amenity sends are common—ask for note cards at checkout.",
     ],
     landmarks: ["Times Square hotels", "Grand Central offices", "Bryant Park area", "Rockefeller Center"],
@@ -35,7 +35,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     boroughSlug: "manhattan",
     headline: "Upper East Side same-day florist delivery.",
     blurb:
-      "Doorman buildings from Midtown to the park—UES deliveries need accurate buzzers and building notes. Petalswift composes in Jackson Heights and routes same-day when ordered by 1:00pm ET.",
+      "Doorman buildings from Midtown to the park—UES deliveries need accurate buzzers and building notes. Same-day when ordered by 4:00pm ET.",
     tips: [
       "Include doorman desk instructions and apartment number.",
       "Anniversary and sympathy sends are frequent on the UES—lily-free options available.",
@@ -54,7 +54,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "Walk-ups: add floor and buzzer code in delivery notes.",
       "Weekend host gifts and birthday sends are popular—Signature size fits most UWS tables.",
-      "Same-day cutoff is 1:00pm ET most days.",
+      "Same-day cutoff is 4:00pm ET most days.",
     ],
     landmarks: ["Amsterdam Ave residences", "Lincoln Center area", "Central Park West"],
     keywords: ["Upper West Side flower delivery", "UWS same-day florist"],
@@ -99,7 +99,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "Many buildings need courier codes—add them in notes.",
       "Garden-style and lily-free bouquets are popular for weekend hosts.",
-      "Order by 1:00pm ET for same-day Williamsburg delivery.",
+      "Order by 4:00pm ET for same-day Williamsburg delivery.",
     ],
     landmarks: ["Bedford Ave", "Waterfront towers", "McCarren vicinity"],
     keywords: ["Williamsburg flower delivery", "same-day florist Williamsburg Brooklyn"],
@@ -144,7 +144,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "Office floors need suite numbers and reception contacts.",
       "Architectural arrangements photograph well for loft entertaining.",
-      "Order by 1:00pm ET for same-day DUMBO delivery.",
+      "Order by 4:00pm ET for same-day DUMBO delivery.",
     ],
     landmarks: ["Waterfront towers", "Bridge views apartments", "Jay Street offices"],
     keywords: ["DUMBO flower delivery", "Brooklyn loft florist"],
@@ -153,7 +153,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     slug: "astoria",
     name: "Astoria",
     boroughSlug: "queens",
-    headline: "Astoria same-day flower delivery from Jackson Heights.",
+    headline: "Astoria same-day flower delivery.",
     blurb:
       "Close to our Queens atelier—Astoria gets some of Petalswift’s fastest same-day windows and the Queens delivery fee from $12.",
     tips: [
@@ -170,33 +170,14 @@ export const neighborhoods: NeighborhoodGuide[] = [
     boroughSlug: "queens",
     headline: "Long Island City same-day florist delivery.",
     blurb:
-      "High-rises and waterfront towers in LIC—Petalswift delivers same-day bouquets with lobby-friendly packaging from Jackson Heights.",
+      "High-rises and waterfront towers in LIC—Petalswift delivers same-day bouquets with lobby-friendly packaging.",
     tips: [
       "Tower lobbies: include building name and package room instructions.",
       "Corporate studio gifts are common—Signature size recommended.",
-      "Queens same-day windows often run 2:00–7:00pm ET.",
+      "Queens same-day windows often run 4:00–8:00pm ET.",
     ],
     landmarks: ["Waterfront towers", "Court Square offices", "Vernon Blvd residences"],
     keywords: ["LIC flower delivery", "Long Island City florist same-day"],
-  },
-  {
-    slug: "jackson-heights",
-    name: "Jackson Heights",
-    boroughSlug: "queens",
-    headline: "Jackson Heights florist — Petalswift atelier.",
-    blurb:
-      "Our home neighborhood. Petalswift is based at 37-68 74th Street, Jackson Heights, NY 11372—same-day composition and the quickest local Queens windows.",
-    tips: [
-      "Local pickup and same-day delivery both available—call (917) 460-5550.",
-      "NAP: 37-68 74th Street, Jackson Heights, NY 11372.",
-      "Orders open December 10, 2026.",
-    ],
-    landmarks: ["74th Street atelier", "Roosevelt Ave corridor", "Local residences"],
-    keywords: [
-      "Jackson Heights florist",
-      "flower shop Jackson Heights NY 11372",
-      "same-day flowers Jackson Heights",
-    ],
   },
   {
     slug: "forest-hills",
@@ -208,7 +189,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "Co-op desks: list resident name exactly as on file.",
       "Holiday centerpieces and sympathy sprays available—order early for Christmas.",
-      "Same-day cutoff 1:00pm ET most days.",
+      "Same-day cutoff 4:00pm ET most days.",
     ],
     landmarks: ["Austin Street area", "Forest Hills Gardens vicinity", "Queens Blvd residences"],
     keywords: ["Forest Hills flower delivery", "Queens florist Forest Hills"],
@@ -219,7 +200,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     boroughSlug: "queens",
     headline: "Flushing flower delivery, same day.",
     blurb:
-      "Family celebrations and congratulations across Flushing—Petalswift routes same-day Queens deliveries from Jackson Heights with transparent fees.",
+      "Family celebrations and congratulations across Flushing—Petalswift routes same-day Queens deliveries with transparent fees.",
     tips: [
       "Add language preference notes if helpful for building staff handoff.",
       "Grand size works well for family gatherings.",
@@ -238,7 +219,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "Gate and buzzer details help couriers on first attempt.",
       "Sympathy and congratulations are common—lily-free on request.",
-      "Bronx same-day when ordered by 1:00pm ET.",
+      "Bronx same-day when ordered by 4:00pm ET.",
     ],
     landmarks: ["Riverdale residences", "Family homes", "Campus-area gifts"],
     keywords: ["Riverdale flower delivery", "Bronx florist Riverdale"],
@@ -253,7 +234,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     tips: [
       "New buildings often need package-room instructions.",
       "Architectural styles suit loft entertaining.",
-      "Order by 1:00pm ET for same-day Bronx delivery.",
+      "Order by 4:00pm ET for same-day Bronx delivery.",
     ],
     landmarks: ["Waterfront lofts", "Residential developments", "Local studios"],
     keywords: ["Mott Haven flower delivery", "South Bronx florist same-day"],
@@ -279,11 +260,11 @@ export const neighborhoods: NeighborhoodGuide[] = [
     boroughSlug: "brooklyn",
     headline: "Bushwick same-day flower delivery.",
     blurb:
-      "Lofts, walk-ups, and studio buildings in Bushwick—Petalswift delivers composed bouquets from Jackson Heights with Brooklyn fees and same-day windows when ordered by cutoff.",
+      "Lofts, walk-ups, and studio buildings in Bushwick—Petalswift delivers composed bouquets with Brooklyn fees and same-day windows when ordered by cutoff.",
     tips: [
       "Many Bushwick buildings need a buzzer code—add it in delivery notes.",
       "Garden-style and lily-free bouquets travel well for weekend hosts.",
-      "Order by 1:00pm ET for same-day Bushwick delivery.",
+      "Order by 4:00pm ET for same-day Bushwick delivery.",
     ],
     landmarks: ["Myrtle-Broadway area", "Warehouse lofts", "Residential walk-ups"],
     keywords: ["Bushwick flower delivery", "same-day florist Bushwick Brooklyn"],
@@ -294,7 +275,7 @@ export const neighborhoods: NeighborhoodGuide[] = [
     boroughSlug: "manhattan",
     headline: "Harlem same-day flower delivery.",
     blurb:
-      "Brownstones and residences across Harlem—Petalswift delivers same-day bouquets with Manhattan fees, doorman notes, and a 1:00pm ET order cutoff most days.",
+      "Brownstones and residences across Harlem—Petalswift delivers same-day bouquets with Manhattan fees, doorman notes, and a 4:00pm ET order cutoff most days.",
     tips: [
       "Include buzzer or doorman instructions for the first handoff.",
       "Celebrations and sympathy sends are common—lily-free on request.",

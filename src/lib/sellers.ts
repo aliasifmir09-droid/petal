@@ -55,7 +55,7 @@ export const partnerShops: SellerShop[] = [
     email: "hello@petalswift.com",
     phone: "+1-917-460-5550",
     borough: "queens",
-    neighborhood: "Jackson Heights",
+    neighborhood: "Office",
     addressLine: "37-68 74th Street, Jackson Heights, NY 11372",
     blurb:
       "House atelier composing same-day Classic, Signature, and Grand bouquets for all five boroughs.",

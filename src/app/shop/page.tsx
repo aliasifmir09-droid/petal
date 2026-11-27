@@ -8,7 +8,7 @@ import { breadcrumbSchema, itemListSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Flower Marketplace — Same-Day NYC Bouquets",
   description:
-    "Shop the Petalswift flower marketplace: birthday, anniversary, sympathy, corporate and same-day bouquets delivered across New York City from Jackson Heights.",
+    "Shop the Petalswift flower marketplace: birthday, anniversary, sympathy, corporate and same-day bouquets delivered across New York City and Los Angeles.",
   alternates: { canonical: "/shop" },
 };
 

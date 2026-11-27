@@ -12,7 +12,7 @@ export const qaItems: QaItem[] = [
     slug: "same-day-flower-delivery-nyc-five-boroughs",
     question: "Does Petalswift offer same-day flower delivery across all five NYC boroughs?",
     answer:
-      "Yes. Petalswift delivers same-day flowers across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island when you order by 1:00pm ET. Arrangements are composed in Jackson Heights at 37-68 74th Street and routed with published borough fees from $12. Taking orders from December 10, 2026.",
+      "Yes. Petalswift delivers same-day flowers across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island when you order by 4:00pm ET. Published borough fees start at $12. Office: 37-68 74th Street, Jackson Heights, NY 11372. Taking orders from December 10, 2026.",
     borough: "nyc",
     topic: "delivery",
     keywords: ["same-day flower delivery NYC", "five boroughs"],
@@ -21,7 +21,7 @@ export const qaItems: QaItem[] = [
     slug: "manhattan-same-day-flower-delivery",
     question: "How does same-day flower delivery work in Manhattan?",
     answer:
-      "Order Petalswift by 1:00pm ET for same-day Manhattan flower delivery to Midtown, downtown, Uptown, and surrounding neighborhoods. Fees and windows are shown before checkout. Lobby, doorman, and hotel handoffs are supported—ideal for corporate gifts and timed arrivals.",
+      "Order Petalswift by 4:00pm ET for same-day Manhattan flower delivery to Midtown, downtown, Uptown, and surrounding neighborhoods. Fees and windows are shown before checkout. Lobby, doorman, and hotel handoffs are supported—ideal for corporate gifts and timed arrivals.",
     borough: "manhattan",
     topic: "delivery",
     keywords: ["Manhattan flower delivery", "same-day Manhattan florist"],
@@ -30,25 +30,25 @@ export const qaItems: QaItem[] = [
     slug: "brooklyn-same-day-flower-delivery",
     question: "Can I get same-day flowers delivered in Brooklyn?",
     answer:
-      "Yes. Petalswift offers same-day flower delivery across Brooklyn—including Williamsburg, Park Slope, Brooklyn Heights, Bushwick, and more—when ordered by 1:00pm ET. Garden-style and lily-free options are popular for brownstones and weekend host gifts.",
+      "Yes. Petalswift offers same-day flower delivery across Brooklyn—including Williamsburg, Park Slope, Brooklyn Heights, Bushwick, and more—when ordered by 4:00pm ET. Garden-style and lily-free options are popular for brownstones and weekend host gifts.",
     borough: "brooklyn",
     topic: "delivery",
     keywords: ["Brooklyn flower delivery", "same-day Brooklyn florist"],
   },
   {
-    slug: "queens-jackson-heights-florist",
+    slug: "queens-flower-delivery",
     question: "Where is Petalswift’s Queens florist based?",
     answer:
-      "Petalswift’s atelier is at 37-68 74th Street, Jackson Heights, Queens, NY 11372. From this studio we compose same-day bouquets for Queens neighborhoods and the other four boroughs. Call (917) 460-5550 for local Queens orders.",
+      "The office is 37-68 74th Street, Jackson Heights, NY 11372. It is not a walk-in shop. We deliver same-day bouquets across Queens and the other four boroughs. Call (917) 460-5550.",
     borough: "queens",
     topic: "local",
-    keywords: ["Jackson Heights florist", "Queens flower delivery"],
+    keywords: ["Queens flower delivery", "New York City florist"],
   },
   {
     slug: "bronx-flower-delivery-same-day",
     question: "Do you deliver same-day flowers to the Bronx?",
     answer:
-      "Yes. Petalswift provides same-day flower delivery in the Bronx when ordered by 1:00pm ET. Delivery fees and windows are published on our NYC delivery page before you pay. Sympathy, congratulations, and family celebration arrangements are frequently requested.",
+      "Yes. Petalswift provides same-day flower delivery in the Bronx when ordered by 4:00pm ET. Delivery fees and windows are published on our NYC delivery page before you pay. Sympathy, congratulations, and family celebration arrangements are frequently requested.",
     borough: "bronx",
     topic: "delivery",
     keywords: ["Bronx flower delivery", "same-day Bronx florist"],
@@ -57,7 +57,7 @@ export const qaItems: QaItem[] = [
     slug: "staten-island-flower-delivery",
     question: "Is same-day flower delivery available on Staten Island?",
     answer:
-      "Petalswift delivers to Staten Island with same-day windows when ordered by 1:00pm ET (availability can vary by ZIP and season). Christmas Eve and peak holiday days may require earlier cutoffs—check the delivery page or call (917) 460-5550.",
+      "Petalswift delivers to Staten Island with same-day windows when ordered by 4:00pm ET (availability can vary by ZIP and season). Christmas Eve and peak holiday days may require earlier cutoffs—check the delivery page or call (917) 460-5550.",
     borough: "staten-island",
     topic: "delivery",
     keywords: ["Staten Island flower delivery", "Staten Island florist"],
@@ -90,13 +90,13 @@ export const qaItems: QaItem[] = [
     keywords: ["order flowers same-day NYC", "how to order NYC florist"],
   },
   {
-    slug: "best-florist-jackson-heights",
-    question: "Is Petalswift a real local florist in Jackson Heights?",
+    slug: "is-petalswift-a-real-florist",
+    question: "Is Petalswift a real florist?",
     answer:
-      "Yes. Petalswift is a Jackson Heights, Queens flower marketplace and atelier at 37-68 74th Street, 11372—not a generic national relay catalog. We compose to order for presence and longevity, then deliver across all five boroughs.",
+      "Yes. Petalswift composes to order and delivers across New York City and Los Angeles. Office: 37-68 74th Street, Jackson Heights, NY 11372. Phone (917) 460-5550.",
     borough: "queens",
     topic: "local",
-    keywords: ["Jackson Heights florist", "local NYC florist"],
+    keywords: ["New York City florist", "local florist"],
   },
   {
     slug: "corporate-flower-delivery-manhattan",

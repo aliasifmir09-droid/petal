@@ -60,7 +60,7 @@ export default function UpdatesPage() {
             </h2>
             <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-ink-soft">
               <li>Order confirmation with delivery fee and window</li>
-              <li>Composition started at the Jackson Heights atelier</li>
+              <li>Composition started</li>
               <li>Out for delivery with courier window</li>
               <li>Delivered / handoff confirmation</li>
             </ol>

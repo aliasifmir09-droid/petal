@@ -8,7 +8,6 @@ import { neighborhoodPath, neighborhoods } from "@/lib/neighborhoods";
 import { site } from "@/lib/site";
 
 const newYorkCityOrder = [
-  "jackson-heights",
   "astoria",
   "long-island-city",
   "forest-hills",
@@ -106,11 +105,10 @@ export function MarketIdentity() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-base">
             {site.name} is a US florist starting in New York City and Los
-            Angeles on {site.ordersStartDate}. The studio is at{" "}
-            {site.address.streetAddress}, {site.address.addressLocality},{" "}
-            {site.address.addressRegion} {site.address.postalCode}. Same-day in
-            New York City by {site.orderCutoff}, and in Los Angeles by{" "}
-            {losAngeles.orderCutoff}. Phone:{" "}
+            Angeles on {site.ordersStartDate}. Office: {site.address.streetAddress},{" "}
+            {site.address.addressLocality}, {site.address.addressRegion}{" "}
+            {site.address.postalCode}. Same-day in New York City by {site.orderCutoff},
+            and in Los Angeles by {losAngeles.orderCutoff}. Phone:{" "}
             <a className="font-semibold text-leaf hover:underline" href={`tel:${site.phone}`}>
               {site.phoneDisplay}
             </a>

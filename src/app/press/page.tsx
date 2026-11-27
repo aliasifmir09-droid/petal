@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Press & Brand Kit | Petalswift",
   description:
-    "Petalswift press assets: logo downloads, NAP for directories, and media contact for the Jackson Heights NYC florist marketplace.",
+    "Petalswift press assets: logo downloads, office address for directories, and media contact.",
   alternates: { canonical: "/press" },
 };
 
@@ -90,7 +90,7 @@ export default function PressPage() {
             <h2 className="font-display text-2xl text-ink">Boilerplate</h2>
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
               Petalswift is a New York City same-day flower marketplace and
-              florist atelier in Jackson Heights, Queens. We compose Classic,
+              florist for New York City and Los Angeles. We compose Classic,
               Signature, and Grand arrangements and deliver across Manhattan,
               Brooklyn, Queens, the Bronx, and Staten Island. Taking orders from{" "}
               {site.ordersStartDate}.

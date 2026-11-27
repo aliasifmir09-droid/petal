@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     absolute: "Christmas Flower Delivery in NYC | Same-Day Bouquets",
   },
   description:
-    "Taking Christmas flower orders from Dec 10. Same-day NYC bouquets, centerpieces & hatboxes from Petalswift in Jackson Heights. Call (917) 460-5550.",
+    "Taking Christmas flower orders from Dec 10. Same-day bouquets, centerpieces, and hatboxes in New York City and Los Angeles. Call (917) 460-5550.",
   keywords: [
     "Christmas flower delivery NYC",
     "same day Christmas flowers New York",
     "Christmas Eve flower delivery Manhattan",
     "holiday centerpiece Brooklyn",
-    "Christmas bouquet Queens Jackson Heights",
+    "Christmas bouquet Queens",
     "corporate Christmas flowers NYC",
   ],
   alternates: {
@@ -76,11 +76,11 @@ export default function ChristmasPage() {
           Christmas flower delivery across New York City.
         </h1>
         <p className="xmas-summary mt-6 max-w-3xl text-base leading-relaxed text-ink-soft md:text-lg">
-          Petalswift starts taking Christmas orders from {site.ordersStartDate}{" "}
-          at our Jackson Heights atelier at {site.address.streetAddress},{" "}
-          {site.address.addressLocality}, NY {site.address.postalCode}. Same-day
-          holiday bouquets, evergreen centerpieces, hatboxes, and corporate
-          gifts delivered to all five boroughs.
+          Petalswift starts taking Christmas orders from {site.ordersStartDate}.
+          Office: {site.address.streetAddress}, {site.address.addressLocality}, NY{" "}
+          {site.address.postalCode}. Same-day holiday bouquets, evergreen
+          centerpieces, hatboxes, and corporate gifts delivered to all five
+          boroughs. Order by {site.orderCutoff} for same-day.
         </p>
         <div className="xmas-ops mt-8 flex flex-wrap gap-3">
           <Link

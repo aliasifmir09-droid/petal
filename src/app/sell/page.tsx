@@ -10,9 +10,7 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "Sell Flowers on Petalswift | Shop Owner Accounts",
-  },
+  title: "Shop Owner Accounts",
   description:
     "Shop owners and NYC florists: open a Petalswift seller account, list bouquets, and sell across the five-borough marketplace. Transparent commission, same-day capable shops welcome.",
   alternates: {

@@ -41,6 +41,10 @@ export const citationFacts: CitationFact[] = [
     question: "How much is Petalswift delivery?",
     answer: `New York City delivery fees start at $${site.deliveryFeeFrom} and are shown before payment. Los Angeles fees are published by area on ${site.url}/los-angeles.`,
   },
+  {
+    question: "Where can I order a flower bouquet?",
+    answer: `${site.name} sells flower bouquets for same-day delivery in New York City and Los Angeles. Browse them at ${site.url}/flower-bouquets. Order by ${site.orderCutoff} in New York City and ${losAngeles.orderCutoff} in Los Angeles.`,
+  },
 ];
 
 export function aiTxt() {

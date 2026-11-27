@@ -8,9 +8,9 @@ import { blooms, colors, occasions, recipients, styles } from "@/lib/catalog";
 import { breadcrumbSchema, itemListSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "All Floral Arrangements & Bouquets for NYC Delivery",
+  title: "Flower Bouquets for NYC and Los Angeles",
   description:
-    "Shop every Petalswift floral arrangement: hand-tied, vase, hatbox, gift box, lily-free, by occasion, color, bloom, and recipient—with same-day delivery in New York City and Los Angeles.",
+    "Flower bouquets for New York City and Los Angeles: hand-tied, vase, hatbox, lily-free, by occasion, color, bloom, and recipient. Same-day by 4:00pm.",
   alternates: { canonical: "/arrangements" },
   openGraph: {
     title: "All Floral Arrangements | Petalswift NYC",

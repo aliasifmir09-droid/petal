@@ -11,7 +11,7 @@ import { boroughs, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
-  const lastModified = new Date("2026-11-26T15:00:00.000Z");
+  const lastModified = new Date("2026-11-27T18:00:00.000Z");
 
   const staticRoutes = [
     { path: "", priority: 1, changeFrequency: "daily" as const },
@@ -107,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${marketLandingPath(page)}`,
     lastModified,
     changeFrequency: "weekly" as const,
-    priority: 0.84,
+    priority: page.slug.includes("bouquet") ? 0.92 : 0.84,
   }));
 
   const sellerRoutes = partnerShops.map((shop) => ({

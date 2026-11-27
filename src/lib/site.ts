@@ -16,7 +16,7 @@ export const site = {
   tagline: "Flowers for New York City and Los Angeles.",
   /** Meta description target: 120–160 characters (audit). */
   description:
-    "Same-day flowers in New York City and Los Angeles from Dec 10. Borough and neighborhood fees are published before you pay.",
+    "Same-day flower bouquets in New York City and Los Angeles from Dec 10. Order by 4:00pm. Fees are shown before you pay.",
   shortDescription:
     "Same-day flower delivery in New York City and Los Angeles. Orders open December 10, 2026.",
   address: {

@@ -31,8 +31,8 @@ const assets = [
   },
   {
     href: "/logo-mark.svg",
-    label: "Pinwheel mark (SVG)",
-    detail: "Icon-only bloom mark",
+    label: "Lotus mark (SVG)",
+    detail: "Icon-only lotus",
   },
   {
     href: "/icon.png",

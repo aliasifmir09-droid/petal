@@ -14,8 +14,8 @@ export function ArrangementsCatalog() {
       initialStyle={params.get("style") ?? "all"}
       initialOccasion={params.get("occasion") ?? "all"}
       initialQuery={params.get("q") ?? ""}
-      heading="All floral arrangements—every option, elevated."
-      intro="Hand-tied, vase, hatbox, gift box, lily-free, same-day, next-day, every major occasion, color story, bloom type, and recipient. Built to outclass cluttered network catalogs with clearer filters and New York atelier quality."
+      heading="Flower bouquets for New York City and Los Angeles."
+      intro="Hand-tied bouquets, vase bouquets, hatboxes, lily-free bunches, and mixed blooms. Same-day in both cities when you order by 4:00pm. Filter by style, color, bloom, recipient, and occasion."
     />
   );
 }

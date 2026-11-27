@@ -1,3 +1,4 @@
+import { bouquetLandings } from "@/lib/bouquet-landings";
 import {
   getLaArea,
   getLaNeighborhood,
@@ -24,6 +25,8 @@ export type MarketLanding = {
   /** Los Angeles area slug when this page is not a New York City borough page. */
   areaSlug?: string;
   neighborhoodSlug?: string;
+  /** Keyword page that serves both launch cities. */
+  serveBoth?: boolean;
 };
 
 /**
@@ -402,6 +405,7 @@ export const marketLandings: MarketLanding[] = [
     ],
   },
   ...laMarketLandings,
+  ...bouquetLandings,
 ];
 
 export function getMarketLanding(slug: string) {
@@ -417,7 +421,12 @@ export function marketLandingLinks(page: MarketLanding) {
     { href: "/arrangements", label: "Shop arrangements" },
     { href: "/delivery", label: "Fees and windows" },
   ];
-  if (page.areaSlug) {
+  if (page.serveBoth) {
+    links.push(
+      { href: "/nyc", label: "New York City" },
+      { href: "/los-angeles", label: "Los Angeles" },
+    );
+  } else if (page.areaSlug) {
     links.push({ href: losAngeles.path, label: "Los Angeles guides" });
     links.push({
       href: `/los-angeles/${page.areaSlug}`,
@@ -432,24 +441,32 @@ export function marketLandingLinks(page: MarketLanding) {
         });
       }
     }
-    return links;
-  }
-  links.push({ href: "/nyc", label: "New York City guides" });
-  if (page.boroughSlug) {
-    links.push({
-      href: `/nyc/${page.boroughSlug}`,
-      label: "Borough delivery guide",
-    });
-  }
-  if (page.boroughSlug && page.neighborhoodSlug) {
-    const neighborhood = neighborhoods.find(
-      (n) => n.boroughSlug === page.boroughSlug && n.slug === page.neighborhoodSlug,
-    );
-    if (neighborhood) {
+  } else {
+    links.push({ href: "/nyc", label: "New York City guides" });
+    if (page.boroughSlug) {
       links.push({
-        href: neighborhoodPath(neighborhood),
-        label: `${neighborhood.name} guide`,
+        href: `/nyc/${page.boroughSlug}`,
+        label: "Borough delivery guide",
       });
+    }
+    if (page.boroughSlug && page.neighborhoodSlug) {
+      const neighborhood = neighborhoods.find(
+        (n) => n.boroughSlug === page.boroughSlug && n.slug === page.neighborhoodSlug,
+      );
+      if (neighborhood) {
+        links.push({
+          href: neighborhoodPath(neighborhood),
+          label: `${neighborhood.name} guide`,
+        });
+      }
+    }
+  }
+
+  if (bouquetLandings.some((item) => item.slug === page.slug)) {
+    for (const other of bouquetLandings) {
+      if (other.slug === page.slug) continue;
+      links.push({ href: `/${other.slug}`, label: other.title });
+      if (links.length >= 8) break;
     }
   }
   return links;

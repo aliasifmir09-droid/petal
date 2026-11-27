@@ -25,6 +25,12 @@ export function MarketSeoCopy() {
           </p>
           <ul className="mt-6 space-y-2 text-sm text-ink-soft md:text-base">
             <li>
+              <Link href="/flower-bouquets" className="font-semibold text-leaf hover:underline">
+                Flower bouquets
+              </Link>{" "}
+              — hand-tied, rose, birthday, and luxury bunches for New York City and Los Angeles.
+            </li>
+            <li>
               <Link href="/christmas" className="font-semibold text-leaf hover:underline">
                 Christmas flower delivery NYC
               </Link>{" "}

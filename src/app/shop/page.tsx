@@ -25,12 +25,17 @@ export default function ShopPage() {
         ]}
       />
       <div className="site-shell mb-6">
-        <Link
-          href="/arrangements"
-          className="text-sm text-leaf underline-offset-4 hover:underline"
-        >
-          Prefer the full arrangements catalog with every Interflora-class option? Open All Arrangements →
-        </Link>
+        <p className="text-sm text-ink-soft">
+          Prefer the full catalog?{" "}
+          <Link href="/flower-bouquets" className="text-leaf underline underline-offset-4">
+            Flower bouquets
+          </Link>{" "}
+          or{" "}
+          <Link href="/arrangements" className="text-leaf underline underline-offset-4">
+            all arrangements
+          </Link>
+          .
+        </p>
       </div>
       <ShopMarketplace
         heading="A flower marketplace for New York City and Los Angeles."

@@ -31,6 +31,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/flower-bouquets" className="hover:text-porcelain">
+                Flower bouquets
+              </Link>
+            </li>
+            <li>
               <Link href="/arrangements" className="hover:text-porcelain">
                 All arrangements
               </Link>

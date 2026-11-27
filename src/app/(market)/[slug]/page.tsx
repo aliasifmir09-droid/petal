@@ -66,10 +66,15 @@ export default async function MarketLandingPage({ params }: Props) {
             description: page.lead,
             url: `${site.url}${path}`,
             provider: { "@id": `${site.url}/#organization` },
-            areaServed: {
-              "@type": "City",
-              name: page.cityName ?? "New York City",
-            },
+            areaServed: page.serveBoth
+              ? [
+                  { "@type": "City", name: "New York City" },
+                  { "@type": "City", name: "Los Angeles" },
+                ]
+              : {
+                  "@type": "City",
+                  name: page.cityName ?? "New York City",
+                },
             offers: fee
               ? {
                   "@type": "Offer",

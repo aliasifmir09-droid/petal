@@ -36,12 +36,12 @@ export const marketLandings: MarketLanding[] = [
     slug: "same-day-flower-delivery-nyc",
     title: "Same-Day Flower Delivery NYC",
     description:
-      "Same-day flower delivery across all five NYC boroughs from Jackson Heights. Order by 1:00pm ET. Fees from $12, shown before you pay.",
+      "Same-day flower delivery across all five NYC boroughs. Order by 4:00pm ET. Fees from $12, shown before you pay.",
     h1: "Same-day flower delivery across New York City.",
-    kicker: "Five boroughs · order by 1:00pm ET",
+    kicker: "Five boroughs · order by 4:00pm ET",
     lead: `Petalswift composes bouquets to order at ${site.address.streetAddress}, ${site.address.addressLocality}, and delivers them the same day across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island when you order by ${site.orderCutoff}.`,
     details: [
-      "Queens from $12 (2:00–7:00pm ET), Brooklyn $16, Manhattan and the Bronx $18, Staten Island $24.",
+      "Queens from $12 (4:00–8:00pm ET), Brooklyn $16, Manhattan and the Bronx $18, Staten Island $24.",
       "Classic, Signature, and Grand sizes, plus hatboxes and lily-free gifts.",
       `Taking orders from ${site.ordersStartDate}. Christmas Eve cutoff is ${site.christmasEveCutoff}.`,
     ],
@@ -50,10 +50,10 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-nyc",
     title: "Flower Delivery NYC",
     description:
-      "NYC flower delivery from a Jackson Heights florist. Five-borough handoff, published fees, and email or SMS updates. Call (917) 460-5550.",
+      "New York City flower delivery with published fees and email or SMS updates. Call (917) 460-5550.",
     h1: "Flower delivery in New York City.",
-    kicker: "Jackson Heights florist · NYC handoff",
-    lead: "Petalswift is a flower delivery company based in Jackson Heights, NY 11372. We are not a storefront you browse in person for a ready-made cooler bouquet—we compose to order, then hand off across the city.",
+    kicker: "New York City handoff",
+    lead: "Petalswift is a flower delivery company for New York City and Los Angeles. The office address is not a walk-in shop. We compose to order, then hand off across the city.",
     details: [
       `Phone ${site.phoneDisplay}. Email ${site.email}.`,
       "Add doorman, buzzer, or lobby notes so the first handoff sticks.",
@@ -64,10 +64,10 @@ export const marketLandings: MarketLanding[] = [
     slug: "online-florist-nyc",
     title: "Online Florist NYC",
     description:
-      "Order from an online NYC florist: Petalswift designs in Jackson Heights and delivers same-day across five boroughs. Fees shown before checkout.",
+      "Order from an online New York City florist. Petalswift delivers same-day across five boroughs. Fees are shown before checkout.",
     h1: "An online florist for New York City.",
     kicker: "Order online · composed in Queens",
-    lead: "Choose a bouquet, a size, and a ZIP. Petalswift designs it in Jackson Heights and routes it across NYC with the borough fee and window printed before you pay.",
+    lead: "Choose a bouquet, a size, and a ZIP. Petalswift routes it across New York City with the borough fee and window printed before you pay.",
     details: [
       "Filter the catalog by occasion, style, color, and bloom.",
       "Hatboxes, hand-tied bouquets, and vase arrangements are listed with prices.",
@@ -78,12 +78,12 @@ export const marketLandings: MarketLanding[] = [
     slug: "flowers-near-me-nyc",
     title: "Flowers Near Me NYC",
     description:
-      "Looking for flowers near you in NYC? Petalswift delivers from Jackson Heights to Queens, Brooklyn, Manhattan, the Bronx, and Staten Island.",
+      "Looking for flowers near you in New York City? Petalswift delivers to Queens, Brooklyn, Manhattan, the Bronx, and Staten Island.",
     h1: "Flowers near you in New York City.",
     kicker: "Local atelier · citywide delivery",
-    lead: "If you are in New York City and searching for flowers nearby, Petalswift’s atelier is in Jackson Heights, Queens. Delivery—not a walk-in cooler—is how most orders arrive.",
+    lead: "If you are in New York City and searching for flowers nearby, Petalswift delivers. The office is not a walk-in cooler.",
     details: [
-      "Same-day in the neighborhood list below when ordered by 1:00pm ET.",
+      "Same-day in the neighborhood list below when ordered by 4:00pm ET.",
       "Enter a ZIP on the homepage to confirm we cover it.",
       "Neighborhood guides name the handoff details that matter on that block.",
     ],
@@ -92,27 +92,27 @@ export const marketLandings: MarketLanding[] = [
     slug: "luxury-bouquets-nyc",
     title: "Luxury Bouquets NYC",
     description:
-      "Luxury bouquets in NYC: Classic, Signature, and Grand compositions from $72, arranged in Jackson Heights and delivered same-day.",
+      "Luxury bouquets in New York City: Classic, Signature, and Grand compositions from $72, delivered same-day.",
     h1: "Luxury bouquets, composed for New York City rooms.",
     kicker: "Classic · Signature · Grand",
     lead: "Price follows stem count and presence in the room. Classic is about 15–20 stems, Signature 25–35, and Grand is statement scale for tables, suites, and client gifts.",
     details: [
       "Soft garden roses, architectural whites, and holiday color are in the catalog.",
       "A note card can go with every bouquet.",
-      "Same-day luxury delivery still follows the 1:00pm ET cutoff.",
+      "Same-day luxury delivery still follows the 4:00pm ET cutoff.",
     ],
   },
   {
     slug: "florist-queens-ny",
     title: "Florist in Queens, NY",
     description:
-      "Queens florist in Jackson Heights, NY 11372. Same-day flower delivery in Queens from $12, window 2:00–7:00pm ET. Order by 1:00pm.",
-    h1: "A Queens florist, based in Jackson Heights.",
+      "Queens flower delivery from $12, window 4:00–8:00pm ET. Order by 4:00pm ET.",
+    h1: "Flower delivery in Queens.",
     kicker: "Queens · from $12",
     boroughSlug: "queens",
-    lead: "Petalswift’s studio is at 37-68 74th Street, Jackson Heights, NY 11372. Queens deliveries are the closest runs: fee from $12, same-day window 2:00–7:00pm ET.",
+    lead: "Queens deliveries are $12, with a same-day window of 4:00–8:00pm ET. Office: 37-68 74th Street, Jackson Heights, NY 11372.",
     details: [
-      "Jackson Heights, Astoria, Long Island City, Forest Hills, and Flushing each have a delivery guide.",
+      "Astoria, Long Island City, Forest Hills, and Flushing each have a delivery guide.",
       "Walk-ups need a floor and buzzer. Towers need the package room or desk name.",
       "Local questions: (917) 460-5550 or hello@petalswift.com.",
     ],
@@ -121,11 +121,11 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-brooklyn-ny",
     title: "Flower Delivery Brooklyn, NY",
     description:
-      "Brooklyn flower delivery from $16. Same-day window 3:00–8:00pm ET for Williamsburg, Park Slope, Brooklyn Heights, DUMBO, and Bushwick.",
+      "Brooklyn flower delivery from $16. Same-day window 5:00–9:00pm ET for Williamsburg, Park Slope, Brooklyn Heights, DUMBO, and Bushwick.",
     h1: "Flower delivery in Brooklyn.",
     kicker: "Brooklyn · $16",
     boroughSlug: "brooklyn",
-    lead: "Petalswift delivers composed bouquets across Brooklyn the same day when you order by 1:00pm ET. The Brooklyn fee is $16, with a 3:00–8:00pm ET window.",
+    lead: "Petalswift delivers composed bouquets across Brooklyn the same day when you order by 4:00pm ET. The Brooklyn fee is $16, with a 5:00–9:00pm ET window.",
     details: [
       "Brownstones, lofts, and waterfront towers are all in range.",
       "Add stoop versus buzzer instructions so the courier does not guess.",
@@ -136,11 +136,11 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-manhattan-ny",
     title: "Flower Delivery Manhattan, NY",
     description:
-      "Manhattan flower delivery from $18. Same-day 3:00–8:00pm ET for Midtown, UES, UWS, West Village, Chelsea, and Harlem.",
+      "Manhattan flower delivery from $18. Same-day 5:00–9:00pm ET for Midtown, UES, UWS, West Village, Chelsea, and Harlem.",
     h1: "Flower delivery in Manhattan.",
     kicker: "Manhattan · $18",
     boroughSlug: "manhattan",
-    lead: "Hotel desks, doorman buildings, and downtown walk-ups. Manhattan delivery is $18, same-day window 3:00–8:00pm ET, ordered by 1:00pm ET.",
+    lead: "Hotel desks, doorman buildings, and downtown walk-ups. Manhattan delivery is $18, same-day window 5:00–9:00pm ET, ordered by 4:00pm ET.",
     details: [
       "Name the recipient the way the desk has them listed.",
       "Lobby, suite, and mobile number shorten Midtown handoffs.",
@@ -151,11 +151,11 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-bronx-ny",
     title: "Flower Delivery Bronx, NY",
     description:
-      "Bronx flower delivery from $18. Same-day window 3:00–7:30pm ET, including Riverdale and Mott Haven. Order by 1:00pm ET.",
+      "Bronx flower delivery from $18. Same-day window 5:00–8:30pm ET, including Riverdale and Mott Haven. Order by 4:00pm ET.",
     h1: "Flower delivery in the Bronx.",
     kicker: "The Bronx · $18",
     boroughSlug: "bronx",
-    lead: "Petalswift delivers to the Bronx from the Jackson Heights atelier. The fee is $18 and the same-day window is 3:00–7:30pm ET.",
+    lead: "Petalswift delivers to the Bronx for $18. The same-day window is 5:00–8:30pm ET.",
     details: [
       "Gate codes and buzzers belong in the delivery note.",
       "Riverdale and Mott Haven have neighborhood pages.",
@@ -166,38 +166,22 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-staten-island-ny",
     title: "Flower Delivery Staten Island",
     description:
-      "Staten Island flower delivery from $24. Same-day most weekdays, window 3:30–7:00pm ET. St. George and nearby homes included.",
+      "Staten Island flower delivery from $24. Same-day most weekdays, window 5:00–8:00pm ET. St. George and nearby homes included.",
     h1: "Flower delivery on Staten Island.",
     kicker: "Staten Island · $24",
     boroughSlug: "staten-island",
-    lead: "Staten Island is the longest run. The fee is $24, the same-day window is 3:30–7:00pm ET, and next-day is often smoother on peak weekends.",
+    lead: "Staten Island is the longest run. The fee is $24, the same-day window is 5:00–8:00pm ET, and next-day is often smoother on peak weekends.",
     details: [
-      "Order by 1:00pm ET for same-day. Christmas Eve cutoff is 11:00am ET.",
+      "Order by 4:00pm ET for same-day. Christmas Eve cutoff is 11:00am ET.",
       "St. George has its own delivery guide.",
       "The fee is shown before payment, not after.",
-    ],
-  },
-  {
-    slug: "florist-jackson-heights-ny",
-    title: "Florist in Jackson Heights, NY",
-    description:
-      "Jackson Heights florist at 37-68 74th Street, NY 11372. Petalswift composes same-day bouquets here for Queens and the rest of NYC.",
-    h1: "Jackson Heights florist — Petalswift.",
-    kicker: "37-68 74th Street · NY 11372",
-    boroughSlug: "queens",
-    neighborhoodSlug: "jackson-heights",
-    lead: "This is the home studio. Petalswift conditions and designs at 37-68 74th Street, Jackson Heights, NY 11372, then delivers—starting with the surrounding Queens blocks.",
-    details: [
-      "Queens fee from $12. Same-day window 2:00–7:00pm ET.",
-      "Call (917) 460-5550 or email hello@petalswift.com.",
-      "Hours Monday–Sunday 8:00am–8:00pm ET. Orders open December 10, 2026.",
     ],
   },
   {
     slug: "flower-delivery-astoria-queens-ny",
     title: "Flower Delivery Astoria, Queens",
     description:
-      "Astoria flower delivery from the Jackson Heights atelier. Queens fee from $12, same-day when ordered by 1:00pm ET.",
+      "Astoria flower delivery. Queens fee from $12, same-day when ordered by 4:00pm ET.",
     h1: "Flower delivery in Astoria, Queens.",
     kicker: "Astoria · Queens",
     boroughSlug: "queens",
@@ -205,7 +189,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Astoria is a short run from the atelier. Walk-ups need a buzzer and floor. The Queens fee starts at $12.",
     details: [
       "Ditmars, Steinway, and Astoria Park-area addresses are in range.",
-      "Same-day when ordered by 1:00pm ET.",
+      "Same-day when ordered by 4:00pm ET.",
       "See the Astoria neighborhood guide for handoff notes.",
     ],
   },
@@ -218,18 +202,18 @@ export const marketLandings: MarketLanding[] = [
     kicker: "Long Island City · Queens",
     boroughSlug: "queens",
     neighborhoodSlug: "long-island-city",
-    lead: "LIC towers want a building name and a package-room or desk contact. Petalswift sends lobby-ready bouquets from Jackson Heights on the Queens fee.",
+    lead: "LIC towers want a building name and a package-room or desk contact. Petalswift sends lobby-ready bouquets on the Queens fee.",
     details: [
       "Court Square and Vernon Boulevard addresses are covered.",
       "Signature size is the usual office and host gift.",
-      "Same-day window for Queens is 2:00–7:00pm ET.",
+      "Same-day window for Queens is 4:00–8:00pm ET.",
     ],
   },
   {
     slug: "flower-delivery-williamsburg-brooklyn-ny",
     title: "Flower Delivery Williamsburg",
     description:
-      "Williamsburg flower delivery, Brooklyn fee $16. Same-day 3:00–8:00pm ET for lofts and walk-ups. Order by 1:00pm ET.",
+      "Williamsburg flower delivery, Brooklyn fee $16. Same-day 5:00–9:00pm ET for lofts and walk-ups. Order by 4:00pm ET.",
     h1: "Flower delivery in Williamsburg, Brooklyn.",
     kicker: "Williamsburg · Brooklyn",
     boroughSlug: "brooklyn",
@@ -237,7 +221,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Lofts and walk-ups along Bedford and the waterfront. Add the courier code. Brooklyn delivery is $16.",
     details: [
       "Garden-style and lily-free bouquets are common weekend sends.",
-      "Order by 1:00pm ET for same-day.",
+      "Order by 4:00pm ET for same-day.",
       "The Williamsburg guide lists the handoff details.",
     ],
   },
@@ -245,7 +229,7 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-park-slope-brooklyn-ny",
     title: "Flower Delivery Park Slope",
     description:
-      "Park Slope flower delivery for brownstones and stoops. Brooklyn fee $16, same-day window 3:00–8:00pm ET.",
+      "Park Slope flower delivery for brownstones and stoops. Brooklyn fee $16, same-day window 5:00–9:00pm ET.",
     h1: "Flower delivery in Park Slope.",
     kicker: "Park Slope · Brooklyn",
     boroughSlug: "brooklyn",
@@ -261,23 +245,23 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-upper-west-side-nyc",
     title: "Flower Delivery Upper West Side",
     description:
-      "Upper West Side flower delivery, Manhattan fee $18. Same-day 3:00–8:00pm ET for doorman buildings and walk-ups.",
+      "Upper West Side flower delivery, Manhattan fee $18. Same-day 5:00–9:00pm ET for doorman buildings and walk-ups.",
     h1: "Flower delivery on the Upper West Side.",
     kicker: "Upper West Side · Manhattan",
     boroughSlug: "manhattan",
     neighborhoodSlug: "upper-west-side",
     lead: "Central Park West, Amsterdam, and the blocks near Lincoln Center. Doorman desks need the resident’s name. Walk-ups need a floor and buzzer.",
     details: [
-      "Manhattan fee $18. Window 3:00–8:00pm ET.",
+      "Manhattan fee $18. Window 5:00–9:00pm ET.",
       "Signature size is the usual host and birthday send.",
-      "Order by 1:00pm ET for same-day.",
+      "Order by 4:00pm ET for same-day.",
     ],
   },
   {
     slug: "flower-delivery-upper-east-side-nyc",
     title: "Flower Delivery Upper East Side",
     description:
-      "Upper East Side flower delivery for doorman buildings. Manhattan fee $18, same-day when ordered by 1:00pm ET.",
+      "Upper East Side flower delivery for doorman buildings. Manhattan fee $18, same-day when ordered by 4:00pm ET.",
     h1: "Flower delivery on the Upper East Side.",
     kicker: "Upper East Side · Manhattan",
     boroughSlug: "manhattan",
@@ -285,7 +269,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Park Avenue and Museum Mile buildings want the name on the desk list and the apartment number. Petalswift routes these on the Manhattan fee.",
     details: [
       "Anniversary and sympathy sends are common. Lily-free is available.",
-      "Same-day window 3:00–8:00pm ET.",
+      "Same-day window 5:00–9:00pm ET.",
       "The Upper East Side guide has the handoff notes.",
     ],
   },
@@ -301,8 +285,8 @@ export const marketLandings: MarketLanding[] = [
     lead: "Waterfront lofts and Jay Street offices. Put the suite and the front-desk name in the note. Brooklyn fee is $16.",
     details: [
       "Architectural arrangements suit loft rooms.",
-      "Same-day when ordered by 1:00pm ET.",
-      "Window 3:00–8:00pm ET.",
+      "Same-day when ordered by 4:00pm ET.",
+      "Window 5:00–9:00pm ET.",
     ],
   },
   {
@@ -317,7 +301,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Townhouses around Bleecker and Hudson need a stoop-versus-intercom note. Petalswift delivers hand-tied bouquets on the Manhattan fee.",
     details: [
       "Romance and thank-you sends are the usual order.",
-      "Friday same-day needs the 1:00pm ET cutoff.",
+      "Friday same-day needs the 4:00pm ET cutoff.",
       "See the West Village guide for block-level notes.",
     ],
   },
@@ -325,7 +309,7 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-chelsea-nyc",
     title: "Flower Delivery Chelsea, NYC",
     description:
-      "Chelsea flower delivery for galleries, lofts, and homes. Manhattan fee $18, same-day window 3:00–8:00pm ET.",
+      "Chelsea flower delivery for galleries, lofts, and homes. Manhattan fee $18, same-day window 5:00–9:00pm ET.",
     h1: "Flower delivery in Chelsea.",
     kicker: "Chelsea · Manhattan",
     boroughSlug: "manhattan",
@@ -334,7 +318,7 @@ export const marketLandings: MarketLanding[] = [
     details: [
       "Architectural whites are a common Chelsea choice.",
       "High Line residences are in the Manhattan window.",
-      "Order by 1:00pm ET for same-day.",
+      "Order by 4:00pm ET for same-day.",
     ],
   },
   {
@@ -349,7 +333,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Promenade residences and Montague Street. Co-op desks need the resident’s name as listed. The Brooklyn fee is $16.",
     details: [
       "Sympathy and congratulations are frequent. Ask for lily-free if needed.",
-      "Same-day window 3:00–8:00pm ET.",
+      "Same-day window 5:00–9:00pm ET.",
       "The Brooklyn Heights guide has the rest of the handoff notes.",
     ],
   },
@@ -357,7 +341,7 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-forest-hills-queens-ny",
     title: "Flower Delivery Forest Hills",
     description:
-      "Forest Hills flower delivery for homes and co-ops. Queens fee from $12, same-day window 2:00–7:00pm ET.",
+      "Forest Hills flower delivery for homes and co-ops. Queens fee from $12, same-day window 4:00–8:00pm ET.",
     h1: "Flower delivery in Forest Hills.",
     kicker: "Forest Hills · Queens",
     boroughSlug: "queens",
@@ -365,20 +349,20 @@ export const marketLandings: MarketLanding[] = [
     lead: "Co-ops near Austin Street and homes toward Forest Hills Gardens. Use the resident’s name as the desk has it. Queens fee from $12.",
     details: [
       "Holiday centerpieces and sympathy designs are available.",
-      "Same-day cutoff is 1:00pm ET.",
-      "Window 2:00–7:00pm ET.",
+      "Same-day cutoff is 4:00pm ET.",
+      "Window 4:00–8:00pm ET.",
     ],
   },
   {
     slug: "flower-delivery-flushing-queens-ny",
     title: "Flower Delivery Flushing, Queens",
     description:
-      "Flushing flower delivery from Jackson Heights. Queens fee from $12. Grand sizes for family gatherings. Order by 1:00pm ET.",
+      "Flushing flower delivery. Queens fee from $12. Grand sizes for family gatherings. Order by 4:00pm ET.",
     h1: "Flower delivery in Flushing.",
     kicker: "Flushing · Queens",
     boroughSlug: "queens",
     neighborhoodSlug: "flushing",
-    lead: "Family celebrations around Main Street and the residential towers. Petalswift routes these from Jackson Heights on the Queens fee.",
+    lead: "Family celebrations around Main Street and the residential towers. Petalswift routes these on the Queens fee.",
     details: [
       "A short note for building staff helps the handoff.",
       "Grand size is the usual family-gathering choice.",
@@ -389,7 +373,7 @@ export const marketLandings: MarketLanding[] = [
     slug: "flower-delivery-harlem-nyc",
     title: "Flower Delivery Harlem, NYC",
     description:
-      "Harlem flower delivery, Manhattan fee $18. Same-day 3:00–8:00pm ET for brownstones and residences. Order by 1:00pm ET.",
+      "Harlem flower delivery, Manhattan fee $18. Same-day 5:00–9:00pm ET for brownstones and residences. Order by 4:00pm ET.",
     h1: "Flower delivery in Harlem.",
     kicker: "Harlem · Manhattan",
     boroughSlug: "manhattan",
@@ -398,14 +382,14 @@ export const marketLandings: MarketLanding[] = [
     details: [
       "Celebrations and sympathy sends are both common.",
       "Lily-free on request.",
-      "Same-day window 3:00–8:00pm ET.",
+      "Same-day window 5:00–9:00pm ET.",
     ],
   },
   {
     slug: "flower-delivery-bushwick-brooklyn-ny",
     title: "Flower Delivery Bushwick",
     description:
-      "Bushwick flower delivery for lofts and walk-ups. Brooklyn fee $16, same-day window 3:00–8:00pm ET.",
+      "Bushwick flower delivery for lofts and walk-ups. Brooklyn fee $16, same-day window 5:00–9:00pm ET.",
     h1: "Flower delivery in Bushwick.",
     kicker: "Bushwick · Brooklyn",
     boroughSlug: "brooklyn",
@@ -413,7 +397,7 @@ export const marketLandings: MarketLanding[] = [
     lead: "Warehouse lofts and walk-ups near Myrtle-Broadway. Buzzer codes belong in the note. Brooklyn delivery is $16.",
     details: [
       "Garden-style bouquets are a frequent weekend order.",
-      "Order by 1:00pm ET for same-day.",
+      "Order by 4:00pm ET for same-day.",
       "The Bushwick guide covers the handoff details.",
     ],
   },

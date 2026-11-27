@@ -8,7 +8,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "FAQ — Same-Day NYC Flower Delivery",
   description:
-    "Answers about Petalswift same-day flower delivery across New York City, freshness, notes, corporate orders, and our Jackson Heights atelier.",
+    "Answers about Petalswift same-day flower delivery in New York City and Los Angeles, freshness, notes, and corporate orders.",
   alternates: { canonical: "/faq" },
 };
 

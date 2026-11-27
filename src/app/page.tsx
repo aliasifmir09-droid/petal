@@ -60,7 +60,7 @@ export default function Home() {
       <FloristsStrip />
       <PhotoStrip
         title="Atelier craft and delivery photography."
-        intro="Florist work in Jackson Heights and NYC handoffs—operational proof, not decoration."
+        intro="Florist work and delivery handoffs—operational proof, not decoration."
         photos={[...atelierPhotos.slice(0, 2), ...deliveryPhotos.slice(0, 2)]}
       />
       <Reviews />

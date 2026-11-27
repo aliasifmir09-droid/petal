@@ -12,7 +12,7 @@ export function FloristsStrip() {
               Our florists
             </p>
             <h2 className="font-display mt-4 text-3xl tracking-[-0.03em] text-ink md:text-5xl">
-              The Jackson Heights team behind every send.
+              The team behind every send.
             </h2>
           </div>
           <Link

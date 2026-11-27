@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     absolute: "Taking NYC Flower Orders from December 10th, 2026",
   },
   description:
-    "Petalswift takes NYC flower orders from Dec 10. Same-day & Christmas delivery by phone (917) 460-5550 or online from Jackson Heights.",
+    "Petalswift takes New York City and Los Angeles flower orders from Dec 10. Same-day and Christmas delivery by phone (917) 460-5550 or online. Order by 4:00pm for same-day.",
   alternates: {
     canonical: "/order",
     languages: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "1. Pick the arrangement",
-    body: "Shop Christmas, all arrangements, or call us with a color story, budget, and occasion. We compose in Jackson Heights.",
+    body: "Shop Christmas, all arrangements, or call us with a color story, budget, and occasion.",
     href: "/christmas",
     cta: "Shop Christmas",
   },

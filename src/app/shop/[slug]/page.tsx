@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const titleName = productDisplayName(product);
   return {
     title: `${titleName} — Same-Day NYC Flower Delivery`,
-    description: `${product.blurb} Dimensions, vase details, delivery fees, and freshness guarantee from Petalswift in Jackson Heights.`,
+    description: `${product.blurb} Dimensions, vase details, delivery fees, and freshness guarantee from Petalswift.`,
     alternates: { canonical: `/shop/${product.slug}` },
     openGraph: {
       title: `${titleName} | Petalswift`,

@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Corporate & Hotel Flower Delivery NYC",
   description:
-    "Petalswift corporate gifting and hotel arrival florals across NYC—timed handoffs, published fees, and Jackson Heights atelier quality.",
+    "Petalswift corporate gifting and hotel arrival florals across New York City—timed handoffs and published fees.",
   alternates: { canonical: "/corporate" },
 };
 

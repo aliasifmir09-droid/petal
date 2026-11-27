@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     slug: "same-day-flower-delivery-nyc-five-boroughs",
     title: "Same-Day Flower Delivery Across NYC’s Five Boroughs",
     description:
-      "How Petalswift delivers same-day flowers to Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—fees, cutoffs, and how to order from Jackson Heights.",
+      "How Petalswift delivers same-day flowers to Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—fees, cutoffs, and how to order.",
     publishedAt: "2026-11-26",
     updatedAt: "2026-11-26",
     borough: "nyc",
@@ -28,11 +28,11 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "One marketplace, five boroughs",
-        body: "New Yorkers search for same-day flower delivery NYC when they need reliable handoffs—not a generic catalog. Petalswift composes in Jackson Heights and delivers across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island with published fees from $12 and a 1:00pm ET same-day cutoff most days.",
+        body: "People in New York City search for same-day flower delivery when they need reliable handoffs—not a generic catalog. Petalswift delivers across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island with published fees from $12 and a 4:00pm ET same-day cutoff most days.",
       },
       {
         heading: "What “same-day” means here",
-        body: "Enter a NYC ZIP before you pay to see the borough fee and window. Same-day is available when you order by 1:00pm ET. Christmas Eve uses an 11:00am ET cutoff. Taking orders from December 10, 2026 for holiday volume.",
+        body: "Enter a NYC ZIP before you pay to see the borough fee and window. Same-day is available when you order by 4:00pm ET. Christmas Eve uses an 11:00am ET cutoff. Taking orders from December 10, 2026 for holiday volume.",
       },
       {
         heading: "How to order fast",
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Cutoff and fees",
-        body: "Order by 1:00pm ET for same-day Manhattan delivery. Borough fees show after ZIP entry. Corporate and hotel lists can email the atelier for multi-address sends starting December 10, 2026.",
+        body: "Order by 4:00pm ET for same-day Manhattan delivery. Borough fees show after ZIP entry. Corporate and hotel lists can email the atelier for multi-address sends starting December 10, 2026.",
       },
       {
         heading: "What to send",
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "Brooklyn same-day, without guesswork",
-        body: "From Williamsburg to Park Slope and Brooklyn Heights, Petalswift delivers same-day when ordered by 1:00pm ET. Fees and windows are published before checkout so walk-ups and brownstones are planned correctly.",
+        body: "From Williamsburg to Park Slope and Brooklyn Heights, Petalswift delivers same-day when ordered by 4:00pm ET. Fees and windows are published before checkout so walk-ups and brownstones are planned correctly.",
       },
       {
         heading: "Styles that fit Brooklyn",
@@ -95,25 +95,25 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "queens-jackson-heights-florist-same-day",
-    title: "Queens Flower Delivery from a Jackson Heights Florist",
+    slug: "queens-flower-delivery-same-day",
+    title: "Queens Flower Delivery",
     description:
-      "Same-day Queens flower delivery from Petalswift’s Jackson Heights atelier at 37-68 74th Street—local NAP, cutoffs, and borough coverage.",
+      "Same-day Queens flower delivery from Petalswift—fees, cutoff, and borough coverage. Office: 37-68 74th Street, Jackson Heights, NY 11372.",
     publishedAt: "2026-11-26",
     updatedAt: "2026-11-26",
     borough: "queens",
-    tags: ["Queens", "Jackson Heights", "local florist"],
+    tags: ["Queens", "local florist"],
     heroImage:
       "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1600&q=80",
-    heroAlt: "Jackson Heights florist composing a bouquet",
+    heroAlt: "Florist composing a bouquet",
     sections: [
       {
         heading: "A real Queens atelier",
-        body: "Petalswift is based at 37-68 74th Street, Jackson Heights, NY 11372. Same-day Queens flower delivery starts here—composed to order, then routed across the borough and the rest of NYC.",
+        body: "Office: 37-68 74th Street, Jackson Heights, NY 11372. Same-day Queens flower delivery is composed to order, then routed across the borough and the rest of New York City.",
       },
       {
         heading: "Why local matters for SEO and trust",
-        body: "Searchers looking for a Jackson Heights florist want a real address and phone. Ours is (917) 460-5550, with Google Maps linked from the site NAP and LocalBusiness schema.",
+        body: "The office address and phone are published for directories: (917) 460-5550, with Google Maps linked from the site and LocalBusiness schema.",
       },
       {
         heading: "Order locally or citywide",
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "Coverage across the Bronx",
-        body: "Petalswift delivers same-day flowers in the Bronx when you order by 1:00pm ET. Confirm ZIP for fee and window before payment—transparent borough pricing from $12 citywide starting points.",
+        body: "Petalswift delivers same-day flowers in the Bronx when you order by 4:00pm ET. Confirm ZIP for fee and window before payment—transparent borough pricing from $12 citywide starting points.",
       },
       {
         heading: "Popular occasions",
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "Island-wide delivery",
-        body: "Petalswift serves Staten Island with same-day options when ordered by 1:00pm ET (ZIP-dependent). Peak holidays may need earlier ordering—especially Christmas Eve (11:00am ET cutoff).",
+        body: "Petalswift serves Staten Island with same-day options when ordered by 4:00pm ET (ZIP-dependent). Peak holidays may need earlier ordering—especially Christmas Eve (11:00am ET cutoff).",
       },
       {
         heading: "Planning a send",
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "What to send",
-        body: "Centerpieces, red and ivory bouquets, hatboxes, lily-free gifts, and corporate holiday florals ship across all five boroughs from the Jackson Heights atelier.",
+        body: "Centerpieces, red and ivory bouquets, hatboxes, lily-free gifts, and corporate holiday florals are delivered across all five boroughs.",
       },
       {
         heading: "How to book",
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Step 2 — Confirm ZIP and size",
-        body: "Choose Classic, Signature, or Grand. Enter the delivery ZIP to see borough fee and window before you pay. Same-day needs order by 1:00pm ET.",
+        body: "Choose Classic, Signature, or Grand. Enter the delivery ZIP to see borough fee and window before you pay. Same-day needs order by 4:00pm ET.",
       },
       {
         heading: "Step 3 — Checkout or call",

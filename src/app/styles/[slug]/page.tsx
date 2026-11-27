@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!style) return { title: "Styles" };
   return {
     title: `${style.name} Flower Arrangements NYC`,
-    description: `${style.blurb} Same-day NYC delivery from Petalswift in Jackson Heights.`,
+    description: `${style.blurb} Same-day New York City delivery from Petalswift.`,
     alternates: { canonical: `/styles/${style.slug}` },
   };
 }

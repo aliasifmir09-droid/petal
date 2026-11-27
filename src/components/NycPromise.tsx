@@ -8,7 +8,7 @@ const points = [
   },
   {
     title: "Fresh this morning",
-    body: "We arrange to order from our Jackson Heights atelier—no tired overnight inventory staged for tomorrow’s photo.",
+    body: "We arrange to order—no tired overnight inventory staged for tomorrow’s photo.",
   },
   {
     title: "Quiet, reliable handoff",
@@ -34,7 +34,7 @@ export function NycPromise() {
           <p className="mt-6 max-w-xl text-base leading-relaxed text-porcelain/72 md:text-lg">
             New York City and Los Angeles customers judge florists on
             punctuality, freshness, and presence. Petalswift is designed around
-            those three—from Jackson Heights across New York City, and across
+            those three—across New York City and across
             Los Angeles.
           </p>
         </div>

@@ -81,7 +81,7 @@ export function organizationSchema() {
     knowsAbout: [
       "same-day flower delivery NYC",
       "Christmas flower delivery New York",
-      "Jackson Heights florist",
+      "New York City florist",
       "luxury bouquets Manhattan Brooklyn Queens Bronx Staten Island",
     ],
     potentialAction: {
@@ -311,7 +311,7 @@ export function howToOrderSchema() {
       {
         "@type": "HowToStep",
         name: "Checkout or call",
-        text: `Add to cart online or call ${site.phoneDisplay} to place the order with Petalswift in Jackson Heights.`,
+        text: `Add to cart online or call ${site.phoneDisplay} to place the order.`,
         url: `${site.url}/order`,
       },
     ],

@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Delivery & Atelier Photo Gallery",
   description:
-    "Petalswift delivery photography and Jackson Heights atelier process photos—operational proof for NYC same-day flower customers.",
+    "Petalswift delivery photography—operational proof for same-day flower customers.",
   alternates: { canonical: "/gallery" },
 };
 
@@ -40,7 +40,7 @@ export default function GalleryPage() {
         photos={deliveryPhotos}
       />
       <PhotoStrip
-        title="Jackson Heights atelier"
+        title="Studio"
         intro="Morning conditioning, composition, and final checks before dispatch."
         photos={atelierPhotos}
       />

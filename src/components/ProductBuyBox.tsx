@@ -148,7 +148,7 @@ export function ProductBuyBox({ product }: { product: Product }) {
             Order updates
           </Link>
         </li>
-        <li>Composed in Jackson Heights · {site.address.streetAddress}</li>
+        <li>Office · {site.address.streetAddress}</li>
         <li>Note-card included — preview your message at checkout email</li>
       </ul>
 

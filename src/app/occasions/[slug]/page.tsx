@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!occasion) return { title: "Occasions" };
   return {
     title: occasion.seoTitle,
-    description: `${occasion.blurb} Same-day NYC flower delivery from Petalswift in Jackson Heights.`,
+    description: `${occasion.blurb} Same-day New York City flower delivery from Petalswift.`,
     alternates: { canonical: `/occasions/${occasion.slug}` },
   };
 }

@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     "Christmas Eve flowers New York City",
     "luxury bouquets Manhattan",
     "Brooklyn flower delivery",
-    "Queens florist Jackson Heights",
+    "Queens florist",
     "flower delivery Bronx",
     "Staten Island florist",
     "Petalswift",
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "US-NY",
-    "geo.placename": "Jackson Heights",
+    "geo.placename": "New York City",
     "geo.position": `${site.geo.latitude};${site.geo.longitude}`,
     ICBM: `${site.geo.latitude}, ${site.geo.longitude}`,
   },

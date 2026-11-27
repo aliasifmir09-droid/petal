@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "NYC Flower Delivery Q&A | Five Borough Answers",
   },
   description:
-    "Q&A for same-day flower delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—fees, cutoffs, Christmas, and Jackson Heights florist facts.",
+    "Q&A for same-day flower delivery across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—fees, cutoffs, and Christmas.",
   alternates: {
     canonical: "/qa",
     languages: { "en-US": "/qa", "x-default": "/qa" },
@@ -48,7 +48,7 @@ export default function QaHubPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
           Straight answers for same-day flowers in Manhattan, Brooklyn, Queens,
-          the Bronx, and Staten Island—from our Jackson Heights atelier. Taking
+          the Bronx, and Staten Island. Taking
           orders from {site.ordersStartDate}.
         </p>
         <div className="mt-8 flex flex-wrap gap-2">

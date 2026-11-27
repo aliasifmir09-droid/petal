@@ -11,7 +11,7 @@ export function SiteFooter() {
           <BrandLogo variant="on-dark" size="lg" href="/" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-porcelain/72">
             Luxury flowers and composed bouquets for New York City—arranged
-            fresh in Jackson Heights, delivered across all five boroughs.
+            delivered across New York City and Los Angeles.
           </p>
         </div>
 
@@ -206,7 +206,7 @@ export function SiteFooter() {
 
         <div>
           <p className="text-[0.7rem] uppercase tracking-[0.2em] text-porcelain/50">
-            Visit & contact
+            Office
           </p>
           <address className="mt-4 space-y-2.5 text-sm not-italic leading-relaxed text-porcelain/85">
             <p>

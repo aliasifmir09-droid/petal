@@ -12,7 +12,7 @@ export const deliveryZipGroups: ZipBorough[] = [
     borough: "Queens",
     slug: "queens",
     feeFrom: 12,
-    note: "Includes Jackson Heights atelier ZIP 11372 and nearby neighborhoods.",
+    note: "Includes nearby Queens neighborhoods.",
     zips: [
       "11101", "11102", "11103", "11104", "11105", "11106",
       "11354", "11355", "11358", "11361", "11364", "11365",

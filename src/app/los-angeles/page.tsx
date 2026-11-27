@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Flower Delivery in Los Angeles",
   description:
-    "Same-day Petalswift flower delivery in the City of Los Angeles. Downtown through Studio City, with fees from $16. Order by 1:00pm PT.",
+    "Same-day Petalswift flower delivery in the City of Los Angeles. Downtown through Studio City, with fees from $16. Order by 4:00pm PT.",
   alternates: { canonical: "/los-angeles" },
 };
 

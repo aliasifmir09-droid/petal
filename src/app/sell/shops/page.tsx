@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Partner Flower Shops | Sell on Petalswift",
   description:
-    "Browse NYC flower shops selling on the Petalswift marketplace—Jackson Heights, Brooklyn, Manhattan partners and more.",
+    "Browse New York City flower shops selling on the Petalswift marketplace.",
   alternates: { canonical: "/sell/shops" },
 };
 
